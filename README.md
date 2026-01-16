@@ -58,7 +58,7 @@ Ingeniarius Systematum (Singulus): r07-252224@soei.ed.jp https://github.com/ATAR
 為咗宣傳呢個由2025年開始舉辦嘅活動，我哋整咗呢個網站。<br>
 希望大家會鍾意！<br>
 <br>
-聯絡我哋 我哋嘅團隊：y.s.profes@outlook.jp
+聯絡我哋 我哋嘅團隊：y.s.profes@outlook.jp<br>
 系統工程師（個人）：r07-252224@soei.ed.jp https://github.com/ATARO-QQQ<br>
 <br><br><br>
 
@@ -66,8 +66,8 @@ Ingeniarius Systematum (Singulus): r07-252224@soei.ed.jp https://github.com/ATAR
 우리덜은 요코하마 소에이 중고등학교 '프로젝트 페스타' 실행위원회우다.<br>
 2025년부떠 ᄒᆞ는 요 행사를 알리젠 이 웹사이트를 ᄆᆞᆫ들엄수다.<br>
 즐겁게 봐주시길 ᄇᆞ람수다!<br>
-
-연락ᄒᆞ는 디 우리 팀: y.s.profes@outlook.jp
+<br>
+연락ᄒᆞ는 디 우리 팀: y.s.profes@outlook.jp<br>
 시스템 엔지니어 (개인): r07-252224@soei.ed.jp https://github.com/ATARO-QQQ<br>
 <br><br><br>
 
