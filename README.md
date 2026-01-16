@@ -104,7 +104,7 @@ Engenheiro de Sistemas (Individual): r07-252224@soei.ed.jp https://github.com/AT
 ᓂᕆᐅᖅᑐᒍᑦ ᐊᓕᐊᒋᓂᐊᖅᑕᓯ!<br>
 <br>
 ᐅᖃᖃᑎᒋᑎᒍᑦᓱᓕᖃᑎᒌᑦ: y.s.profes@outlook.jp<br>
-ᖃᕆᑕᐅᔭᓕᕆᔨ (ᐃᓄᑐᐊᖅ): r07-252224@soei.ed.jphttps://github.com/ATARO-QQQ<br>
+ᖃᕆᑕᐅᔭᓕᕆᔨ (ᐃᓄᑐᐊᖅ): r07-252224@soei.ed.jp https://github.com/ATARO-QQQ<br>
 <br><br><br>
 
 # Γεια σας!<br>
