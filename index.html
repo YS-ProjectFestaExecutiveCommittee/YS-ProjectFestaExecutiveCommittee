@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- ファビコンは元のリンクを使用（必要なければ削除してください） -->
+    <link rel="icon" href="https://ataro-qqq.github.io/PFH-alpha-0.1.1/figure/favicon01.ico" />
+    <title>準備中 | Yokohama-SOEI Project Festa 2026</title>
+    
+    <!-- Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0057B7',
+                            yellow: '#FFD700',
+                            black: '#212121',
+                            green: '#009B77',
+                            red: '#DD2E44',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-medium': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html, body {
+            overflow-x: hidden; /* 横スクロール禁止 */
+            overflow-y: auto;   /* 縦スクロール許可（コンテンツが増えたため） */
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        /* --- Background Patterns (継承) --- */
+        .bg-dot-grid {
+            background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            position: fixed; /* 背景固定 */
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -3;
+            opacity: 0.6;
+        }
+
+        .geo-deco {
+            position: fixed; /* 背景固定 */
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .shape-1 {
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(0,87,183,0.08) 0%, rgba(0,155,119,0) 70%);
+            top: -10vw;
+            right: -10vw;
+            border-radius: 50%;
+        }
+
+        .shape-2 {
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(221,46,68,0.08) 0%, rgba(255,215,0,0) 70%);
+            bottom: 5vh;
+            left: -10vw;
+            border-radius: 50%;
+        }
+
+        /* Hero Text Clip (継承) */
+        .text-clip-gradient {
+            background: linear-gradient(90deg, #0057B7, #DD2E44, #FFD700, #009B77);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 8s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .reveal-up {
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased relative selection:bg-brand-blue selection:text-white flex flex-col min-h-screen justify-between">
+
+    <!-- Global Backgrounds -->
+    <div class="bg-dot-grid"></div>
+    <div class="geo-deco shape-1 animate-float-slow"></div>
+    <div class="geo-deco shape-2 animate-float-medium"></div>
+
+    <!-- Header (Logoのみ配置・リンクなし) -->
+    <header class="w-full px-4 py-6 z-50">
+        <div class="container mx-auto flex justify-center md:justify-start items-center">
+            <div class="flex items-center gap-2 select-none">
+                <div class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-tr from-brand-blue to-brand-red rotate-45 shadow-lg"></div>
+                <span class="font-bold text-lg md:text-2xl tracking-tighter">&nbsp; Y. S. PROJECT FESTA <span class="text-brand-blue">2026</span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center px-4 relative w-full py-10">
+        
+        <!-- Geometric Accents (継承) -->
+        <div class="fixed top-[20%] right-[15%] w-16 h-16 md:w-24 md:h-24 border-[4px] border-brand-blue/20 rounded-full animate-float-slow -z-10"></div>
+        <div class="fixed bottom-[20%] left-[10%] text-brand-yellow/30 animate-spin-slow -z-10">
+            <svg width="80" height="80" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50 15 L90 85 L10 85 Z" />
+            </svg>
+        </div>
+
+        <div class="text-center max-w-4xl mx-auto z-10 w-full">
+            <div class="reveal-up" style="animation-delay: 0.1s;">
+                <span class="inline-block px-4 py-1 rounded-full bg-brand-black/5 text-brand-black font-bold text-sm tracking-widest mb-6">
+                    STATUS: PREPARING
+                </span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter leading-none reveal-up drop-shadow-sm" style="animation-delay: 0.2s;">
+                COMING<br>
+                <span class="text-clip-gradient">SOON</span>
+            </h1>
+
+            <p class="text-gray-600 text-base md:text-xl font-medium tracking-wide mb-8 reveal-up leading-relaxed" style="animation-delay: 0.3s;">
+                Project Festa 2026 公式サイトは現在準備中です。<br>
+                ティザームービーをご覧になってお待ちください。
+            </p>
+
+            <div class="reveal-up" style="animation-delay: 0.4s;">
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-blue to-brand-red mx-auto rounded-full mb-10"></div>
+            </div>
+
+            <!-- Video Embed Section -->
+            <div class="reveal-up w-full max-w-2xl mx-auto mb-6" style="animation-delay: 0.5s;">
+                <div class="relative w-full pb-[56.25%] rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-black">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/8-V9ipx_zRk" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- YouTube Link Button -->
+            <div class="reveal-up" style="animation-delay: 0.6s;">
+                <a href="https://youtu.be/8-V9ipx_zRk" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <i class="fa-brands fa-youtube text-xl"></i>
+                    <span>YouTubeで開く</span>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer (リンクなし・コピーライトのみ) -->
+    <footer class="w-full py-6 text-center z-10 bg-white/50 backdrop-blur-sm border-t border-gray-100 mt-10">
+        <p class="text-xs text-gray-400 font-medium">
+            &copy; 2026 Yokohama Soei High School Project Festa Executive Committee.
+        </p>
+    </footer>
+
+</body>
+</html>
