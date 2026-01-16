@@ -142,6 +142,3 @@ Tanwemaitar (Eryamo): r07-252224@soei.ed.jp https://github.com/ATARO-QQQ<br>
 連絡先<br>
 実行委員会：y.s.profes@outlook.jp<br>
 システムエンジニア(個人)：r07-252224@soei.ed.jp https://github.com/ATARO-QQQ
-
-<br>
-[![My Skills](https://skillicons.dev/icons?i=html,css,js,htmx,r,raspberrypi,arduino,)](https://skillicons.dev)
