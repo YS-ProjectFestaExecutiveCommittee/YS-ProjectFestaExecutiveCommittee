@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <!-- Favicon (共通) -->
+    <link rel="icon" href="https://soei-pf.com/figure/favicon01.ico" />
+    
+    <title>みどころ | Yokohama-SOEI Project Festa 2026</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Project Festa 2026（プロジェクトフェスタ2026）の必見ポイントをご紹介。「Sharing dreams」をテーマにしたステージ発表、展示、模擬店のハイライトや、オンライン配信情報はこちらから。">
+    <meta name="keywords" content="Project Festa 2026, みどころ, ハイライト, 文化祭, 横浜創英, ステージ, 展示">
+    <meta name="robots" content="index, follow">
+    <!-- OGP (SNS Sharing) -->
+    <meta property="og:title" content="みどころ | Project Festa 2026">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://soei-pf.com/attractions/">
+    <meta property="og:image" content="https://soei-pf.com/figure/place01.jpg">
+    <meta property="og:description" content="今年のフェスタはここが違う。Project Festa 2026の注目イベントをスレッド形式で紹介。">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Security Headers (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self';">
+
+    <!-- Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0057B7',
+                            yellow: '#FFD700',
+                            black: '#212121',
+                            green: '#009B77',
+                            red: '#DD2E44',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-medium': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                        'spin-reverse-slow': 'spin-reverse 15s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'spin-reverse': {
+                            from: { transform: 'rotate(360deg)' },
+                            to: { transform: 'rotate(0deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* ベーススタイル */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            background-color: #ffffff;
+            -webkit-text-size-adjust: 100%;
+        }
+        /* 背景パターン */
+        .bg-dot-grid {
+            background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -3;
+            opacity: 0.6;
+            height: 100%;
+        }
+        
+        /* 固定背景要素 */
+        .fixed-bg-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -10;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        /* 幾何学模様用クラス */
+        .geo-shape {
+            position: absolute;
+            opacity: 0.15;
+            z-index: -5;
+        }
+        /* Header Transition */
+        #main-header {
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+        }
+        #main-header.hidden-header {
+            transform: translateY(-100%);
+        }
+        #main-header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        /* Text Gradients */
+        .text-clip-gradient {
+            background: linear-gradient(90deg, #0057B7, #DD2E44, #FFD700, #009B77);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 8s ease infinite;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* Scroll Animation (Fade Up) */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* タイムライン（センターライン）スタイル */
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #0057B7 0%, #DD2E44 50%, #FFD700 100%);
+            border-radius: 4px;
+            z-index: 0;
+        }
+        
+        /* PC: 中央配置 */
+        @media (min-width: 768px) {
+            .timeline-line {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        /* Mobile: 左側配置 */
+        @media (max-width: 767px) {
+            .timeline-line {
+                left: 24px;
+                transform: translateX(-50%);
+            }
+        }
+        /* スレッドカードの矢印 */
+        .thread-card::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        
+        /* PC: 奇数(左)アイテム */
+        @media (min-width: 768px) {
+            .thread-item-odd .thread-card::before {
+                right: -12px;
+                left: auto;
+                border-width: 12px 0 12px 12px;
+                border-color: transparent transparent transparent white;
+            }
+            .thread-item-even .thread-card::before {
+                left: -12px;
+                right: auto;
+                border-width: 12px 12px 12px 0;
+                border-color: transparent white transparent transparent;
+            }
+        }
+        
+        /* Mobile: 全て左矢印（右にカード） */
+        @media (max-width: 767px) {
+            .thread-card::before {
+                left: -12px;
+                right: auto;
+                border-width: 12px 12px 12px 0;
+                border-color: transparent white transparent transparent;
+            }
+        }
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased relative selection:bg-brand-blue selection:text-white flex flex-col min-h-screen">
+    <!-- Global Backgrounds (Fixed) -->
+    <div class="fixed-bg-container">
+        <div class="bg-dot-grid"></div>
+        
+        <!-- Original Animated Shapes -->
+        <div class="absolute top-[-10vw] right-[-10vw] w-[50vw] h-[50vw] rounded-full bg-gradient-to-b from-brand-blue/5 to-transparent animate-float-slow"></div>
+        <div class="absolute bottom-[10vh] left-[-10vw] w-[40vw] h-[40vw] rounded-full bg-gradient-to-t from-brand-yellow/5 to-transparent animate-float-medium"></div>
+        <!-- Colorful Geometric Decor -->
+        <div class="geo-shape top-[15%] left-[5%] animate-float-slow hidden md:block" style="width: 0; height: 0; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 86px solid #0057B7;"></div>
+        <div class="geo-shape top-[40%] right-[8%] w-24 h-24 bg-brand-red rotate-45 animate-spin-slow rounded-lg opacity-10"></div>
+        <div class="geo-shape bottom-[30%] left-[10%] w-32 h-32 bg-brand-yellow rounded-full animate-pulse-slow opacity-10"></div>
+        <div class="geo-shape bottom-[10%] right-[15%] animate-float-fast hidden md:block" style="width: 0; height: 0; border-left: 30px solid transparent; border-right: 30px solid transparent; border-bottom: 52px solid #009B77; transform: rotate(15deg);"></div>
+        <div class="geo-shape top-[25%] right-[20%] w-4 h-4 bg-brand-blue rounded-full animate-ping opacity-20"></div>
+        <div class="geo-shape top-[60%] left-[40%] w-6 h-6 bg-brand-red rounded-full animate-float-medium opacity-20"></div>
+    </div>
+    <!-- Header -->
+    <header id="main-header" class="fixed w-full top-0 z-50 px-4 py-3 md:py-4 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="https://soei-pf.com/" class="flex items-center gap-2 group">
+                <!-- 修正箇所: rotate-45を削除し、group-hover:rotate-45を追加 -->
+                <img src="https://soei-pf.com/figure/logo01.png" 
+                     alt="Project Festa Logo" 
+                     class="w-10 h-10 md:w-14 md:h-14 transition-transform duration-500 shrink-0 group-hover:scale-110 group-hover:rotate-45 object-contain">
+                <span class="font-bold text-lg md:text-2xl tracking-tighter truncate">&nbsp; Y. S. PROJECT FESTA <span class="text-brand-blue">2026</span></span>
+            </a>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">TOP</a>
+                <a href="https://soei-pf.com/concept/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ABOUT</a>
+                <a href="https://soei-pf.com/schedule/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">SCHEDULE</a>
+                <a href="https://soei-pf.com/map/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">MAP</a>
+                <a href="https://soei-pf.com/attractions/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ATTRACTIONS</a>
+                <a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">NEWS</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none p-2" aria-label="メニューを開く">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md shadow-lg absolute top-full left-0 w-full border-t border-gray-100">
+            <nav class="flex flex-col p-4 space-y-4 font-bold text-center">
+                <a href="https://soei-pf.com/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">TOP</a>
+                <a href="https://soei-pf.com/concept/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ABOUT</a>
+                <a href="https://soei-pf.com/schedule/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">SCHEDULE</a>
+                <a href="https://soei-pf.com/map/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">MAP</a>
+                <a href="https://soei-pf.com/attractions/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ATTRACTIONS</a>
+                <a href="https://soei-pf.com/information/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">NEWS</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="flex-grow pt-24 pb-20 w-full relative">
+        
+        <!-- Page Title -->
+        <section class="relative py-12 md:py-20 px-4 text-center overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[15vw] md:text-[10vw] font-black text-gray-100 -z-10 select-none whitespace-nowrap">
+                HIGHLIGHTS
+            </div>
+            <div class="container mx-auto relative z-10">
+                <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight reveal-up">
+                    <span class="text-clip-gradient">ATTRACTIONS</span>
+                </h1>
+                <p class="text-lg md:text-xl font-medium text-gray-600 max-w-2xl mx-auto leading-relaxed reveal-up" style="transition-delay: 0.1s;">
+                    感動と興奮の瞬間を。<br class="md:hidden">今年のフェスタはここが見逃せない。
+                </p>
+                <div class="w-20 h-1 bg-brand-blue mx-auto mt-8 rounded-full reveal-up" style="transition-delay: 0.2s;"></div>
+            </div>
+        </section>
+        <!-- 2-Column Grid Thread Style Attractions -->
+        <section class="container mx-auto px-4 py-4 relative max-w-6xl">
+            
+            <div class="relative w-full">
+                <!-- Center Line (Thread) -->
+                <div class="timeline-line h-full"></div>
+                <!-- 2-Column Grid Container -->
+                <!-- md:gap-x-16 ensures separation between two columns, center line runs in the middle -->
+                <!-- md:gap-y-0 allows manual staggering using margin -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-20 md:gap-y-0">
+                    <!-- Item 1: Opening (Blue) [Left Col, Top] -->
+                    <article class="thread-item thread-item-odd relative mb-12 md:mb-12 pl-16 md:pl-0 reveal-up">
+                        <div class="absolute -left-10 top-0 w-32 h-32 bg-brand-blue/5 rounded-full blur-2xl -z-10 animate-pulse-slow hidden md:block"></div>
+                        
+                        <!-- Dot: Mobile=Left-6, Desktop=Right Edge of this col -->
+                        <div class="absolute left-6 md:left-auto md:-right-[calc(2.5rem+12px)] top-8 transform -translate-x-1/2 md:translate-x-0 w-6 h-6 rounded-full border-4 border-white bg-brand-blue shadow-lg z-10"></div>
+                        
+                        <div class="thread-card bg-white p-6 md:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100 relative group">
+                            <div class="absolute -top-4 -right-4 w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg z-20 group-hover:scale-110 transition-transform">01</div>
+                            <div class="mb-4 overflow-hidden rounded-xl h-48 md:h-56">
+                                <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://placehold.jp/800x600.png?text=Opening');">
+                                    <span class="bg-black/30 text-white px-3 py-1 rounded">イメージ</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800 flex items-center gap-2">
+                                <i class="fa-solid fa-bolt text-brand-blue"></i>
+                                オープニングセレモニー
+                            </h3>
+                            <p class="text-sm font-bold text-brand-blue mb-4">Day 1 | 08:45 - 体育館ステージ</p>
+                            <p class="text-gray-600 leading-relaxed">
+                                祭典の幕開けを告げる圧巻のパフォーマンス。イベントの楽しみ方や見どころなどを一気にご紹介。
+                            </p>
+                            <div class="mt-4 flex gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#Start</span>
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#introduction</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 2: Club Performance (Red) [Right Col, Staggered Down] -->
+                    <!-- md:mt-24 creates the zig-zag effect -->
+                    <article class="thread-item thread-item-even relative mb-12 md:mb-12 pl-16 md:pl-0 md:mt-24 reveal-up">
+                        <div class="absolute -right-10 top-0 w-32 h-32 bg-brand-red/5 rounded-full blur-2xl -z-10 animate-pulse-slow hidden md:block"></div>
+                        
+                        <!-- Dot: Mobile=Left-6, Desktop=Left Edge of this col -->
+                        <div class="absolute left-6 md:left-auto md:-left-[calc(2.5rem+12px)] top-8 transform -translate-x-1/2 md:translate-x-0 w-6 h-6 rounded-full border-4 border-white bg-brand-red shadow-lg z-10"></div>
+                        
+                        <div class="thread-card bg-white p-6 md:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100 relative group">
+                            <div class="absolute -top-4 -right-4 md:-left-4 md:right-auto w-16 h-16 bg-brand-red rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg z-20 group-hover:scale-110 transition-transform">02</div>
+                            <div class="mb-4 overflow-hidden rounded-xl h-48 md:h-56">
+                                <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://placehold.jp/800x600.png?text=Outstanding+Performance');">
+                                    <span class="bg-black/30 text-white px-3 py-1 rounded">イメージ</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800 flex items-center gap-2">
+                                <i class="fa-solid fa-guitar text-brand-red"></i>
+                                優秀者発表
+                            </h3>
+                            <p class="text-sm font-bold text-brand-red mb-4">Day 1 & 2 | 随時 - 体育館ステージ</p>
+                            <p class="text-gray-600 leading-relaxed">
+                                昨年度のフェスタ優秀者や今年大活躍のスターなど、様々な探究を頑張る人の発表です。高クオリティな努力のたまものをご覧あれ！
+                            </p>
+                            <div class="mt-4 flex gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#Live</span>
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#Performance</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 3: Academic (Green) [Left Col] -->
+                    <article class="thread-item thread-item-odd relative mb-12 md:mb-12 pl-16 md:pl-0 reveal-up">
+                        <div class="absolute left-6 md:left-auto md:-right-[calc(2.5rem+12px)] top-8 transform -translate-x-1/2 md:translate-x-0 w-6 h-6 rounded-full border-4 border-white bg-brand-green shadow-lg z-10"></div>
+                        
+                        <div class="thread-card bg-white p-6 md:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100 relative group">
+                            <div class="absolute -top-4 -right-4 w-16 h-16 bg-brand-green rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg z-20 group-hover:scale-110 transition-transform">03</div>
+                            <div class="mb-4 overflow-hidden rounded-xl h-48 md:h-56">
+                                <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://placehold.jp/800x600.png?text=Collaboration');">
+                                    <span class="bg-black/30 text-white px-3 py-1 rounded">イメージ</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800 flex items-center gap-2">
+                                <i class="fa-solid fa-microscope text-brand-green"></i>
+                                4Cコラボ発表
+                            </h3>
+                            <p class="text-sm font-bold text-brand-green mb-4">Day 1 & 2 | 終日 - 一号館1階</p>
+                            <p class="text-gray-600 leading-relaxed">
+                                今年1月に開催された「4Cコラボレーションウィーク」の成果を発表。学年関係なくつながった生徒たちの渾身の一作をご覧あれ！
+                            </p>
+                            <div class="mt-4 flex gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#COLLABORATION</span>
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#GROUP PRESENTATION</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 4: Class Exhibition (Yellow) [Right Col, Staggered] -->
+                    <article class="thread-item thread-item-even relative mb-12 md:mb-12 pl-16 md:pl-0 md:mt-24 reveal-up">
+                        <div class="absolute -right-12 top-10 w-40 h-40 bg-brand-red/5 rotate-12 blur-xl -z-10 hidden md:block"></div>
+                        <div class="absolute left-6 md:left-auto md:-left-[calc(2.5rem+12px)] top-8 transform -translate-x-1/2 md:translate-x-0 w-6 h-6 rounded-full border-4 border-white bg-brand-yellow shadow-lg z-10"></div>
+                        
+                        <div class="thread-card bg-white p-6 md:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100 relative group">
+                            <div class="absolute -top-4 -right-4 md:-left-4 md:right-auto w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg z-20 group-hover:scale-110 transition-transform">04</div>
+                            <div class="mb-4 overflow-hidden rounded-xl h-48 md:h-56">
+                                <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://placehold.jp/800x600.png?text=Scientific');">
+                                    <span class="bg-black/30 text-white px-3 py-1 rounded">イメージ</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800 flex items-center gap-2">
+                                <i class="fa-solid fa-shapes text-brand-yellow"></i>
+                                サイエンスコース発表
+                            </h3>
+                            <p class="text-sm font-bold text-brand-yellow mb-4">Day 1 & 2 | 終日 - 新館2, 3階</p>
+                            <p class="text-gray-600 leading-relaxed">
+                                創英特有のカリキュラムを進む「サイエンスコース」の生徒たちが贈る一年間の探究のご紹介。それぞれの個性をポスターに詰め込みました！
+                            </p>
+                             <div class="mt-4 flex gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#UNIQUE</span>
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#FUN</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 5: Food Festa (Blue) [Left Col] -->
+                    <article class="thread-item thread-item-odd relative mb-12 md:mb-12 pl-16 md:pl-0 reveal-up">
+                        <div class="absolute left-6 md:left-auto md:-right-[calc(2.5rem+12px)] top-8 transform -translate-x-1/2 md:translate-x-0 w-6 h-6 rounded-full border-4 border-white bg-brand-blue shadow-lg z-10"></div>
+                        
+                        <div class="thread-card bg-white p-6 md:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100 relative group">
+                            <div class="absolute -top-4 -right-4 w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg z-20 group-hover:scale-110 transition-transform">05</div>
+                            <div class="mb-4 overflow-hidden rounded-xl h-48 md:h-56">
+                                <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://placehold.jp/800x600.png?text=Group');">
+                                    <span class="bg-black/30 text-white px-3 py-1 rounded">イメージ</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800 flex items-center gap-2">
+                                <i class="fa-solid fa-utensils text-brand-blue"></i>
+                                グローバルコース発表
+                            </h3>
+                            <p class="text-sm font-bold text-brand-blue mb-4">Day 1 & 2 | 終日 - 本館・一号館各ステージ</p>
+                            <p class="text-gray-600 leading-relaxed">
+                                力を合わせて社会をよりよくする「グローバルコース」。その生徒たちがグループを組み、一生懸命考えたプロジェクトを披露します！
+                            </p>
+                            <div class="mt-4 flex gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#GROUP</span>
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#BUSINESS</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 6: e-Sports (Red) [Right Col, Staggered] -->
+                    <article class="thread-item thread-item-even relative mb-12 md:mb-12 pl-16 md:pl-0 md:mt-24 reveal-up">
+                        <div class="absolute left-6 md:left-auto md:-left-[calc(2.5rem+12px)] top-8 transform -translate-x-1/2 md:translate-x-0 w-6 h-6 rounded-full border-4 border-white bg-brand-red shadow-lg z-10"></div>
+                        
+                        <div class="thread-card bg-white p-6 md:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100 relative group">
+                            <div class="absolute -top-4 -right-4 md:-left-4 md:right-auto w-16 h-16 bg-brand-red rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg z-20 group-hover:scale-110 transition-transform">06</div>
+                            <div class="mb-4 overflow-hidden rounded-xl h-48 md:h-56">
+                                <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://placehold.jp/800x600.png?text=Authentic');">
+                                    <span class="bg-black/30 text-white px-3 py-1 rounded">イメージ</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800 flex items-center gap-2">
+                                <i class="fa-solid fa-gamepad text-brand-red"></i>
+                                高校二年生発表
+                            </h3>
+                            <p class="text-sm font-bold text-brand-red mb-4">Day 1 & 2 | 終日 - 本館各教室</p>
+                            <p class="text-gray-600 leading-relaxed">
+                                発表者の中では最高学年！熟練した思考や解決のプロセスを存分に生かして作り上げた発表は皆様も納得のクオリティーになるでしょう。
+                            </p>
+                            <div class="mt-4 flex gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#AUTHENTIC</span>
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#PRESENTATION</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 7: Fashion Show (Yellow) [Left Col] -->
+                    <article class="thread-item thread-item-odd relative mb-12 md:mb-12 pl-16 md:pl-0 reveal-up">
+                        <div class="absolute left-6 md:left-auto md:-right-[calc(2.5rem+12px)] top-8 transform -translate-x-1/2 md:translate-x-0 w-6 h-6 rounded-full border-4 border-white bg-brand-yellow shadow-lg z-10"></div>
+                        
+                        <div class="thread-card bg-white p-6 md:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100 relative group">
+                            <div class="absolute -top-4 -right-4 w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg z-20 group-hover:scale-110 transition-transform">07</div>
+                            <div class="mb-4 overflow-hidden rounded-xl h-48 md:h-56">
+                                <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://placehold.jp/800x600.png?text=Gourmet');">
+                                    <span class="bg-black/30 text-white px-3 py-1 rounded">イメージ</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800 flex items-center gap-2">
+                                <i class="fa-solid fa-shirt text-brand-yellow"></i>
+                                キッチンカーの出店
+                            </h3>
+                            <p class="text-sm font-bold text-brand-yellow mb-4">Day 1 & 2 | 9:00～11:10 - 一号館食堂裏</p>
+                            <p class="text-gray-600 leading-relaxed">
+                                生徒たちの地域活性化プロジェクトの一環でコラボしたキッチンカーをお呼びしました。おいしいメニューでおなかも満足！
+                            </p>
+                            <div class="mt-4 flex gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#GOURMET</span>
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#REGION</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 8: Grand Finale (Green) [Right Col, Staggered] -->
+                    <article class="thread-item thread-item-even relative mb-12 md:mb-12 pl-16 md:pl-0 md:mt-24 reveal-up">
+                        <div class="absolute -left-8 bottom-0 w-36 h-36 bg-brand-green/5 rounded-3xl rotate-45 blur-xl -z-10 hidden md:block"></div>
+                        <div class="absolute left-6 md:left-auto md:-left-[calc(2.5rem+12px)] top-8 transform -translate-x-1/2 md:translate-x-0 w-6 h-6 rounded-full border-4 border-white bg-brand-green shadow-lg z-10"></div>
+                        
+                        <div class="thread-card bg-white p-6 md:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100 relative group">
+                            <div class="absolute -top-4 -right-4 md:-left-4 md:right-auto w-16 h-16 bg-brand-green rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg z-20 group-hover:scale-110 transition-transform">08</div>
+                            <div class="mb-4 overflow-hidden rounded-xl h-48 md:h-56">
+                                <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://placehold.jp/800x600.png?text=Finale');">
+                                    <span class="bg-black/30 text-white px-3 py-1 rounded">イメージ</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800 flex items-center gap-2">
+                                <i class="fa-solid fa-star text-brand-green"></i>
+                                エンディングセレモニー
+                            </h3>
+                            <p class="text-sm font-bold text-brand-green mb-4">Day 2 | 11:20 - メインステージ</p>
+                            <p class="text-gray-600 leading-relaxed">
+                                2日間の締めくくり。このイベントを様々な視点から振り返ります。表彰式や告知などもございますよ！
+                            </p>
+                            <div class="mt-4 flex gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#Finale</span>
+                                <span class="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded">#Emotion</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- End Dot (Centered) -->
+                    <!-- Absolute position relative to container, needs centering -->
+                    <!-- Since items are in grid, dot needs to be placed at bottom center of the container -->
+                </div>
+                
+                <div class="absolute left-6 md:left-1/2 bottom-0 transform -translate-x-1/2 translate-y-full w-4 h-4 bg-gray-300 rounded-full"></div>
+            </div>
+        </section>
+        <!-- Live Streaming Link -->
+        <section class="py-16 md:py-20 bg-gray-900 text-white relative overflow-hidden mt-8">
+            <!-- Background effects -->
+            <div class="absolute inset-0 bg-brand-blue/10"></div>
+            <div class="absolute -top-24 -left-24 w-64 h-64 bg-brand-red/20 rounded-full filter blur-3xl animate-pulse-slow"></div>
+            <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-blue/20 rounded-full filter blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
+            
+            <div class="absolute top-10 right-20 w-12 h-12 border-2 border-brand-yellow/30 rotate-12"></div>
+            <div class="absolute bottom-10 left-20 w-8 h-8 bg-brand-green/20 rounded-full"></div>
+            <div class="container mx-auto px-4 relative z-10 text-center reveal-up">
+                <div class="inline-block mb-4 px-4 py-1 rounded-full border border-red-500/50 bg-red-500/10 text-red-400 text-sm font-bold tracking-widest uppercase animate-pulse">
+                    <i class="fa-solid fa-circle text-[8px] align-middle mr-2"></i>Live Streaming
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black mb-6">会場に来られないあなたへ</h2>
+                <p class="text-gray-300 mb-10 max-w-2xl mx-auto text-lg">
+                    メインステージの様子をYouTube Liveでリアルタイム配信。<br>
+                    どこにいても、Project Festaの熱狂を感じてください。
+                </p>
+                
+                <a href="https://youtube.com/live/XSiDKIQYi_I" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-4 bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:shadow-[0_0_40px_rgba(220,38,38,0.8)] hover:-translate-y-1">
+                    <i class="fa-brands fa-youtube text-2xl"></i>
+                    <span class="text-lg tracking-wider">配信を見る</span>
+                    <i class="fa-solid fa-arrow-right opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all"></i>
+                </a>
+                
+                <p class="mt-6 text-xs text-gray-500">※配信スケジュールは予告なく変更になる場合があります。</p>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+        <footer class="bg-white border-t border-gray-100 pt-16 pb-8 w-full relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-32 h-32 bg-gray-50 rounded-tl-full -z-10"></div>
+        
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                         <!-- 修正箇所: rotate-45を削除し、hover:rotate-45を追加 -->
+                         <img src="https://soei-pf.com/figure/logo01.png" 
+                              alt="Project Festa Logo" 
+                              class="w-8 h-8 shrink-0 object-contain transition-transform duration-500 hover:rotate-45">
+                        <span class="font-bold text-xl tracking-tighter">PROJECT FESTA 2026</span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-loose">
+                        〒221-0004<br>
+                        神奈川県横浜市神奈川区西大口28<br>
+                        お問い合わせ: y.s.profes@outlook.jp
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 border-l-4 border-brand-blue pl-3">PAGES</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors">トップページ</a></li>
+                        <li><a href="#" class="hover:text-brand-blue transition-colors">お知らせ</a></li>
+                        <li><a href="https://soei-pf.com/concept/" class="hover:text-brand-blue transition-colors">コンセプト</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 border-l-4 border-brand-red pl-3">EVENT</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="https://soei-pf.com/schedule/" class="hover:text-brand-blue transition-colors">スケジュール</a></li>
+                        <li><a href="https://soei-pf.com/map/" class="hover:text-brand-blue transition-colors">会場マップ</a></li>
+                        <li><a href="https://soei-pf.com/committee/" class="hover:text-brand-blue transition-colors">実行委員会より</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 border-l-4 border-brand-yellow pl-3">SUPPORT</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-brand-blue transition-colors">よくある質問</a></li>
+                        <li><a href="#" class="hover:text-brand-blue transition-colors">プライバシーポリシー</a></li>
+                        <li><a href="#" class="hover:text-brand-blue transition-colors">サイトマップ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+           <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">  
+ <p>&copy; 2026 Yokohama Soei High School Project Festa Executive Committee.</p>  
+ <div class="flex space-x-4 mt-4 md:mt-0">  
+ <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-twitter"></i></a> 
+ <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-instagram"></i></a>  
+ <a href="https://www.youtube.com/live/XSiDKIQYi_I" class="hover:text-brand-blue"><i class="fa-brands fa-youtube"></i></a>  
+ </div>  
+ </div>  
+ </div>  
+ </footer>  
+    </footer>
+    <!-- Scripts -->
+    <script>
+        // Header Scroll Effect
+        const header = document.getElementById('main-header');
+        let lastScrollY = 0;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            // Optional: Hide header on scroll down, show on scroll up
+            if (window.scrollY > lastScrollY && window.scrollY > 200) {
+                header.classList.add('hidden-header');
+            } else {
+                header.classList.remove('hidden-header');
+            }
+            lastScrollY = window.scrollY;
+        });
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.add('open');
+                menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            } else {
+                mobileMenu.classList.remove('open');
+                menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
+        });
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.remove('open');
+                menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+        // Scroll Animation (Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15 // 要素が15%見えたら発火
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // 一度表示したら監視を終了（軽量化）
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
