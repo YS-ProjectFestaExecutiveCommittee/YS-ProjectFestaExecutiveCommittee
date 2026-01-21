@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://soei-pf.com/figure/favicon01.ico" />
+    
+    <title>プライバシーポリシー | Yokohama-SOEI Project Festa 2026</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Project Festa 2026における個人情報保護方針（プライバシーポリシー）について。ご来場者の皆様の個人情報の取り扱い、会場内での写真・動画撮影に関するルール、生徒の肖像権保護への取り組みを掲載しています。">
+    <meta name="keywords" content="Project Festa 2026, プライバシーポリシー, 個人情報保護方針, 撮影ルール, 肖像権, 横浜創英, 文化祭">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OGP (SNS Sharing) -->
+    <meta property="og:title" content="プライバシーポリシー | Project Festa 2026">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://soei-pf.com/privacypolicy/">
+    <meta property="og:image" content="https://soei-pf.com/figure/place01.jpg">
+    <meta property="og:description" content="安心・安全なイベント開催のために。個人情報の取り扱いと撮影ルールについて。">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Security Headers (CSP) -->
+    <!-- 許可するドメイン: Google Fonts, FontAwesome, Tailwind CDN, 画像ホスト, Google Maps -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-src https://www.google.com;">
+
+    <!-- Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0057B7',
+                            yellow: '#FFD700',
+                            black: '#212121',
+                            green: '#009B77',
+                            red: '#DD2E44',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-medium': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* --- Base Styles --- */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            background-color: #ffffff;
+            -webkit-text-size-adjust: 100%;
+            color: #212121;
+            line-height: 1.8;
+        }
+
+        /* --- Background Patterns --- */
+        .bg-dot-grid {
+            background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -3;
+            opacity: 0.6;
+        }
+
+        /* Fixed Background Container */
+        .fixed-bg-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -10;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        /* --- Header Transitions --- */
+        #main-header {
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+        }
+        #main-header.hidden-header {
+            transform: translateY(-100%);
+        }
+        #main-header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- Text Gradients --- */
+        .text-clip-gradient {
+            background: linear-gradient(90deg, #0057B7, #DD2E44, #FFD700, #009B77);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 8s ease infinite;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- Scroll Animations (Reveal Up) --- */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Mobile Menu --- */
+        #mobile-menu {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        /* --- Policy Content Specific Styles --- */
+        .policy-section {
+            margin-bottom: 3rem;
+        }
+        .policy-section h3 {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .policy-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #0057B7, #009B77);
+        }
+        
+        .policy-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .policy-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .policy-list li::before {
+            content: '\f00c'; /* FontAwesome check */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #0057B7;
+            font-size: 0.8em;
+            top: 0.4em;
+        }
+
+        .important-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #DD2E44;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-box {
+            background-color: #f0f9ff;
+            border: 1px solid #e0f2fe;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Global Backgrounds (Fixed) -->
+    <div class="fixed-bg-container">
+        <div class="bg-dot-grid"></div>
+        
+        <!-- Animated Shapes (Matching other pages) -->
+        <div class="absolute top-[-10vw] right-[-10vw] w-[50vw] h-[50vw] rounded-full bg-gradient-to-b from-brand-blue/5 to-transparent animate-float-slow"></div>
+        <div class="absolute bottom-[10vh] left-[-10vw] w-[40vw] h-[40vw] rounded-full bg-gradient-to-t from-brand-yellow/5 to-transparent animate-float-medium"></div>
+        
+        <!-- Geometric Accents for Privacy Page -->
+        <!-- Lock Icon / Shield motif -->
+        <div class="absolute top-[20%] left-[5%] text-brand-green/10 text-9xl font-black -z-10 select-none hidden md:block">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="absolute bottom-[30%] right-[5%] w-24 h-24 border-4 border-brand-blue/10 rounded-lg rotate-45 animate-pulse-slow"></div>
+        <div class="absolute top-[40%] right-[15%] w-6 h-6 bg-brand-red rounded-full animate-float-fast opacity-20"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header" class="fixed w-full top-0 z-50 px-4 py-3 md:py-4 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="https://soei-pf.com/" class="flex items-center gap-2 group">
+                <!-- 修正箇所: rotate-45を削除し、group-hover:rotate-45を追加 -->
+                <img src="https://soei-pf.com/figure/logo01.png" 
+                     alt="Project Festa Logo" 
+                     class="w-10 h-10 md:w-14 md:h-14 transition-transform duration-500 shrink-0 group-hover:scale-110 group-hover:rotate-45 object-contain">
+                <span class="font-bold text-lg md:text-2xl tracking-tighter truncate">&nbsp; Y. S. PROJECT FESTA <span class="text-brand-blue">2026</span></span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">TOP</a>
+                <a href="https://soei-pf.com/concept/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ABOUT</a>
+                <a href="https://soei-pf.com/schedule/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">SCHEDULE</a>
+                <a href="https://soei-pf.com/map/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">MAP</a>
+                <a href="https://soei-pf.com/attractions/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ATTRACTIONS</a>
+                <a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">NEWS</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none p-2" aria-label="メニューを開く">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md shadow-lg absolute top-full left-0 w-full border-t border-gray-100">
+            <nav class="flex flex-col p-4 space-y-4 font-bold text-center">
+                <a href="https://soei-pf.com/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">TOP</a>
+                <a href="https://soei-pf.com/concept/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ABOUT</a>
+                <a href="https://soei-pf.com/schedule/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">SCHEDULE</a>
+                <a href="https://soei-pf.com/map/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">MAP</a>
+                <a href="https://soei-pf.com/attractions/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ATTRACTIONS</a>
+                <a href="https://soei-pf.com/information/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">NEWS</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24 pb-20 w-full relative">
+
+        <!-- Page Title Area -->
+        <section class="relative py-12 md:py-20 px-4 text-center overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[15vw] md:text-[10vw] font-black text-gray-100 -z-10 select-none whitespace-nowrap">
+                PRIVACY
+            </div>
+            <div class="container mx-auto relative z-10 reveal-up">
+                <h1 class="text-3xl md:text-5xl font-black mb-6 tracking-tight">
+                    PRIVACY POLICY
+                    <span class="block text-base md:text-xl font-medium text-brand-blue mt-2 tracking-widest">個人情報保護方針</span>
+                </h1>
+                <p class="text-lg md:text-xl font-medium text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    安心してご来場いただくために。<br>
+                    皆様の情報の取り扱いと、撮影に関するルールについて。
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-blue to-brand-green mx-auto mt-8 rounded-full"></div>
+            </div>
+        </section>
+
+        <!-- Content Area -->
+        <section class="container mx-auto max-w-4xl px-4 mb-20">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12 reveal-up" style="transition-delay: 0.1s;">
+                
+                <!-- Introduction -->
+                <div class="mb-12">
+                    <p class="text-gray-600 leading-relaxed">
+                        横浜創英中学・高等学校 Project Festa 実行委員会（以下「当委員会」といいます。）は、Project Festa 2026（以下「本イベント」といいます。）の運営において、ご来場者様および関係者の皆様の個人情報の重要性を認識し、その保護を徹底いたします。<br>
+                        本イベントは教育活動の一環として、中学2年生から高校2年生までの生徒が探究学習の成果を発表する場です。未成年である生徒の安全とプライバシーを守りつつ、ご来場の皆様に安心してイベントを楽しんでいただけるよう、以下の通りプライバシーポリシーを定めます。
+                    </p>
+                </div>
+
+                <!-- Article 1: Definition -->
+                <article class="policy-section reveal-up">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800">第1条（個人情報の定義）</h3>
+                    <p class="text-gray-600">
+                        本ポリシーにおいて「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報を指します。
+                    </p>
+                </article>
+
+                <!-- Article 2: Collection -->
+                <article class="policy-section reveal-up">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800">第2条（収集する情報）</h3>
+                    <p class="text-gray-600 mb-4">
+                        当委員会は、本イベントの運営に必要な範囲で、以下の情報を収集する場合があります。
+                    </p>
+                    <ul class="policy-list text-gray-600 space-y-2">
+                        <li><strong>チケット予約時：</strong> 氏名、メールアドレス、電話番号、来場人数、属性（保護者、卒業生、受験生、一般等）。</li>
+                        <li><strong>お問い合わせ時：</strong> 氏名、メールアドレス、お問い合わせ内容。</li>
+                        <li><strong>イベント当日：</strong> 記録用の写真・動画（会場風景として撮影される場合）。</li>
+                        <li><strong>アクセスログ：</strong> 本ウェブサイトの閲覧履歴、Cookie情報、IPアドレス等（Google Analytics等による統計情報として収集）。</li>
+                    </ul>
+                </article>
+
+                <!-- Article 3: Purpose -->
+                <article class="policy-section reveal-up">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800">第3条（利用目的）</h3>
+                    <p class="text-gray-600 mb-4">
+                        収集した個人情報は、以下の目的でのみ利用いたします。
+                    </p>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>事前予約システムの管理および入場時の本人確認のため</li>
+                            <li>緊急時（災害発生時や感染症対応等）のご連絡のため</li>
+                            <li>お問い合わせへの回答や対応のため</li>
+                            <li>来場者数や属性の統計分析による、次年度以降の運営改善のため</li>
+                            <li>本イベントの広報活動（ウェブサイト、パンフレット等）における記録写真の使用のため（個人が特定されない形、または許可を得た場合に限る）</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Article 4: Third Party -->
+                <article class="policy-section reveal-up">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800">第4条（個人情報の第三者提供）</h3>
+                    <p class="text-gray-600">
+                        当委員会は、あらかじめご本人の同意を得ることなく、第三者に個人情報を提供することはありません。ただし、個人情報保護法その他の法令で認められる場合（人の生命、身体または財産の保護のために必要がある場合等）を除きます。
+                    </p>
+                </article>
+
+                <!-- Article 5: Photo & SNS Rules (Crucial) -->
+                <article class="policy-section reveal-up">
+                    <h3 class="text-xl md:text-2xl font-bold text-brand-red">第5条（写真・動画撮影およびSNS等への掲載について）</h3>
+                    <p class="text-gray-600 mb-4">
+                        本イベントは教育機関の行事であり、多数の未成年者が参加しています。生徒の肖像権およびプライバシー保護のため、以下のルールを厳守してください。
+                    </p>
+                    
+                    <div class="important-box">
+                        <h4 class="font-bold text-red-700 mb-2 flex items-center">
+                            <i class="fa-solid fa-triangle-exclamation mr-2"></i> 撮影・掲載に関する禁止事項
+                        </h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm md:text-base">
+                            <li><strong>被写体の許可のない撮影：</strong> 特定の生徒や来場者を無断で撮影することは禁止です。</li>
+                            <li><strong>SNS等への無断アップロード：</strong> 生徒の顔が識別できる写真や動画を、本人の明確な同意なくInstagram、X（旧Twitter）、TikTok、YouTube等のSNSやインターネット上に公開することは固くお断りいたします。</li>
+                            <li><strong>「撮影禁止」エリアでの撮影：</strong> 一部のステージ発表や展示エリアでは、権利関係や演出の都合上、撮影を禁止する場合があります。現場の掲示やスタッフの指示に従ってください。</li>
+                            <li><strong>研究発表資料の無断複写：</strong> 生徒が作成したポスターやスライド等の著作物は、研究の成果です。これらを無断で撮影し、公開することは著作権の侵害となる場合があります。</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-600 text-sm">
+                        ※当委員会および学校側が記録用に撮影した写真・動画については、個人が特定できないよう配慮した上で、広報媒体に使用させていただく場合があります。あらかじめご了承ください。
+                    </p>
+                </article>
+
+                <!-- Article 6: Management -->
+                <article class="policy-section reveal-up">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800">第6条（安全管理措置）</h3>
+                    <p class="text-gray-600">
+                        当委員会は、取り扱う個人情報の漏洩、滅失またはき損の防止その他の個人情報の安全管理のために必要かつ適切な措置を講じます。本イベント終了後、不要となった個人情報（予約データ等）は、適切な方法で速やかに廃棄・消去いたします。
+                    </p>
+                </article>
+
+                <!-- Article 7: Cookie -->
+                <article class="policy-section reveal-up">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800">第7条（Cookie等の利用）</h3>
+                    <p class="text-gray-600">
+                        本ウェブサイトでは、Google Analyticsを利用してアクセス解析を行っています。Google AnalyticsはCookieを使用し、個人を特定しない形でデータを収集します。この機能はブラウザの設定でCookieを無効にすることで拒否することができます。
+                    </p>
+                </article>
+
+                <!-- Article 8: Disclaimer -->
+                <article class="policy-section reveal-up">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800">第8条（免責事項）</h3>
+                    <p class="text-gray-600">
+                        本ウェブサイトに掲載されている情報については万全を期しておりますが、その内容の正確性および安全性を保証するものではありません。本ウェブサイトの利用によって生じたトラブルや損害について、当委員会は一切の責任を負いかねます。また、本イベント会場内での来場者間トラブル（無断撮影によるトラブル等）についても、当事者間で解決していただくものとします。
+                    </p>
+                </article>
+
+                <!-- Contact Info -->
+                <div class="contact-box mt-16 reveal-up">
+                    <h3 class="text-xl font-bold mb-4 text-brand-blue">お問い合わせ窓口</h3>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        本ポリシーに関するお問い合わせ、および個人情報の取り扱いに関するご質問は、下記までお願いいたします。
+                    </p>
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                        <div class="text-left">
+                            <p class="font-bold text-gray-800">Yokohama-SOEI Project Festa 実行委員会</p>
+                            <p class="text-gray-500 text-sm">（横浜創英中学・高等学校 内）</p>
+                        </div>
+                        <div class="h-10 w-px bg-gray-300 hidden md:block"></div>
+                        <div class="text-left">
+                            <p class="text-gray-600"><i class="fa-solid fa-envelope mr-2 text-brand-blue"></i> y.s.profes@outlook.jp</p>
+                            <p class="text-gray-600"><i class="fa-solid fa-phone mr-2 text-brand-blue"></i> 045-421-3121 (代表)</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-6">制定日：2025年12月1日</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 pt-16 pb-8 w-full relative overflow-hidden">
+        <!-- Footer Deco -->
+        <div class="absolute bottom-0 right-0 w-32 h-32 bg-gray-50 rounded-tl-full -z-10"></div>
+        
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                         <!-- 修正箇所: rotate-45を削除し、hover:rotate-45を追加 -->
+                         <img src="https://soei-pf.com/figure/logo01.png" 
+                              alt="Project Festa Logo" 
+                              class="w-8 h-8 shrink-0 object-contain transition-transform duration-500 hover:rotate-45">
+                        <span class="font-bold text-xl tracking-tighter">PROJECT FESTA 2026</span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-loose">
+                        〒221-0004<br>
+                        神奈川県横浜市神奈川区西大口28<br>
+                        お問い合わせ: y.s.profes@outlook.jp
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 border-l-4 border-brand-blue pl-3">PAGES</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors">トップページ</a></li>
+                        <li><a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors">お知らせ</a></li>
+                        <li><a href="https://soei-pf.com/concept/" class="hover:text-brand-blue transition-colors">コンセプト</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 border-l-4 border-brand-red pl-3">EVENT</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="https://soei-pf.com/schedule/" class="hover:text-brand-blue transition-colors">スケジュール</a></li>
+                        <li><a href="https://soei-pf.com/map/" class="hover:text-brand-blue transition-colors">会場マップ</a></li>
+                        <li><a href="https://soei-pf.com/committee/" class="hover:text-brand-blue transition-colors">実行委員会より</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 border-l-4 border-brand-yellow pl-3">SUPPORT</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="https://soei-pf.com/qaa/" class="hover:text-brand-blue transition-colors">よくある質問</a></li>
+                        <li><a href="https://soei-pf.com/privacypolicy/" class="text-brand-blue font-bold">プライバシーポリシー</a></li>
+                        <li><a href="https://soei-pf.com/sitemap/" class="hover:text-brand-blue transition-colors">サイトマップ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+           <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">  
+             <p>&copy; 2026 Yokohama Soei High School Project Festa Executive Committee.</p>  
+             <div class="flex space-x-4 mt-4 md:mt-0">  
+                 <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-twitter"></i></a>  
+                 <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-instagram"></i></a>  
+                 <a href="https://www.youtube.com/live/XSiDKIQYi_I" class="hover:text-brand-blue"><i class="fa-brands fa-youtube"></i></a> 
+             </div>  
+           </div>  
+        </div>  
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            /* --- 1. Header Scroll Logic (Common) --- */
+            const header = document.getElementById('main-header');
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let lastScroll = 0;
+
+            // Scroll Effect
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+
+                // Add background when scrolled
+                if (currentScroll > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+
+                // Show/Hide Logic
+                if (currentScroll <= 0) {
+                    header.classList.remove('hidden-header');
+                    return;
+                }
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    // Scrolling Down
+                    header.classList.add('hidden-header');
+                } else {
+                    // Scrolling Up
+                    header.classList.remove('hidden-header');
+                }
+                lastScroll = currentScroll;
+            });
+
+            /* --- 2. Mobile Menu Toggle --- */
+            menuBtn.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.contains('open');
+                if (isOpen) {
+                    mobileMenu.classList.remove('open');
+                    menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                } else {
+                    mobileMenu.classList.add('open');
+                    menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                }
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                });
+            });
+
+            /* --- 3. Scroll Reveal Animation (Intersection Observer) --- */
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Animate only once
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal-up');
+            revealElements.forEach(el => observer.observe(el));
+
+            /* --- 4. Smooth Scroll for Anchor Links --- */
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
