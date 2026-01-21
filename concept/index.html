@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <!-- Favicon -->
+    <link rel="icon" href="https://soei-pf.com/figure/favicon01.ico" />
+    
+    <title>コンセプト | Yokohama-SOEI Project Festa 2026</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Project Festa 2026（プロジェクトフェスタ2026）のコンセプトページです。「Sharing dreams」をテーマに、横浜創英中学・高等学校の生徒たちが探究と創造の成果を発表します。開催概要や教員からのメッセージも掲載。">
+    <meta name="keywords" content="Project Festa 2026, コンセプト, 横浜創英, 文化祭, 探究学習, プレゼンテーション, 教育">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OGP (SNS Sharing) -->
+    <meta property="og:title" content="コンセプト | Project Festa 2026">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://soei-pf.com/concept/">
+    <meta property="og:image" content="https://soei-pf.com/figure/place01.jpg">
+    <meta property="og:description" content="未来をつくる、夢の共有。Project Festa 2026の理念と概要について。">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Security Headers (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self';">
+
+    <!-- Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0057B7',
+                            yellow: '#FFD700',
+                            black: '#212121',
+                            green: '#009B77',
+                            red: '#DD2E44',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-medium': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* --- Base Styles --- */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            background-color: #ffffff;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* --- Background Patterns --- */
+        .bg-dot-grid {
+            background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -3;
+            opacity: 0.6;
+        }
+        
+        /* Geometric Decorations */
+        .geo-deco {
+            position: fixed;
+            z-index: -2;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        /* Header Transitions */
+        #main-header {
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+        }
+        #main-header.hidden-header {
+            transform: translateY(-100%);
+        }
+        #main-header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Text Gradients */
+        .text-clip-gradient {
+            background: linear-gradient(90deg, #0057B7, #DD2E44, #FFD700, #009B77);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 8s ease infinite;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Scroll Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+        
+        /* Table Styles */
+        .overview-table th {
+            background-color: #f9fafb;
+            color: #374151;
+            font-weight: 700;
+        }
+        .overview-table td {
+            color: #4b5563;
+        }
+    </style>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Yokohama-SOEI Project Festa 2026",
+      "startDate": "2026-03-17",
+      "endDate": "2026-03-18",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "横浜創英中学・高等学校",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "神奈川区西大口28",
+          "addressLocality": "横浜市",
+          "postalCode": "221-0004",
+          "addressRegion": "神奈川県",
+          "addressCountry": "JP"
+        }
+      },
+      "description": "生徒たちが取り組んできた探究やプロジェクトを発表する、夢が輝く祭典。",
+      "organizer": {
+        "@type": "Organization",
+        "name": "Project Festa 実行委員会",
+        "url": "https://soei-pf.com/"
+      }
+    }
+    </script>
+</head>
+<body class="text-gray-800 antialiased relative selection:bg-brand-blue selection:text-white flex flex-col min-h-screen">
+
+    <!-- Global Backgrounds (Fixed) -->
+    <div class="bg-dot-grid"></div>
+    
+    <!-- Animated Shapes (Matching other pages) -->
+    <div class="fixed top-[-10vw] right-[-10vw] w-[50vw] h-[50vw] rounded-full bg-gradient-to-b from-brand-blue/5 to-transparent -z-10 animate-float-slow"></div>
+    <div class="fixed bottom-[10vh] left-[-10vw] w-[40vw] h-[40vw] rounded-full bg-gradient-to-t from-brand-yellow/5 to-transparent -z-10 animate-float-medium"></div>
+    
+    <!-- Geometric Accents (Specific to Concept Page) -->
+    <div class="fixed top-1/4 left-10 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-b-[34px] border-b-brand-red/10 rotate-[-15deg] -z-20 hidden md:block"></div>
+    <div class="fixed bottom-1/3 right-10 w-20 h-20 border-4 border-brand-green/10 rounded-full -z-20 hidden md:block"></div>
+
+    <!-- Header -->
+    <header id="main-header" class="fixed w-full top-0 z-50 px-4 py-3 md:py-4 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="https://soei-pf.com/" class="flex items-center gap-2 group">
+                <!-- 修正箇所: rotate-45を削除し、group-hover:rotate-45を追加 -->
+                <img src="https://soei-pf.com/figure/logo01.png" 
+                     alt="Project Festa Logo" 
+                     class="w-10 h-10 md:w-14 md:h-14 transition-transform duration-500 shrink-0 group-hover:scale-110 group-hover:rotate-45 object-contain">
+                <span class="font-bold text-lg md:text-2xl tracking-tighter truncate">&nbsp; Y. S. PROJECT FESTA <span class="text-brand-blue">2026</span></span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">TOP</a>
+                <a href="https://soei-pf.com/concept/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ABOUT</a>
+                <a href="https://soei-pf.com/schedule/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">SCHEDULE</a>
+                <a href="https://soei-pf.com/map/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">MAP</a>
+                <a href="https://soei-pf.com/attractions/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ATTRACTIONS</a>
+                <a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">NEWS</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none p-2" aria-label="メニューを開く">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md shadow-lg absolute top-full left-0 w-full border-t border-gray-100">
+            <nav class="flex flex-col p-4 space-y-4 font-bold text-center">
+                <a href="https://soei-pf.com/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">TOP</a>
+                <a href="https://soei-pf.com/concept/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ABOUT</a>
+                <a href="https://soei-pf.com/schedule/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">SCHEDULE</a>
+                <a href="https://soei-pf.com/map/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">MAP</a>
+                <a href="https://soei-pf.com/attractions/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ATTRACTIONS</a>
+                <a href="https://soei-pf.com/information/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">NEWS</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24 pb-12 w-full">
+        
+        <!-- Page Title Area -->
+        <section class="relative py-12 md:py-20 px-4 text-center overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[15vw] md:text-[10vw] font-black text-gray-100 -z-10 select-none whitespace-nowrap">
+                CONCEPT
+            </div>
+            <div class="container mx-auto relative z-10 reveal-up">
+                <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">
+                    ABOUT
+                    <span class="block text-base md:text-xl font-medium text-brand-blue mt-2 tracking-widest">コンセプト</span>
+                </h1>
+                <p class="text-lg md:text-xl font-medium text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    未来をつくる、夢の共有。<br>
+                    Project Festa 2026へようこそ。
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-blue to-brand-green mx-auto mt-8 rounded-full"></div>
+            </div>
+        </section>
+
+        <!-- Concept Detail Section -->
+        <section class="py-16 md:py-24 px-4 bg-gradient-to-b from-transparent to-gray-50/50">
+            <div class="container mx-auto max-w-5xl">
+                <div class="text-center mb-16 reveal-up">
+                    <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight">
+                        <span class="text-clip-gradient">Sharing dreams</span>
+                    </h2>
+                    <p class="text-gray-700 leading-loose text-base md:text-lg max-w-3xl mx-auto">
+                        今年のテーマは「Sharing dreams」。<br>
+                        私たち横浜創英中学・高等学校の生徒は、日々「自律」と「対話」を大切に、それぞれの興味や関心を深めています。<br><br>
+                        
+                        Project Festaは、単なる文化祭ではありません。<br>
+                        中学2年生から高校2年生までの生徒たちが、1年間かけて取り組んできた<br>
+                        <span class="font-bold text-brand-blue border-b-2 border-brand-blue/30">「探究」</span>や<br>
+                        <span class="font-bold text-brand-red border-b-2 border-brand-red/30">「プロジェクト」</span>の成果を発表する、学びと創造の祭典です。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center reveal-up" style="transition-delay: 0.2s;">
+                    <!-- Point 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 bg-brand-blue/10 text-brand-blue rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">探究と発見</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            生徒一人ひとりが問いを立て、自分なりの答えを導き出すプロセスを重視。教科の枠を超えた学びの成果をご覧ください。
+                        </p>
+                    </div>
+                    <!-- Point 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 bg-brand-yellow/10 text-brand-yellow rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+                            <i class="fa-solid fa-handshake-simple"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">共有と共創</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            夢やアイデアを共有することで、新しい価値が生まれます。来場者の皆様との対話も、私たちの大切な学びです。
+                        </p>
+                    </div>
+                    <!-- Point 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">挑戦と未来</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            失敗を恐れずに挑戦すること。このフェスタでの経験が、これからの未来を切り拓く大きな力となります。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teacher Message Section -->
+        <section class="py-20 px-4 relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 right-0 w-full h-full bg-brand-blue/5 -skew-y-3 z-0 transform origin-top-left scale-110"></div>
+            
+            <div class="container mx-auto max-w-6xl relative z-10">
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden reveal-up">
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Image Column -->
+                        <div class="md:w-2/5 relative min-h-[400px]">
+                            <img src="https://soei-pf.com/figure/teacher02.jpg" 
+                                 alt="教員からのご挨拶" 
+                                 class="absolute inset-0 w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:bg-gradient-to-r md:from-transparent md:to-black/60 opacity-60"></div>
+                            
+                            <!-- Quote Decoration -->
+                            <div class="absolute top-6 left-6 text-white/80 text-6xl font-serif">"</div>
+                        </div>
+                        
+                        <!-- Text Column -->
+                        <div class="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
+                            <span class="inline-block py-1 px-3 rounded-full bg-brand-blue/10 text-brand-blue text-xs font-bold tracking-wider mb-6 w-max">
+                                TEACHER'S MESSAGE
+                            </span>
+                            <h2 class="text-3xl font-black mb-6 leading-snug">
+                                自ら考え、動き出す。<br>
+                                その瞬間に立ち会ってください。
+                            </h2>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                横浜創英では、「自律」を教育の柱に据えています。誰かに言われたからやるのではなく、自分がやりたいからやる。Project Festaは、まさにその集大成です。
+                            </p>
+                            <p class="text-gray-600 leading-relaxed mb-8">
+                                中学2年生のフレッシュな感性から、高校2年生の深みのある探究まで。生徒たちが試行錯誤し、壁にぶつかりながらも形にしてきた成果には、大人もハッとさせられるような「本気」が詰まっています。ぜひ、彼らの熱量に触れ、声をかけてあげてください。
+                            </p>
+                            
+                            <div class="mt-auto pt-6 border-t border-gray-100 flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-400">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-800">猪又 ○史</p>
+                                    <p class="text-sm text-gray-500">横浜創英中学・高等学校 教諭  Project Festa 実行委員顧問</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Overview (Table) -->
+        <section class="py-20 px-4 bg-white">
+            <div class="container mx-auto max-w-4xl reveal-up">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-black mb-4 inline-block relative">
+                        OUTLINE
+                        <span class="absolute -bottom-2 left-0 w-full h-1 bg-brand-yellow"></span>
+                    </h2>
+                    <p class="text-gray-500">開催概要</p>
+                </div>
+
+                <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                    <table class="w-full text-left border-collapse overview-table">
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <th class="py-4 px-6 w-1/3 md:w-1/4">名称</th>
+                                <td class="py-4 px-6">Yokohama-SOEI Project Festa 2026</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <th class="py-4 px-6">テーマ</th>
+                                <td class="py-4 px-6 font-bold text-brand-blue">Sharing dreams</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <th class="py-4 px-6">開催日時</th>
+                                <td class="py-4 px-6">
+                                    2026年3月17日（火） 8:20 - 13:00<br>
+                                    2026年3月18日（水） 8:20 - 13:00
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <th class="py-4 px-6">会場</th>
+                                <td class="py-4 px-6">
+                                    横浜創英中学・高等学校<br>
+                                    <span class="text-xs text-gray-500">〒221-0004 神奈川県横浜市神奈川区西大口28</span>
+                                    <a href="https://soei-pf.com/map/" class="ml-2 text-xs text-brand-blue hover:underline"><i class="fa-solid fa-map-location-dot"></i> アクセス</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <th class="py-4 px-6">発表主体</th>
+                                <td class="py-4 px-6">中学2年生 〜 高校2年生</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <th class="py-4 px-6">主催</th>
+                                <td class="py-4 px-6">Project Festa 実行委員会</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <a href="https://soei-pf.com/schedule/" class="inline-flex items-center justify-center px-8 py-3 bg-gray-900 text-white font-bold rounded hover:bg-brand-blue transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300">
+                        <i class="fa-regular fa-calendar-check mr-2"></i> スケジュールを確認する
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 pt-16 pb-8 w-full relative overflow-hidden">
+        <!-- Footer Deco -->
+        <div class="absolute bottom-0 right-0 w-32 h-32 bg-gray-50 rounded-tl-full -z-10"></div>
+        
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                         <!-- 修正箇所: rotate-45を削除し、hover:rotate-45を追加 -->
+                         <img src="https://soei-pf.com/figure/logo01.png" 
+                              alt="Project Festa Logo" 
+                              class="w-8 h-8 shrink-0 object-contain transition-transform duration-500 hover:rotate-45">
+                        <span class="font-bold text-xl tracking-tighter">PROJECT FESTA 2026</span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-loose">
+                        〒221-0004<br>
+                        神奈川県横浜市神奈川区西大口28<br>
+                        お問い合わせ: y.s.profes@outlook.jp
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 border-l-4 border-brand-blue pl-3">PAGES</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors">トップページ</a></li>
+                        <li><a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors">お知らせ</a></li>
+                        <li><a href="https://soei-pf.com/concept/" class="text-brand-blue font-bold">コンセプト</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 border-l-4 border-brand-red pl-3">EVENT</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="https://soei-pf.com/schedule/" class="hover:text-brand-blue transition-colors">スケジュール</a></li>
+                        <li><a href="https://soei-pf.com/map/" class="hover:text-brand-blue transition-colors">会場マップ</a></li>
+                        <li><a href="https://soei-pf.com/committee/" class="hover:text-brand-blue transition-colors">実行委員会より</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4 border-l-4 border-brand-yellow pl-3">SUPPORT</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="https://soei-pf.com/qaa/" class="hover:text-brand-blue transition-colors">よくある質問</a></li>
+                        <li><a href="https://soei-pf.com/privacypolicy/" class="hover:text-brand-blue transition-colors">プライバシーポリシー</a></li>
+                        <li><a href="https://soei-pf.com/sitemap/" class="hover:text-brand-blue transition-colors">サイトマップ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+           <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">  
+             <p>&copy; 2026 Yokohama Soei High School Project Festa Executive Committee.</p>  
+             <div class="flex space-x-4 mt-4 md:mt-0">  
+                 <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-twitter"></i></a>  
+                 <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-instagram"></i></a>  
+                 <a href="https://www.youtube.com/live/XSiDKIQYi_I" class="hover:text-brand-blue"><i class="fa-brands fa-youtube"></i></a>   
+             </div>  
+           </div>  
+        </div>  
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            /* --- Header Scroll Logic --- */
+            let lastScroll = 0;
+            const header = document.getElementById('main-header');
+            const scrollThreshold = 100;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+
+                // Add background when scrolled
+                if (currentScroll > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+
+                // Show/Hide Logic
+                if (currentScroll <= 0) {
+                    header.classList.remove('hidden-header');
+                    return;
+                }
+
+                if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
+                    // Scrolling Down
+                    header.classList.add('hidden-header');
+                } else {
+                    // Scrolling Up
+                    header.classList.remove('hidden-header');
+                }
+                lastScroll = currentScroll;
+            });
+
+            /* --- Scroll Reveal Animation (Intersection Observer) --- */
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal-up');
+            revealElements.forEach(el => observer.observe(el));
+
+            /* --- Mobile Menu Toggle --- */
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isMenuOpen = false;
+
+            menuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+                if (isMenuOpen) {
+                    mobileMenu.classList.add('open');
+                    menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.remove('open');
+                    menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    isMenuOpen = false;
+                    mobileMenu.classList.remove('open');
+                    menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
