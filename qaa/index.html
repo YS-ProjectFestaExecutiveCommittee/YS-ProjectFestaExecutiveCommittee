@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://soei-pf.com/figure/favicon01.ico" />
+    
+    <title>よくある質問 | Yokohama-SOEI Project Festa 2026</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Project Festa 2026（プロジェクトフェスタ2026）に関するよくある質問（FAQ）まとめ。入場方法、チケット、撮影ルール、バリアフリー情報、受験生向け情報など、ご来場前に確認したい情報を掲載しています。">
+    <meta name="keywords" content="Project Festa 2026, よくある質問, FAQ, Q&A, 横浜創英, 文化祭, 入場方法, 撮影">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OGP (SNS Sharing) -->
+    <meta property="og:title" content="よくある質問 | Project Festa 2026">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://soei-pf.com/question/">
+    <meta property="og:image" content="https://soei-pf.com/figure/place01.jpg">
+    <meta property="og:description" content="ご来場の皆様からのよくある質問にお答えします。">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Structured Data (FAQPage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "入場にチケットや予約は必要ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、本年度のProject Festaは混雑緩和とセキュリティ確保のため、事前登録制（デジタルチケット）となっております。公式サイトのチケットページより事前の来場登録をお願いいたします。"
+        }
+      }, {
+        "@type": "Question",
+        "name": "写真や動画の撮影は可能ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "原則として可能です。ただし、生徒のプライバシー保護のため、SNS等へのアップロードには制限がございます。詳細は当日の配布資料をご確認ください。"
+        }
+      }, {
+        "@type": "Question",
+        "name": "駐車場はありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "来場者用の駐車場はございません。公共交通機関をご利用ください。近隣店舗への無断駐車は固くお断りいたします。"
+        }
+      }]
+    }
+    </script>
+
+    <!-- Security Headers (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self';">
+
+    <!-- Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0057B7',
+                            yellow: '#FFD700',
+                            black: '#212121',
+                            green: '#009B77',
+                            red: '#DD2E44',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-medium': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* --- Base Styles --- */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            background-color: #ffffff;
+            -webkit-text-size-adjust: 100%;
+            color: #212121;
+        }
+
+        /* --- Background Patterns --- */
+        .bg-dot-grid {
+            background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -3;
+            opacity: 0.6;
+        }
+
+        /* Fixed Background Container */
+        .fixed-bg-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -10;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        /* --- Header Transitions --- */
+        #main-header {
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+        }
+        #main-header.hidden-header {
+            transform: translateY(-100%);
+        }
+        #main-header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- Text Gradients --- */
+        .text-clip-gradient {
+            background: linear-gradient(90deg, #0057B7, #DD2E44, #FFD700, #009B77);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 8s ease infinite;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- Scroll Animations (Reveal Up) --- */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Mobile Menu --- */
+        #mobile-menu {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        /* --- FAQ Accordion Styles --- */
+        .faq-item {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            background-color: #fff;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .faq-item:hover {
+            border-color: #0057B7;
+            box-shadow: 0 4px 6px -1px rgba(0, 87, 183, 0.1);
+        }
+
+        .faq-question {
+            cursor: pointer;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: #374151;
+            position: relative;
+            background: transparent;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .faq-question .icon-wrapper {
+            width: 2rem;
+            height: 2rem;
+            background-color: #f3f4f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-question[aria-expanded="true"] .icon-wrapper {
+            background-color: #0057B7;
+            color: white;
+            transform: rotate(45deg);
+        }
+
+        .faq-question[aria-expanded="true"] {
+            color: #0057B7;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: #f9fafb;
+        }
+
+        .faq-answer-inner {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: #4b5563;
+            line-height: 1.7;
+        }
+        
+        /* Category Tabs */
+        .category-btn {
+            transition: all 0.3s ease;
+        }
+        .category-btn.active {
+            background-color: #212121;
+            color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Q Mark Decoration */
+        .q-mark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background-color: #0057B7;
+            color: white;
+            border-radius: 4px;
+            margin-right: 12px;
+            font-family: serif;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Search Box */
+        .search-wrapper {
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border-radius: 9999px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: #0057B7;
+            box-shadow: 0 0 0 3px rgba(0, 87, 183, 0.1);
+        }
+        .search-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Global Backgrounds (Fixed) -->
+    <div class="fixed-bg-container">
+        <div class="bg-dot-grid"></div>
+        
+        <!-- Animated Shapes (Consistent with other pages) -->
+        <div class="absolute top-[-10vw] right-[-10vw] w-[50vw] h-[50vw] rounded-full bg-gradient-to-b from-brand-blue/5 to-transparent animate-float-slow"></div>
+        <div class="absolute bottom-[10vh] left-[-10vw] w-[40vw] h-[40vw] rounded-full bg-gradient-to-t from-brand-yellow/5 to-transparent animate-float-medium"></div>
+        
+        <!-- Geometric Accents for FAQ Page -->
+        <div class="absolute top-[20%] left-[5%] text-brand-blue/10 text-9xl font-black rotate-12 -z-10 select-none hidden md:block">?</div>
+        <div class="absolute bottom-[30%] right-[10%] w-20 h-20 border-4 border-brand-green/10 rounded-full animate-pulse-slow"></div>
+        <div class="absolute top-[40%] right-[15%] w-4 h-4 bg-brand-red rounded-full animate-float-fast opacity-20"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header" class="fixed w-full top-0 z-50 px-4 py-3 md:py-4 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="https://soei-pf.com/" class="flex items-center gap-2 group">
+                <!-- 修正箇所: rotate-45を削除し、group-hover:rotate-45を追加 -->
+                <img src="https://soei-pf.com/figure/logo01.png" 
+                     alt="Project Festa Logo" 
+                     class="w-10 h-10 md:w-14 md:h-14 transition-transform duration-500 shrink-0 group-hover:scale-110 group-hover:rotate-45 object-contain">
+                <span class="font-bold text-lg md:text-2xl tracking-tighter truncate">&nbsp; Y. S. PROJECT FESTA <span class="text-brand-blue">2026</span></span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">TOP</a>
+                <a href="https://soei-pf.com/concept/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ABOUT</a>
+                <a href="https://soei-pf.com/schedule/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">SCHEDULE</a>
+                <a href="https://soei-pf.com/map/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">MAP</a>
+                <a href="https://soei-pf.com/attractions/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ATTRACTIONS</a>
+                <a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">NEWS</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none p-2" aria-label="メニューを開く">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md shadow-lg absolute top-full left-0 w-full border-t border-gray-100">
+            <nav class="flex flex-col p-4 space-y-4 font-bold text-center">
+                <a href="https://soei-pf.com/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">TOP</a>
+                <a href="https://soei-pf.com/concept/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ABOUT</a>
+                <a href="https://soei-pf.com/schedule/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">SCHEDULE</a>
+                <a href="https://soei-pf.com/map/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">MAP</a>
+                <a href="https://soei-pf.com/attractions/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ATTRACTIONS</a>
+                <a href="https://soei-pf.com/information/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">NEWS</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24 pb-20 w-full relative">
+
+        <!-- Page Title Area -->
+        <section class="relative py-12 md:py-20 px-4 text-center overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[15vw] md:text-[10vw] font-black text-gray-100 -z-10 select-none whitespace-nowrap">
+                Q & A
+            </div>
+            <div class="container mx-auto relative z-10 reveal-up">
+                <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">
+                    FAQ
+                    <span class="block text-base md:text-xl font-medium text-brand-blue mt-2 tracking-widest">よくある質問</span>
+                </h1>
+                <p class="text-lg md:text-xl font-medium text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    皆様から寄せられる質問をまとめました。<br>
+                    ご不明な点がございましたら、こちらをご確認ください。
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-blue to-brand-green mx-auto mt-8 rounded-full"></div>
+            </div>
+        </section>
+
+        <!-- Search & Filter Section -->
+        <section class="container mx-auto px-4 max-w-4xl mb-12 reveal-up" style="transition-delay: 0.1s;">
+            <!-- Search Box -->
+            <div class="search-wrapper mb-8">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="faq-search" class="search-input" placeholder="キーワードで質問を検索（例: チケット、撮影、食事）">
+            </div>
+
+            <!-- Category Filters -->
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4" id="category-filters">
+                <button class="category-btn active px-5 py-2 rounded-full font-bold text-sm md:text-base border border-gray-200 bg-white text-gray-600 hover:bg-gray-50" data-filter="all">すべて</button>
+                <button class="category-btn px-5 py-2 rounded-full font-bold text-sm md:text-base border border-gray-200 bg-white text-gray-600 hover:bg-gray-50" data-filter="entry">入場・チケット</button>
+                <button class="category-btn px-5 py-2 rounded-full font-bold text-sm md:text-base border border-gray-200 bg-white text-gray-600 hover:bg-gray-50" data-filter="event">発表・イベント</button>
+                <button class="category-btn px-5 py-2 rounded-full font-bold text-sm md:text-base border border-gray-200 bg-white text-gray-600 hover:bg-gray-50" data-filter="facility">施設・設備</button>
+                <button class="category-btn px-5 py-2 rounded-full font-bold text-sm md:text-base border border-gray-200 bg-white text-gray-600 hover:bg-gray-50" data-filter="other">その他</button>
+            </div>
+        </section>
+
+        <!-- FAQ List Section -->
+        <section class="container mx-auto px-4 max-w-4xl mb-24 reveal-up" style="transition-delay: 0.2s;">
+            <div id="faq-container" class="space-y-4">
+                <!-- FAQs will be generated here -->
+                
+                <!-- Category: Entry -->
+                <div class="faq-group" data-category="entry">
+                    <h3 class="text-xl font-bold mb-4 text-brand-blue border-l-4 border-brand-blue pl-3 flex items-center">
+                        <i class="fa-solid fa-ticket mr-2"></i> 入場・チケットについて
+                    </h3>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="flex items-start text-left leading-snug"><span class="q-mark">Q</span> 入場には予約が必要ですか？</span>
+                            <span class="icon-wrapper"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>はい。本年度のProject Festaは混雑緩和とセキュリティ確保のため、<strong>事前予約制（Peatixによるデジタルチケット）</strong>となっております。<br>公式サイトおよび学校サイトの「チケット申し込み」ページより、来場登録をお願いいたします。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="flex items-start text-left leading-snug"><span class="q-mark">Q</span> 予約のキャンセルや変更はできますか？</span>
+                            <span class="icon-wrapper"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>はい。可能です。Peatixアプリやサイトの指示に従って操作していただく形になります。<br>予約期間中はいつでも変更可能ですので、お気軽にご予約ください。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="flex items-start text-left leading-snug"><span class="q-mark">Q</span> 上履きは必要ですか？</span>
+                            <span class="icon-wrapper"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>体育館ステージには入場に上履きが必要であるため、上履きは<strong>必須</strong>です。<br>体育館ステージにお越しにならないお客様も確実にお持ちください。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Event -->
+                <div class="faq-group mt-12" data-category="event">
+                    <h3 class="text-xl font-bold mb-4 text-brand-red border-l-4 border-brand-red pl-3 flex items-center">
+                        <i class="fa-solid fa-microphone-lines mr-2"></i> 発表・イベントについて
+                    </h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="flex items-start text-left leading-snug"><span class="q-mark">Q</span> 写真や動画の撮影は可能ですか？</span>
+                            <span class="icon-wrapper"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>原則として可能です。ただし、以下の点にご注意ください。</p>
+                                <ul class="list-disc list-inside mt-2 space-y-1 text-sm bg-gray-100 p-3 rounded">
+                                    <li>生徒のプライバシー保護のため、<strong>SNS等へのアップロードは、被写体の許可がある場合を除きご遠慮ください。</strong></li>
+                                    <li>ステージ発表など、一部「撮影禁止」のアナウンスがある演目では指示に従ってください。</li>
+                                    <li>三脚等の使用は、通路を塞ぐ原因となりますのでお控えください。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="flex items-start text-left leading-snug"><span class="q-mark">Q</span> どのような発表が見られますか？</span>
+                            <span class="icon-wrapper"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Project Festaでは、中学2年生から高校2年生までの生徒が1年間取り組んできた「探究学習」や「交流プロジェクト」の成果発表を中心に行います。<br>
+                                ポスターセッション、プレゼンテーション、実演展示など形式は様々です。また、生徒が企画した面白い企画がほかにも開催されますので、お楽しみください。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="flex items-start text-left leading-snug"><span class="q-mark">Q</span> 途中入退場はできますか？</span>
+                            <span class="icon-wrapper"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>開催時間内（8:20〜13:00）であれば、いつでも入退場可能です。<br>再入場の際は、受付にてデジタルチケットまたは入構証をご提示ください。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Facility -->
+                <div class="faq-group mt-12" data-category="facility">
+                    <h3 class="text-xl font-bold mb-4 text-brand-green border-l-4 border-brand-green pl-3 flex items-center">
+                        <i class="fa-solid fa-building mr-2"></i> 施設・設備について
+                    </h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="flex items-start text-left leading-snug"><span class="q-mark">Q</span> バリアフリー対応はしていますか？</span>
+                            <span class="icon-wrapper"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>校舎内にはエレベーターが設置されており、車椅子でのご移動も可能です。<br>多目的トイレは一号館1階にございます。サポートが必要な場合は、お近くのスタッフ（腕章をつけた実行委員や生徒会執行部員または教員）にお声がけください。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="flex items-start text-left leading-snug"><span class="q-mark">Q</span> 授乳室やおむつ交換台はありますか？</span>
+                            <span class="icon-wrapper"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>一号館1階のバリアフリートイレ内に、臨時の授乳・おむつ交換スペースをご用意しております。<br>ご自由にご利用ください。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="flex items-start text-left leading-snug"><span class="q-mark">Q</span> 校内でWi-Fiは使えますか？</span>
+                            <span class="icon-wrapper"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>来場者様向けのWi-Fiはご用意しかねます。<br>インターネットを使用する場合、お客様自身の通信キャリアからとなります。ご理解とご協力よろしくお願いいたします。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="flex items-start text-left leading-snug"><span class="q-mark">Q</span> 食事はできますか？</span>
+                            <span class="icon-wrapper"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>一号館裏のキッチンカー付近で食事・休憩スペースを開放しております。飲食物の持ち込みもOKですので、ぜひお越しください。<br>当スペース以外でのお食事はご遠慮ください。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Other -->
+                <div class="faq-group mt-12" data-category="other">
+                    <h3 class="text-xl font-bold mb-4 text-brand-yellow border-l-4 border-brand-yellow pl-3 flex items-center">
+                        <i class="fa-regular fa-circle-question mr-2"></i> その他
+                    </h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="flex items-start text-left leading-snug"><span class="q-mark">Q</span> 受験生向けの相談コーナーはありますか？</span>
+                            <span class="icon-wrapper"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>はい、ございます。両日ともに最後のセレモニー終了後、12:30～12:45の間に体育館ステージにて受け付けております。<br>教員だけでなく、在校生による相談も受け付けておりますので、学校生活のリアルな声を聞きたい方はぜひお立ち寄りください。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="flex items-start text-left leading-snug"><span class="q-mark">Q</span> 落とし物をした場合はどうすればいいですか？</span>
+                            <span class="icon-wrapper"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>拾得物はすべて「総合案内（本部）」にてお預かりしております。<br>お帰りの際にお気づきの場合は、学校代表電話（045-421-3121）までお問い合わせください。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="flex items-start text-left leading-snug"><span class="q-mark">Q</span> 喫煙所はありますか？</span>
+                            <span class="icon-wrapper"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>敷地内は全面禁煙となっております（電子タバコを含む）。<br>また、学校周辺の路上での喫煙も近隣の方へのご迷惑となりますのでご遠慮ください。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- No Results Message -->
+            <div id="no-results" class="hidden text-center py-12">
+                <div class="text-6xl text-gray-200 mb-4"><i class="fa-regular fa-face-frown"></i></div>
+                <p class="text-gray-500 font-bold">該当する質問が見つかりませんでした。</p>
+                <p class="text-sm text-gray-400 mt-2">キーワードを変えて再度検索するか、お問い合わせフォームよりご質問ください。</p>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="py-16 bg-brand-black text-white relative overflow-hidden">
+             <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+             <div class="container mx-auto px-4 text-center relative z-10 reveal-up">
+                 <h2 class="text-2xl md:text-3xl font-bold mb-4">解決しない場合は</h2>
+                 <p class="text-gray-400 mb-8 max-w-xl mx-auto text-sm md:text-base">
+                     上記の内容で解決しない場合や、個別のご相談につきましては、<br class="hidden md:inline">下記お問い合わせフォームよりご連絡ください。
+                 </p>
+                 <a href="#" class="inline-block px-8 py-3 bg-transparent border border-white text-white font-bold rounded hover:bg-white hover:text-brand-black transition-all duration-300">
+                     お問い合わせフォーム <i class="fa-solid fa-envelope ml-2"></i>
+                 </a>
+             </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 pt-16 pb-8 w-full relative overflow-hidden">
+        <!-- Footer Deco -->
+        <div class="absolute bottom-0 right-0 w-32 h-32 bg-gray-50 rounded-tl-full -z-10"></div>
+        
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                         <!-- 修正箇所: rotate-45を削除し、hover:rotate-45を追加 -->
+                         <img src="https://soei-pf.com/figure/logo01.png" 
+                              alt="Project Festa Logo" 
+                              class="w-8 h-8 shrink-0 object-contain transition-transform duration-500 hover:rotate-45">
+                        <span class="font-bold text-xl tracking-tighter">PROJECT FESTA 2026</span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-loose">
+                        〒221-0004<br>
+                        神奈川県横浜市神奈川区西大口28<br>
+                        お問い合わせ: y.s.profes@outlook.jp
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 border-l-4 border-brand-blue pl-3">PAGES</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors">トップページ</a></li>
+                        <li><a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors">お知らせ</a></li>
+                        <li><a href="https://soei-pf.com/concept/" class="hover:text-brand-blue transition-colors">コンセプト</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 border-l-4 border-brand-red pl-3">EVENT</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="https://soei-pf.com/schedule/" class="hover:text-brand-blue transition-colors">スケジュール</a></li>
+                        <li><a href="https://soei-pf.com/map/" class="hover:text-brand-blue transition-colors">会場マップ</a></li>
+                        <li><a href="https://soei-pf.com/committee/" class="hover:text-brand-blue transition-colors">実行委員会より</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 border-l-4 border-brand-yellow pl-3">SUPPORT</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="https://soei-pf.com/qaa/" class="text-brand-blue font-bold">よくある質問</a></li>
+                        <li><a href="https://soei-pf.com/privacypolicy/" class="hover:text-brand-blue transition-colors">プライバシーポリシー</a></li>
+                        <li><a href="https://soei-pf.com/sitemap/" class="hover:text-brand-blue transition-colors">サイトマップ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+           <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">  
+             <p>&copy; 2026 Yokohama Soei High School Project Festa Executive Committee.</p>  
+             <div class="flex space-x-4 mt-4 md:mt-0">  
+                 <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-twitter"></i></a>  
+                 <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-instagram"></i></a>  
+                 <a href="https://www.youtube.com/live/XSiDKIQYi_I" class="hover:text-brand-blue"><i class="fa-brands fa-youtube"></i></a> 
+             </div>  
+           </div>  
+        </div>  
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            /* --- 1. Header Scroll Logic & Mobile Menu (Common) --- */
+            const header = document.getElementById('main-header');
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let lastScroll = 0;
+
+            // Scroll Effect
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+                if (currentScroll > lastScroll && currentScroll > 200) header.classList.add('hidden-header');
+                else header.classList.remove('hidden-header');
+                lastScroll = currentScroll;
+            });
+
+            // Mobile Menu
+            menuBtn.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.contains('open');
+                if (isOpen) {
+                    mobileMenu.classList.remove('open');
+                    menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                } else {
+                    mobileMenu.classList.add('open');
+                    menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                }
+            });
+
+            // Close mobile menu when clicking links
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                });
+            });
+
+            /* --- 2. Scroll Reveal Animation (Intersection Observer) --- */
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+
+            /* --- 3. FAQ Accordion Logic --- */
+            const questions = document.querySelectorAll('.faq-question');
+
+            questions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const expanded = question.getAttribute('aria-expanded') === 'true';
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('.icon-wrapper i');
+
+                    // Toggle current item
+                    question.setAttribute('aria-expanded', !expanded);
+                    
+                    if (!expanded) {
+                        // Open
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-xmark');
+                    } else {
+                        // Close
+                        answer.style.maxHeight = null;
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-plus');
+                    }
+                });
+            });
+
+            /* --- 4. Filtering & Search Logic --- */
+            const filterBtns = document.querySelectorAll('.category-btn');
+            const faqGroups = document.querySelectorAll('.faq-group');
+            const searchInput = document.getElementById('faq-search');
+            const noResults = document.getElementById('no-results');
+
+            // Category Filter
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active', 'bg-brand-black', 'text-white'));
+                    filterBtns.forEach(b => b.classList.add('bg-white', 'text-gray-600'));
+                    
+                    btn.classList.remove('bg-white', 'text-gray-600');
+                    btn.classList.add('active', 'bg-brand-black', 'text-white'); // Apply styles directly for clarity
+                    
+                    const filterValue = btn.getAttribute('data-filter');
+                    
+                    // Filter logic
+                    let hasVisible = false;
+                    faqGroups.forEach(group => {
+                        const groupCategory = group.getAttribute('data-category');
+                        if (filterValue === 'all' || filterValue === groupCategory) {
+                            group.style.display = 'block';
+                            hasVisible = true;
+                        } else {
+                            group.style.display = 'none';
+                        }
+                    });
+
+                    // Search text reset when filtering categories
+                    searchInput.value = '';
+                    resetSearchHighlight();
+                    
+                    // Show/Hide no results
+                    noResults.style.display = hasVisible ? 'none' : 'block';
+                });
+            });
+
+            // Real-time Search
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                let hasResults = false;
+                
+                // Reset category buttons visual state to "all" conceptually, but maybe keep active class for UI consistency
+                // For simplicity, we search across ALL visible items or all items. 
+                // Let's search across all items regardless of category filter
+                
+                const faqItems = document.querySelectorAll('.faq-item');
+                const faqGroups = document.querySelectorAll('.faq-group');
+
+                // Show all groups first so we can filter individual items
+                faqGroups.forEach(g => g.style.display = 'block');
+                
+                faqItems.forEach(item => {
+                    const questionText = item.querySelector('.faq-question').textContent.toLowerCase();
+                    const answerText = item.querySelector('.faq-answer').textContent.toLowerCase();
+                    const group = item.closest('.faq-group');
+
+                    if (questionText.includes(term) || answerText.includes(term)) {
+                        item.style.display = 'block';
+                        hasResults = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                // Hide empty groups
+                faqGroups.forEach(group => {
+                    const visibleItems = group.querySelectorAll('.faq-item[style="display: block;"]');
+                    // Note: items with no inline style are visible by default
+                    const totalItems = group.querySelectorAll('.faq-item');
+                    const hiddenItems = group.querySelectorAll('.faq-item[style="display: none;"]');
+                    
+                    if (totalItems.length === hiddenItems.length) {
+                        group.style.display = 'none';
+                    } else {
+                        group.style.display = 'block';
+                    }
+                });
+
+                noResults.style.display = hasResults ? 'none' : 'block';
+                
+                // Reset active filter button visually
+                if (term.length > 0) {
+                     filterBtns.forEach(b => b.classList.remove('active'));
+                     document.querySelector('[data-filter="all"]').classList.add('active');
+                }
+            });
+
+            function resetSearchHighlight() {
+                const faqItems = document.querySelectorAll('.faq-item');
+                faqItems.forEach(item => item.style.display = 'block');
+            }
+
+        });
+    </script>
+</body>
+</html>
