@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<link rel="icon" href="https://soei-pf.com/figure/favicon01.ico" />
+<title>スケジュール | Yokohama-SOEI Project Festa 2026</title>
+<!-- SEO Meta Tags -->
+<meta name="description" content="Project Festa 2026（プロジェクトフェスタ2026）の開催スケジュール詳細です。3月17日・18日の2日間、体育館ステージ、教室、グラウンドなど各エリアで行われる発表やイベントのタイムテーブルをご確認いただけます。">
+<meta name="keywords" content="Project Festa 2026, スケジュール, タイムテーブル, プロジェクトフェスタ, 横浜創英">
+<meta name="robots" content="index, follow">
+<!-- OGP (SNS Sharing) -->
+<meta property="og:title" content="スケジュール | Project Festa 2026">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://your-github-username.github.io/project-festa-2026/schedule.html">
+<meta property="og:image" content="https://soei-pf.com/figure/time01.jpg">
+<meta property="og:description" content="2日間の熱狂をチェック。Project Festa 2026の全スケジュールを公開中。">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Security Headers (CSP) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self';">
+<!-- Fonts: Noto Sans JP -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<!-- Icons: FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'] },
+      colors: {
+        brand: {
+          blue: '#0057B7', yellow: '#FFD700', black: '#212121', green: '#009B77', red: '#DD2E44'
+        }
+      },
+      animation: {
+        'float-slow': 'float 8s ease-in-out infinite',
+        'float-medium': 'float 6s ease-in-out infinite'
+      }
+    }
+  }
+}
+</script>
+<style>
+/* ベーススタイル */
+html, body { overflow-x: hidden; width: 100%; background-color: #ffffff; -webkit-text-size-adjust: 100%; }
+/* 背景パターン */
+.bg-dot-grid { background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px); background-size: 24px 24px; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -3; opacity: 0.6; }
+.geo-deco { position: absolute; z-index: -1; pointer-events: none; opacity: 0.6; }
+/* Header Transition */
+#main-header { transition: transform 0.3s ease-in-out, background-color 0.3s ease; }
+#main-header.hidden-header { transform: translateY(-100%); }
+#main-header.scrolled { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+/* スケジュール表のスタイル */
+.schedule-grid { display: grid; grid-template-columns: 80px repeat(6, minmax(140px, 1fr)); gap: 1px; background-color: #e5e7eb; border: 1px solid #e5e7eb; }
+.schedule-header { background-color: #f3f4f6; padding: 1rem; text-align: center; font-weight: bold; display: flex; align-items: center; justify-content: center; position: sticky; top: 0; z-index: 10; }
+.time-col { background-color: #fff; padding: 0.25rem; text-align: center; font-size: 0.75rem; color: #6b7280; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+.event-cell { background-color: #fff; padding: 0.5rem; min-height: 40px; transition: background-color 0.2s; display: flex; flex-direction: column; justify-content: center; font-size: 0.85rem; line-height: 1.4; }
+.event-cell:hover { background-color: #f9fafb; }
+.event-title { font-weight: bold; margin-bottom: 0.1rem; }
+.event-time { font-size: 0.7rem; color: #666; font-weight: 500; }
+/* モバイル用スクロールコンテナ */
+.schedule-scroll-container { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+/* モバイルメニュー */
+#mobile-menu { transition: max-height 0.4s ease-in-out, opacity 0.4s ease; max-height: 0; opacity: 0; overflow: hidden; }
+#mobile-menu.open { max-height: 500px; opacity: 1; }
+/* アニメーション */
+.reveal-up { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+.reveal-up.active { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body class="text-gray-800 antialiased relative selection:bg-brand-blue selection:text-white flex flex-col min-h-screen">
+
+<!-- Global Backgrounds -->
+<div class="bg-dot-grid"></div>
+<div class="fixed top-0 right-0 w-[40vw] h-[40vw] bg-blue-50/50 -z-20 transform translate-x-1/4 -translate-y-1/4" style="clip-path: polygon(100% 0, 0 0, 100% 100%);"></div>
+<div class="fixed bottom-0 left-0 w-[30vw] h-[30vw] border-[30px] border-yellow-50/50 rounded-full -z-20 transform -translate-x-1/4 translate-y-1/4"></div>
+<div class="fixed top-1/4 left-[5%] w-16 h-16 border-4 border-brand-red/10 rotate-12 -z-20 hidden md:block"></div>
+<div class="fixed top-1/3 right-[10%] w-24 h-24 bg-brand-green/5 rounded-full -z-20 hidden md:block"></div>
+<div class="fixed bottom-1/4 left-[15%] w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-b-[50px] border-b-brand-blue/10 rotate-[-15deg] -z-20 hidden md:block"></div>
+<div class="fixed top-[-10vw] right-[-10vw] w-[50vw] h-[50vw] rounded-full bg-gradient-to-b from-brand-blue/5 to-transparent -z-10 animate-float-slow"></div>
+<div class="fixed bottom-[10vh] left-[-10vw] w-[40vw] h-[40vw] rounded-full bg-gradient-to-t from-brand-yellow/5 to-transparent -z-10 animate-float-medium"></div>
+
+<!-- Header -->
+<header id="main-header" class="fixed w-full top-0 z-50 px-4 py-3 md:py-4 bg-white/90 backdrop-blur-md shadow-sm">
+  <div class="container mx-auto flex justify-between items-center">
+    <a href="https://soei-pf.com/" class="flex items-center gap-2 group">
+      <img src="https://soei-pf.com/figure/logo01.png" alt="Project Festa Logo" class="w-10 h-10 md:w-14 md:h-14 transition-transform duration-500 shrink-0 group-hover:scale-110 group-hover:rotate-45 object-contain">
+      <span class="font-bold text-lg md:text-2xl tracking-tighter truncate">&nbsp; Y. S. PROJECT FESTA <span class="text-brand-blue">2026</span></span>
+    </a>
+    <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">TOP</a>
+                <a href="https://soei-pf.com/concept/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ABOUT</a>
+                <a href="https://soei-pf.com/schedule/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">SCHEDULE</a>
+                <a href="https://soei-pf.com/map/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">MAP</a>
+                <a href="https://soei-pf.com/attractions/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ATTRACTIONS</a>
+                <a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">NEWS</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none p-2" aria-label="メニューを開く">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md shadow-lg absolute top-full left-0 w-full border-t border-gray-100">
+            <nav class="flex flex-col p-4 space-y-4 font-bold text-center">
+                <a href="https://soei-pf.com/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">TOP</a>
+                <a href="https://soei-pf.com/concept/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ABOUT</a>
+                <a href="https://soei-pf.com/schedule/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">SCHEDULE</a>
+                <a href="https://soei-pf.com/map/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">MAP</a>
+                <a href="https://soei-pf.com/attractions/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ATTRACTIONS</a>
+                <a href="https://soei-pf.com/information/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">NEWS</a>
+            </nav>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="flex-grow pt-24 pb-12 w-full">
+  <section class="relative py-12 md:py-20 px-4 text-center overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[15vw] md:text-[10vw] font-black text-gray-100 -z-10 select-none whitespace-nowrap">TIMETABLE</div>
+    <div class="container mx-auto relative z-10 reveal-up">
+      <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">SCHEDULE<span class="block text-base md:text-xl font-medium text-brand-blue mt-2 tracking-widest">開催スケジュール</span></h1>
+      <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">2日間にわたり繰り広げられる、情熱と創造のステージ。<br class="hidden md:inline">お目当ての発表を見逃さないよう、タイムテーブルをチェックしましょう。</p>
+    </div>
+  </section>
+
+  <section class="px-2 md:px-4 max-w-7xl mx-auto">
+    <div class="flex justify-center mb-8 reveal-up" style="transition-delay: 0.1s;">
+      <div class="bg-gray-100 p-1 rounded-full flex shadow-inner">
+        <button id="btn-day1" class="px-6 py-2 md:px-10 md:py-3 rounded-full font-bold text-sm md:text-base transition-all duration-300 shadow-sm bg-white text-brand-blue ring-2 ring-brand-blue/20">Day 1 <span class="text-xs font-normal ml-1">3/17 (Tue)</span></button>
+        <button id="btn-day2" class="px-6 py-2 md:px-10 md:py-3 rounded-full font-bold text-sm md:text-base text-gray-500 hover:text-gray-700 transition-all duration-300">Day 2 <span class="text-xs font-normal ml-1">3/18 (Wed)</span></button>
+      </div>
+    </div>
+
+    <!-- Day 1 Schedule -->
+    <div id="schedule-day1" class="schedule-content reveal-up" style="transition-delay: 0.2s;">
+      <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200">
+        <div class="p-4 bg-brand-blue text-white font-bold flex justify-between items-center">
+          <span><i class="fa-regular fa-calendar-days mr-2"></i>Day 1 - 3月17日</span>
+          <span class="text-xs font-normal bg-white/20 px-2 py-1 rounded">※時間は変更になる場合があります</span>
+        </div>
+        <div class="schedule-scroll-container">
+          <div class="schedule-grid min-w-[1000px]">
+            <!-- Header Row -->
+            <div class="schedule-header">Time</div>
+            <div class="schedule-header text-brand-blue"><i class="fa-solid fa-volleyball mr-1"></i>体育館<br>ステージ</div>
+            <div class="schedule-header text-amber-600"><i class="fa-solid fa-building mr-1"></i>一号館<br>1F</div>
+            <div class="schedule-header text-amber-700"><i class="fa-solid fa-stairs mr-1"></i>一号館<br>2~3F</div>
+            <div class="schedule-header text-green-700"><i class="fa-solid fa-school mr-1"></i>本館<br>教室</div>
+            <div class="schedule-header text-purple-600"><i class="fa-solid fa-microphone-lines mr-1"></i>各<br>ステージ</div>
+            <div class="schedule-header text-gray-600"><i class="fa-solid fa-star mr-1"></i>その他</div>
+
+            <!-- 08:00 - 08:20 (Empty) -->
+            <div class="time-col">08:00</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+            
+            <div class="time-col">08:10</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 08:20 Gate Starts -->
+            <div class="time-col">08:20</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+            <div class="event-cell bg-gray-50 border-l-4 border-gray-500" style="grid-row: span 4;">
+              <div class="event-title">入場ゲート開門</div>
+              <div class="event-time">8:20～8:55</div>
+            </div>
+
+            <div class="time-col">08:30</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 08:40 Opening Starts -->
+            <div class="time-col">08:40</div>
+            <div class="event-cell bg-blue-50 border-l-4 border-brand-blue" style="grid-row: span 2;">
+              <div class="event-title">オープニングセレモニー</div>
+              <div class="event-time">8:40～9:00</div>
+            </div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">08:50</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 09:00 All Events Start -->
+            <div class="time-col">09:00</div>
+            <div class="event-cell bg-blue-50 border-l-4 border-brand-blue" style="grid-row: span 6;">
+              <div class="event-title">優秀者ステージ発表(第一部)</div>
+              <div class="event-time">9:00～10:00</div>
+            </div>
+            <div class="event-cell bg-amber-50 border-l-4 border-amber-600" style="grid-row: span 6;">
+              <div class="event-title">4Cコラボ発表(前半)</div>
+              <div class="event-time">9:00～10:00</div>
+            </div>
+            <div class="event-cell bg-orange-50 border-l-4 border-amber-700" style="grid-row: span 6;">
+              <div class="event-title">サイエンスコース発表<br>明蓬館発表(前半)</div>
+              <div class="event-time">9:00～10:00</div>
+            </div>
+            <div class="event-cell bg-green-50 border-l-4 border-green-700" style="grid-row: span 6;">
+              <div class="event-title">高校二年生発表(前半)</div>
+              <div class="event-time">9:00～10:00</div>
+            </div>
+            <div class="event-cell bg-purple-50 border-l-4 border-purple-600" style="grid-row: span 6;">
+              <div class="event-title">グローバルコース<br>ピッチ発表(前半)</div>
+              <div class="event-time">9:00～10:00</div>
+            </div>
+            <div class="event-cell bg-gray-50 border-l-4 border-gray-500" style="grid-row: span 13;">
+              <div class="event-title">入場ゲート開門＆<br>キッチンカー営業</div>
+              <div class="event-time">9:00～11:10</div>
+            </div>
+
+            <div class="time-col">09:10</div>
+            <div class="time-col">09:20</div>
+            <div class="time-col">09:30</div>
+            <div class="time-col">09:40</div>
+            <div class="time-col">09:50</div>
+
+            <!-- 10:00 Break -->
+            <div class="time-col">10:00</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 10:10 Events Resume -->
+            <div class="time-col">10:10</div>
+            <div class="event-cell bg-blue-50 border-l-4 border-brand-blue" style="grid-row: span 6;">
+              <div class="event-title">優秀者ステージ発表(第三部)</div>
+              <div class="event-time">10:10～11:10</div>
+            </div>
+            <div class="event-cell bg-amber-50 border-l-4 border-amber-600" style="grid-row: span 6;">
+              <div class="event-title">4Cコラボ発表(後半)</div>
+              <div class="event-time">10:10～11:10</div>
+            </div>
+            <div class="event-cell bg-orange-50 border-l-4 border-amber-700" style="grid-row: span 6;">
+              <div class="event-title">サイエンスコース発表<br>明蓬館発表(後半)</div>
+              <div class="event-time">10:10～11:10</div>
+            </div>
+            <div class="event-cell bg-green-50 border-l-4 border-green-700" style="grid-row: span 6;">
+              <div class="event-title">高校二年生発表(後半)</div>
+              <div class="event-time">10:10～11:10</div>
+            </div>
+            <div class="event-cell bg-purple-50 border-l-4 border-purple-600" style="grid-row: span 6;">
+              <div class="event-title">グローバルコース<br>ピッチ発表(後半)</div>
+              <div class="event-time">10:10～11:10</div>
+            </div>
+
+            <div class="time-col">10:20</div>
+            <div class="time-col">10:30</div>
+            <div class="time-col">10:40</div>
+            <div class="time-col">10:50</div>
+            <div class="time-col">11:00</div>
+
+            <!-- 11:10 Break -->
+            <div class="time-col">11:10</div>
+            <!-- FIXED: Added 1 empty cell because Gate ends at 11:10 (Total 6 cells) -->
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 11:20 Ending Ceremony Starts -->
+            <div class="time-col">11:20</div>
+            <!-- FIXED: Added 1 empty cell at the end (Total 5 cells including Ceremony) -->
+            <div class="event-cell bg-blue-50 border-l-4 border-brand-blue" style="grid-row: span 4;">
+              <div class="event-title">エンディングセレモニー</div>
+              <div class="event-time">11:20～12:00</div>
+            </div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">11:30</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">11:40</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">11:50</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 12:00 Q&A -->
+            <div class="time-col">12:00</div>
+            <div class="event-cell bg-blue-50 border-l-4 border-brand-blue" style="grid-row: span 6;">
+              <div class="event-title">質問などの対応</div>
+              <div class="event-time">12:00～13:00</div>
+            </div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">12:10</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">12:20</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">12:30</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">12:40</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+            
+            <div class="time-col">12:50</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 13:00 End -->
+            <div class="time-col">13:00</div>
+            <div class="event-cell bg-gray-50 text-xs text-gray-400 text-center" style="grid-column: span 6; display: flex; align-items: center; justify-content: center;">End of Schedule</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 2 Schedule -->
+    <div id="schedule-day2" class="schedule-content hidden" style="transition-delay: 0.2s;">
+      <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200">
+        <div class="p-4 bg-gray-700 text-white font-bold flex justify-between items-center">
+          <span><i class="fa-regular fa-calendar-days mr-2"></i>Day 2 - 3月18日</span>
+          <span class="text-xs font-normal bg-white/20 px-2 py-1 rounded">※時間は変更になる場合があります</span>
+        </div>
+        <div class="schedule-scroll-container">
+          <div class="schedule-grid min-w-[1000px]">
+            <!-- Header Row -->
+            <div class="schedule-header">Time</div>
+            <div class="schedule-header text-brand-blue"><i class="fa-solid fa-volleyball mr-1"></i>体育館<br>ステージ</div>
+            <div class="schedule-header text-amber-600"><i class="fa-solid fa-building mr-1"></i>一号館<br>1F</div>
+            <div class="schedule-header text-amber-700"><i class="fa-solid fa-stairs mr-1"></i>一号館<br>2~3F</div>
+            <div class="schedule-header text-green-700"><i class="fa-solid fa-school mr-1"></i>本館<br>教室</div>
+            <div class="schedule-header text-purple-600"><i class="fa-solid fa-microphone-lines mr-1"></i>各<br>ステージ</div>
+            <div class="schedule-header text-gray-600"><i class="fa-solid fa-star mr-1"></i>その他</div>
+
+            <!-- 08:00 - 08:20 -->
+            <div class="time-col">08:00</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+            
+            <div class="time-col">08:10</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 08:20 Gate Starts -->
+            <div class="time-col">08:20</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+            <div class="event-cell bg-gray-50 border-l-4 border-gray-500" style="grid-row: span 4;">
+              <div class="event-title">入場ゲート開門</div>
+              <div class="event-time">8:20～8:55</div>
+            </div>
+
+            <div class="time-col">08:30</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 08:40 Interim Ceremony -->
+            <div class="time-col">08:40</div>
+            <div class="event-cell bg-blue-50 border-l-4 border-brand-blue" style="grid-row: span 2;">
+              <div class="event-title">中間セレモニー</div>
+              <div class="event-time">8:40～9:00</div>
+            </div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">08:50</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 09:00 All Events Start -->
+            <div class="time-col">09:00</div>
+            <div class="event-cell bg-blue-50 border-l-4 border-brand-blue" style="grid-row: span 6;">
+              <div class="event-title">優秀者ステージ発表(第三部)</div>
+              <div class="event-time">9:00～10:00</div>
+            </div>
+            <div class="event-cell bg-amber-50 border-l-4 border-amber-600" style="grid-row: span 6;">
+              <div class="event-title">4Cコラボ発表(前半)</div>
+              <div class="event-time">9:00～10:00</div>
+            </div>
+            <div class="event-cell bg-orange-50 border-l-4 border-amber-700" style="grid-row: span 6;">
+              <div class="event-title">サイエンスコース発表<br>明蓬館発表(前半)</div>
+              <div class="event-time">9:00～10:00</div>
+            </div>
+            <div class="event-cell bg-green-50 border-l-4 border-green-700" style="grid-row: span 6;">
+              <div class="event-title">高校二年生発表(前半)</div>
+              <div class="event-time">9:00～10:00</div>
+            </div>
+            <div class="event-cell bg-purple-50 border-l-4 border-purple-600" style="grid-row: span 6;">
+              <div class="event-title">グローバルコース<br>ピッチ発表(前半)</div>
+              <div class="event-time">9:00～10:00</div>
+            </div>
+            <!-- FIXED: Changed span 15 to 13 to match Day 1 (Ends at 11:10) -->
+            <div class="event-cell bg-gray-50 border-l-4 border-gray-500" style="grid-row: span 13;">
+              <div class="event-title">入場ゲート開門＆<br>キッチンカー営業</div>
+              <div class="event-time">9:00～11:10</div>
+            </div>
+
+            <div class="time-col">09:10</div>
+            <div class="time-col">09:20</div>
+            <div class="time-col">09:30</div>
+            <div class="time-col">09:40</div>
+            <div class="time-col">09:50</div>
+
+            <!-- 10:00 Break -->
+            <div class="time-col">10:00</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 10:10 Events Resume -->
+            <div class="time-col">10:10</div>
+            <div class="event-cell bg-blue-50 border-l-4 border-brand-blue" style="grid-row: span 6;">
+              <div class="event-title">優秀者ステージ発表(第四部)</div>
+              <div class="event-time">10:10～11:10</div>
+            </div>
+            <div class="event-cell bg-amber-50 border-l-4 border-amber-600" style="grid-row: span 6;">
+              <div class="event-title">4Cコラボ発表(後半)</div>
+              <div class="event-time">10:10～11:10</div>
+            </div>
+            <div class="event-cell bg-orange-50 border-l-4 border-amber-700" style="grid-row: span 6;">
+              <div class="event-title">サイエンスコース発表<br>明蓬館発表(後半)</div>
+              <div class="event-time">10:10～11:10</div>
+            </div>
+            <div class="event-cell bg-green-50 border-l-4 border-green-700" style="grid-row: span 6;">
+              <div class="event-title">高校二年生発表(後半)</div>
+              <div class="event-time">10:10～11:10</div>
+            </div>
+            <div class="event-cell bg-purple-50 border-l-4 border-purple-600" style="grid-row: span 6;">
+              <div class="event-title">グローバルコース<br>ピッチ発表(後半)</div>
+              <div class="event-time">10:10～11:10</div>
+            </div>
+
+            <div class="time-col">10:20</div>
+            <div class="time-col">10:30</div>
+            <div class="time-col">10:40</div>
+            <div class="time-col">10:50</div>
+            <div class="time-col">11:00</div>
+
+            <!-- 11:10 Break -->
+            <div class="time-col">11:10</div>
+            <!-- FIXED: Added 1 empty cell because Gate ends at 11:10 (Total 6 cells) -->
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 11:20 Ending Ceremony Starts -->
+            <div class="time-col">11:20</div>
+            <!-- FIXED: Added 1 empty cell at the end (Total 5 cells including Ceremony) -->
+            <div class="event-cell bg-blue-50 border-l-4 border-brand-blue" style="grid-row: span 4;">
+              <div class="event-title">エンディングセレモニー</div>
+              <div class="event-time">11:20～12:00</div>
+            </div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">11:30</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">11:40</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">11:50</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 12:00 Q&A -->
+            <div class="time-col">12:00</div>
+            <div class="event-cell bg-blue-50 border-l-4 border-brand-blue" style="grid-row: span 6;">
+              <div class="event-title">質問などの対応</div>
+              <div class="event-time">12:00～13:00</div>
+            </div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">12:10</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">12:20</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">12:30</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <div class="time-col">12:40</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+            
+            <div class="time-col">12:50</div>
+            <div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div><div class="event-cell"></div>
+
+            <!-- 13:00 End -->
+            <div class="time-col">13:00</div>
+            <div class="event-cell bg-gray-50 text-xs text-gray-400 text-center" style="grid-column: span 6; display: flex; align-items: center; justify-content: center;">End of Schedule</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Download Button -->
+    <div class="text-center mt-12 mb-8 reveal-up">
+      <a href="https://soei-pf.com/preparation/" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded hover:bg-brand-blue transition-colors text-sm font-bold"><i class="fa-solid fa-file-pdf"></i>PDF版スケジュールをダウンロード</a>
+      <p class="text-xs text-gray-500 mt-2">※アップロードまで今しばらくお待ちください。</p>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-white border-t border-gray-100 pt-16 pb-8 w-full relative overflow-hidden">
+  <div class="absolute bottom-0 right-0 w-32 h-32 bg-gray-50 rounded-tl-full -z-10"></div>
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div class="md:col-span-1">
+        <div class="flex items-center gap-2 mb-4">
+          <img src="https://soei-pf.com/figure/logo01.png" alt="Project Festa Logo" class="w-8 h-8 shrink-0 object-contain transition-transform duration-500 hover:rotate-45">
+          <span class="font-bold text-xl tracking-tighter">PROJECT FESTA 2026</span>
+        </div>
+        <p class="text-gray-500 text-sm leading-loose">〒221-0004<br>神奈川県横浜市神奈川区西大口28<br>お問い合わせ: y.s.profes@outlook.jp</p>
+      </div>
+      <div>
+        <h4 class="font-bold mb-4 border-l-4 border-brand-blue pl-3">PAGES</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors">トップページ</a></li>
+          <li><a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors">お知らせ</a></li>
+          <li><a href="https://soei-pf.com/concept/" class="hover:text-brand-blue transition-colors">コンセプト</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-4 border-l-4 border-brand-red pl-3">EVENT</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="https://soei-pf.com/schedule/" class="text-brand-blue font-bold">スケジュール</a></li>
+          <li><a href="https://soei-pf.com/map/" class="hover:text-brand-blue transition-colors">会場マップ</a></li>
+          <li><a href="https://soei-pf.com/committee/" class="hover:text-brand-blue transition-colors">実行委員会より</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-4 border-l-4 border-brand-yellow pl-3">SUPPORT</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="https://soei-pf.com/qaa/" class="hover:text-brand-blue transition-colors">よくある質問</a></li>
+          <li><a href="https://soei-pf.com/privacypolicy/" class="hover:text-brand-blue transition-colors">プライバシーポリシー</a></li>
+          <li><a href="https://soei-pf.com/sitemap/" class="hover:text-brand-blue transition-colors">サイトマップ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+      <p>&copy; 2026 Yokohama Soei High School Project Festa Executive Committee.</p>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-twitter"></i></a>  
+        <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-instagram"></i></a>  
+        <a href="https://www.youtube.com/live/XSiDKIQYi_I" class="hover:text-brand-blue"><i class="fa-brands fa-youtube"></i></a> 
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+// Day Toggle Logic
+const btnDay1 = document.getElementById('btn-day1');
+const btnDay2 = document.getElementById('btn-day2');
+const scheduleDay1 = document.getElementById('schedule-day1');
+const scheduleDay2 = document.getElementById('schedule-day2');
+
+function switchToDay1() {
+  btnDay1.classList.remove('text-gray-500', 'hover:text-gray-700');
+  btnDay1.classList.add('bg-white', 'text-brand-blue', 'shadow-sm', 'ring-2', 'ring-brand-blue/20');
+  btnDay2.classList.add('text-gray-500', 'hover:text-gray-700');
+  btnDay2.classList.remove('bg-white', 'text-brand-blue', 'shadow-sm', 'ring-2', 'ring-brand-blue/20');
+  scheduleDay1.classList.remove('hidden');
+  scheduleDay2.classList.add('hidden');
+}
+
+function switchToDay2() {
+  btnDay2.classList.remove('text-gray-500', 'hover:text-gray-700');
+  btnDay2.classList.add('bg-white', 'text-brand-blue', 'shadow-sm', 'ring-2', 'ring-brand-blue/20');
+  btnDay1.classList.add('text-gray-500', 'hover:text-gray-700');
+  btnDay1.classList.remove('bg-white', 'text-brand-blue', 'shadow-sm', 'ring-2', 'ring-brand-blue/20');
+  scheduleDay2.classList.remove('hidden');
+  scheduleDay1.classList.add('hidden');
+}
+
+btnDay1.addEventListener('click', switchToDay1);
+btnDay2.addEventListener('click', switchToDay2);
+
+// Mobile Menu Toggle
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+  const icon = menuBtn.querySelector('i');
+  if (mobileMenu.classList.contains('open')) {
+    icon.classList.remove('fa-bars');
+    icon.classList.add('fa-xmark');
+  } else {
+    icon.classList.remove('fa-xmark');
+    icon.classList.add('fa-bars');
+  }
+});
+
+// Reveal Animation on Scroll
+const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal-up').forEach(el => { observer.observe(el); });
+
+// Smart Header Logic
+let lastScrollY = window.scrollY;
+const header = document.getElementById('main-header');
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  
+  if (currentScrollY > lastScrollY && currentScrollY > 100) {
+    header.classList.add('hidden-header');
+  } else {
+    header.classList.remove('hidden-header');
+  }
+  
+  if (currentScrollY > 0) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+  
+  lastScrollY = currentScrollY;
+});
+</script>
+</body>
+</html>
