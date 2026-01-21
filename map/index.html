@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <link rel="icon" href="https://soei-pf.com/figure/favicon01.ico" />
+    <title>会場マップ | Yokohama-SOEI Project Festa 2026</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Project Festa 2026の会場マップ。本館（高校2年）、1号館（サイエンスコース）、体育館、各ホールでの発表場所をご案内します。総勢900名の生徒による探究発表の配置図です。">
+    <meta name="keywords" content="Project Festa 2026, 会場マップ, フロアマップ, 横浜創英, 文化祭, アクセス, 研究発表, サイエンスコース">
+    <meta name="robots" content="index, follow">
+
+    <!-- OGP -->
+    <meta property="og:title" content="会場マップ | Project Festa 2026">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://soei-pf.com/map/">
+    <meta property="og:image" content="https://soei-pf.com/figure/place02.jpg">
+    <meta property="og:description" content="どこで、誰が、どんな夢を語るのか。全発表の配置図とアクセス情報。">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Security Headers (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-src https://www.google.com;">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            blue: '#0057B7',
+                            yellow: '#FFD700',
+                            black: '#212121',
+                            green: '#009B77',
+                            red: '#DD2E44',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-medium': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Base Styles */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            background-color: #ffffff;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* Background Patterns */
+        .bg-dot-grid {
+            background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -3;
+            opacity: 0.6;
+        }
+
+        /* Fixed Background Container */
+        .fixed-bg-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -10;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        /* Header Transitions */
+        #main-header { transition: transform 0.3s ease-in-out, background-color 0.3s ease; }
+        #main-header.hidden-header { transform: translateY(-100%); }
+        #main-header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.active { opacity: 1; transform: translateY(0); }
+
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease;
+            max-height: 0; opacity: 0; overflow: hidden;
+        }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+
+        /* Text Gradients */
+        .text-clip-gradient {
+            background: linear-gradient(90deg, #0057B7, #DD2E44, #FFD700, #009B77);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 8s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- Map Container Styles --- */
+        .map-viewport {
+            overflow: hidden;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            position: relative;
+            height: 60vh; /* 高さ調整 */
+            min-height: 400px;
+            /* cursor: grab; removed for coming soon */
+            touch-action: none;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+            /* Center content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* .map-viewport:active { cursor: grabbing; } removed */
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            display: none;
+            justify-content: center; align-items: center;
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .modal-overlay.open { display: flex; opacity: 1; }
+        .modal-content {
+            background: white; width: 90%; max-width: 800px; max-height: 85vh;
+            border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;
+            transform: scale(0.95); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .modal-overlay.open .modal-content { transform: scale(1); }
+        
+        .student-list {
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 1.5rem;
+            padding: 1.5rem; 
+            overflow-y: auto;
+        }
+        .student-card {
+            border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem;
+            display: flex; gap: 1rem; align-items: flex-start;
+            transition: transform 0.2s;
+            background-color: white;
+        }
+        .student-card:hover { transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .student-img {
+            width: 60px; height: 60px; border-radius: 50%; background: #f3f4f6;
+            object-fit: cover; flex-shrink: 0;
+        }
+
+        /* Access Map Responsive */
+        .gmap-responsive {
+            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+            border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .gmap-responsive iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-black antialiased">
+
+<!-- Global Backgrounds -->
+<div class="fixed-bg-container">
+    <div class="bg-dot-grid"></div>
+    
+    <!-- Geometric Decor (Common) -->
+    <div class="absolute top-[-10vw] right-[-10vw] w-[50vw] h-[50vw] rounded-full bg-gradient-to-b from-brand-blue/5 to-transparent animate-float-slow"></div>
+    <div class="absolute bottom-[10vh] left-[-10vw] w-[40vw] h-[40vw] rounded-full bg-gradient-to-t from-brand-yellow/5 to-transparent animate-float-medium"></div>
+    
+    <!-- Specific Decor -->
+    <div class="absolute top-[20%] left-[5%] w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-b-[52px] border-b-brand-green/10 rotate-12 hidden md:block"></div>
+    <div class="absolute bottom-[40%] right-[10%] w-16 h-16 bg-brand-red/10 rounded-full animate-pulse-slow"></div>
+</div>
+
+<!-- Header -->
+    <header id="main-header" class="fixed w-full top-0 z-50 px-4 py-3 md:py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            
+            <!-- Logo -->
+            <a href="https://soei-pf.com/" class="flex items-center gap-2 group">
+                <img src="https://soei-pf.com/figure/logo01.png" 
+                     alt="Project Festa Logo" 
+                     class="w-10 h-10 md:w-14 md:h-14 transition-transform duration-500 shrink-0 group-hover:scale-110 group-hover:rotate-45 object-contain">
+                <span class="font-bold text-lg md:text-2xl tracking-tighter truncate">&nbsp; Y. S. PROJECT FESTA <span class="text-brand-blue">2026</span></span>
+            </a>
+
+            <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">TOP</a>
+                <a href="https://soei-pf.com/concept/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ABOUT</a>
+                <a href="https://soei-pf.com/schedule/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">SCHEDULE</a>
+                <a href="https://soei-pf.com/map/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">MAP</a>
+                <a href="https://soei-pf.com/attractions/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ATTRACTIONS</a>
+                <a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">NEWS</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none p-2" aria-label="メニューを開く">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md shadow-lg absolute top-full left-0 w-full border-t border-gray-100">
+            <nav class="flex flex-col p-4 space-y-4 font-bold text-center">
+                <a href="https://soei-pf.com/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">TOP</a>
+                <a href="https://soei-pf.com/concept/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ABOUT</a>
+                <a href="https://soei-pf.com/schedule/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">SCHEDULE</a>
+                <a href="https://soei-pf.com/map/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">MAP</a>
+                <a href="https://soei-pf.com/attractions/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ATTRACTIONS</a>
+                <a href="https://soei-pf.com/information/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">NEWS</a>
+            </nav>
+    </div>
+</header>
+
+<main class="flex-grow pt-24 pb-12 w-full">
+    <!-- Page Title Area -->
+    <section class="relative py-12 md:py-20 px-4 text-center overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[15vw] md:text-[10vw] font-black text-gray-100 -z-10 select-none whitespace-nowrap">
+            AREA MAP
+        </div>
+        <div class="container mx-auto relative z-10 reveal-up">
+            <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">
+                MAP
+                <span class="block text-base md:text-xl font-medium text-brand-blue mt-2 tracking-widest">会場マップ・アクセス</span>
+            </h1>
+            <p class="text-lg md:text-xl font-medium text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                総勢約900名の熱気がここに。<br>
+                教室をタップして、各発表の詳細をチェックしよう。
+            </p>
+            <div class="w-16 h-1 bg-gradient-to-r from-brand-blue to-brand-yellow mx-auto mt-8 rounded-full"></div>
+        </div>
+    </section>
+
+    <!-- Map Section (COMING SOON MODE) -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto">
+            
+            <!-- Controls (Hidden for coming soon) -->
+            <!-- 
+            <div class="flex flex-col md:flex-row justify-between items-center mb-4 gap-4 reveal-up">
+                <div class="text-sm text-gray-600 font-bold bg-gray-100 px-4 py-2 rounded-full">
+                    <i class="fa-solid fa-hand-pointer mr-2 text-brand-blue"></i>ドラッグで移動 / 教室をタップ
+                </div>
+                <div class="flex gap-2">
+                    <button id="zoom-in" class="w-10 h-10 bg-white border rounded shadow hover:bg-gray-50 transition-colors" aria-label="Zoom In"><i class="fa-solid fa-plus text-gray-600"></i></button>
+                    <button id="zoom-out" class="w-10 h-10 bg-white border rounded shadow hover:bg-gray-50 transition-colors" aria-label="Zoom Out"><i class="fa-solid fa-minus text-gray-600"></i></button>
+                    <button id="reset-map" class="px-4 h-10 bg-white border rounded shadow hover:bg-gray-50 font-bold text-sm text-gray-600 transition-colors">RESET</button>
+                </div>
+            </div>
+            -->
+
+            <!-- Canvas Viewport (Replaced Content for Coming Soon) -->
+            <div class="map-viewport reveal-up" id="map-viewport">
+                <!-- Coming Soon Display -->
+                <div class="text-center p-8 max-w-md mx-auto">
+                    <div class="mb-8 relative inline-flex justify-center items-center">
+                        <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-map-location-dot text-5xl text-gray-300"></i>
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 bg-white rounded-full p-2 shadow-md">
+                            <i class="fa-solid fa-person-digging text-2xl text-brand-blue animate-bounce"></i>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-black text-gray-700 mb-3 tracking-tight">
+                        MAP COMING SOON
+                    </h3>
+                    
+                    <p class="text-gray-500 font-medium leading-relaxed">
+                        会場マップは現在準備中です。<br>
+                        当日の詳細な配置図は、開催直前に公開予定です。<br>
+                        もうしばらくお待ちください。
+                    </p>
+                    
+                    <div class="mt-8 flex justify-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse delay-75"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse delay-150"></span>
+                    </div>
+                </div>
+
+                <!-- Original Map Canvas (Commented out) -->
+                <!--
+                <div class="map-canvas" id="map-canvas">
+                    ... (Map content hidden) ...
+                </div>
+                -->
+            </div>
+            
+            <!-- Legend (Hidden for coming soon) -->
+            <!--
+            <p class="text-right text-xs text-gray-400 mt-2">* マップの配置は概略です。</p>
+            -->
+        </div>
+    </section>
+
+    <!-- Legend Section (Hidden for coming soon) -->
+    <!--
+    <section class="container mx-auto px-4 mb-16 reveal-up">
+        <div class="flex flex-wrap justify-center gap-4 text-sm font-medium bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3 px-4 py-2 bg-gray-50 rounded-lg">
+                <div class="w-4 h-4 bg-brand-blue rounded shadow-sm"></div>
+                <span>高校2年生 (5名/室)</span>
+            </div>
+            <div class="flex items-center gap-3 px-4 py-2 bg-gray-50 rounded-lg">
+                <div class="w-4 h-4 bg-gray-600 rounded shadow-sm"></div>
+                <span>サイエンス (6名/室)</span>
+            </div>
+            <div class="flex items-center gap-3 px-4 py-2 bg-gray-50 rounded-lg">
+                <div class="w-4 h-4 bg-brand-green rounded shadow-sm"></div>
+                <span>グローバル発表 (Group)</span>
+            </div>
+            <div class="flex items-center gap-3 px-4 py-2 bg-gray-50 rounded-lg">
+                <div class="w-4 h-4 bg-brand-red rounded shadow-sm"></div>
+                <span>セレモニー・表彰</span>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- Access -->
+    <section class="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
+        <div class="container mx-auto px-4 max-w-5xl reveal-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black mb-4 inline-block relative">
+                    ACCESS
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-brand-yellow"></span>
+                </h2>
+                <p class="text-gray-500">会場へのアクセス</p>
+            </div>
+            
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100">
+                <div class="flex flex-col md:flex-row gap-10">
+                    <!-- Info -->
+                    <div class="md:w-5/12 flex flex-col justify-center">
+                        <div class="mb-6">
+                            <h3 class="font-bold text-2xl mb-2 text-gray-800 flex items-center gap-2">
+                                <i class="fa-solid fa-school text-brand-green"></i> 横浜創英中学・高等学校
+                            </h3>
+                            <div class="w-full h-px bg-gray-200 my-4"></div>
+                            <p class="text-gray-600 leading-loose">
+                                〒221-0004<br>
+                                神奈川県横浜市神奈川区西大口28<br>
+                                TEL: 045-421-3121
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center p-3 bg-blue-50 rounded-lg border-l-4 border-brand-blue">
+                                <span class="w-24 font-bold text-brand-blue text-sm">JR横浜線</span>
+                                <span class="text-gray-700 font-medium">大口駅 西口 徒歩8分</span>
+                            </div>
+                            <div class="flex items-center p-3 bg-red-50 rounded-lg border-l-4 border-brand-red">
+                                <span class="w-24 font-bold text-brand-red text-sm">京急線</span>
+                                <span class="text-gray-700 font-medium">子安駅 徒歩12分</span>
+                            </div>
+                            <div class="flex items-center p-3 bg-yellow-50 rounded-lg border-l-4 border-brand-yellow">
+                                <span class="w-24 font-bold text-brand-yellow text-sm">東横線</span>
+                                <span class="text-gray-700 font-medium">妙蓮寺駅 徒歩15分</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-6"><i class="fa-solid fa-triangle-exclamation mr-1"></i>駐車場はございません。公共交通機関をご利用ください。</p>
+                    </div>
+                    <!-- Google Map -->
+                    <div class="md:w-7/12">
+                        <div class="gmap-responsive bg-gray-200">
+                            <!-- ダミーのGoogle Map埋め込みURLを使用しています。実際には正しいAPIキーまたはエンベッドURLを使用してください -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3248.8672922467385!2d139.6439263762887!3d35.49525497264771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185e1b2f77852f%3A0xca038031522f1807!2z5qiq5rWc5Ym16Iux5Lit5a2m44O76auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center text-sm font-bold text-brand-blue hover:underline">
+                                Google Mapで開く <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-white border-t border-gray-100 pt-16 pb-8 w-full relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-32 h-32 bg-gray-50 rounded-tl-full -z-10"></div>
+        
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                         <img src="https://soei-pf.com/figure/logo01.png" 
+                              alt="Project Festa Logo" 
+                              class="w-8 h-8 shrink-0 object-contain transition-transform duration-500 hover:rotate-45">
+                        <span class="font-bold text-xl tracking-tighter">PROJECT FESTA 2026</span>
+                </div>
+                <p class="text-gray-500 text-sm leading-loose">
+                    〒221-0004<br>
+                    神奈川県横浜市神奈川区西大口28<br>
+                    お問い合わせ: y.s.profes@outlook.jp
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4 border-l-4 border-brand-blue pl-3">PAGES</h4>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li><a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors">トップページ</a></li>
+                    <li><a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors">お知らせ</a></li>
+                    <li><a href="https://soei-pf.com/concept/" class="hover:text-brand-blue transition-colors">コンセプト</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4 border-l-4 border-brand-red pl-3">EVENT</h4>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li><a href="https://soei-pf.com/schedule/" class="hover:text-brand-blue transition-colors">スケジュール</a></li>
+                    <li><a href="https://soei-pf.com/map/" class="text-brand-blue font-bold">会場マップ</a></li>
+                    <li><a href="https://soei-pf.com/committee/" class="hover:text-brand-blue transition-colors">実行委員会より</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 border-l-4 border-brand-yellow pl-3">SUPPORT</h4>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li><a href="https://soei-pf.com/qaa/" class="hover:text-brand-blue transition-colors">よくある質問</a></li>
+                    <li><a href="https://soei-pf.com/privacypolicy/" class="hover:text-brand-blue transition-colors">プライバシーポリシー</a></li>
+                    <li><a href="https://soei-pf.com/sitemap/" class="hover:text-brand-blue transition-colors">サイトマップ</a></li>
+                </ul>
+            </div>
+        </div>
+        
+       <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">  
+         <p>&copy; 2026 Yokohama Soei High School Project Festa Executive Committee.</p>  
+         <div class="flex space-x-4 mt-4 md:mt-0">  
+             <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-twitter"></i></a>  
+             <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-instagram"></i></a>  
+             <a href="https://www.youtube.com/live/XSiDKIQYi_I" class="hover:text-brand-blue"><i class="fa-brands fa-youtube"></i></a> 
+         </div>  
+       </div>  
+    </div>  
+</footer>
+
+<!-- Detail Modal (Still present but inactive) -->
+<div id="room-modal" class="modal-overlay">
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="flex justify-between items-center p-5 border-b bg-gray-50">
+            <div class="flex items-center gap-3">
+                <span id="modal-badge" class="px-3 py-1 bg-brand-blue text-white text-xs font-bold rounded uppercase">Room</span>
+                <h3 id="modal-title" class="font-bold text-xl text-gray-800">発表者一覧</h3>
+            </div>
+            <button id="close-modal" class="text-gray-400 hover:text-gray-600 text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        
+        <!-- Modal Body (Scrollable) -->
+        <div id="student-list-container" class="student-list bg-gray-50">
+            <!-- Student cards injected via JS -->
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        /* --- 1. Header & Scroll Animation (Common) --- */
+        const header = document.getElementById('main-header');
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let lastScrollY = 0;
+        
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+            if (window.scrollY > lastScrollY && window.scrollY > 200) header.classList.add('hidden-header');
+            else header.classList.remove('hidden-header');
+            lastScrollY = window.scrollY;
+        });
+        // Mobile Menu
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            menuBtn.innerHTML = mobileMenu.classList.contains('open') ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+        });
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+
+        /* --- 2. Map Logic (Zoom & Pan) --- */
+        const viewport = document.getElementById('map-viewport');
+        const canvas = document.getElementById('map-canvas');
+
+        // Check if map exists before initializing logic (Guard clause for Coming Soon mode)
+        if (canvas) {
+            let scale = 0.9, panX = 0, panY = 0;
+            let isDragging = false, startX, startY;
+
+            function updateTransform() {
+                canvas.style.transform = `translate(calc(-50% + ${panX}px), calc(-50% + ${panY}px)) scale(${scale})`;
+            }
+            
+            // Init
+            updateTransform();
+
+            // Buttons
+            const btnZoomIn = document.getElementById('zoom-in');
+            const btnZoomOut = document.getElementById('zoom-out');
+            const btnReset = document.getElementById('reset-map');
+
+            if (btnZoomIn) btnZoomIn.onclick = () => { scale = Math.min(scale + 0.1, 2.0); updateTransform(); };
+            if (btnZoomOut) btnZoomOut.onclick = () => { scale = Math.max(scale - 0.1, 0.4); updateTransform(); };
+            if (btnReset) btnReset.onclick = () => { scale = 0.9; panX = 0; panY = 0; updateTransform(); };
+
+            // Mouse Drag
+            viewport.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.clientX - panX;
+                startY = e.clientY - panY;
+                viewport.style.cursor = 'grabbing';
+            });
+            window.addEventListener('mouseup', () => { isDragging = false; viewport.style.cursor = 'grab'; });
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                panX = e.clientX - startX;
+                panY = e.clientY - startY;
+                updateTransform();
+            });
+            // Touch Drag
+            viewport.addEventListener('touchstart', (e) => {
+                if(e.touches.length === 1) {
+                    isDragging = true;
+                    startX = e.touches[0].clientX - panX;
+                    startY = e.touches[0].clientY - panY;
+                }
+            });
+            window.addEventListener('touchend', () => { isDragging = false; });
+            window.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                panX = e.touches[0].clientX - startX;
+                panY = e.touches[0].clientY - startY;
+                updateTransform();
+            });
+        }
+
+        /* --- 3. Data Generation & Modal --- */
+        // Only init modal logic if rooms exist
+        const rooms = document.querySelectorAll('.room');
+        if (rooms.length > 0) {
+            const lastNames = ["佐藤", "鈴木", "高橋", "田中", "伊藤", "渡辺", "山本", "中村", "小林", "加藤", "吉田", "山田", "佐々木", "山口", "松本"];
+            const firstNames = ["蓮", "陽翔", "湊", "悠真", "結菜", "陽菜", "莉子", "紬", "颯太", "大翔", "美咲", "花", "太郎", "花子", "健太"];
+            
+            const themesH2 = [
+                "現代文学における「孤独」の表現", "都市緑化計画の変遷と未来", "プラスチックゴミの生分解性研究", 
+                "相対性理論の視覚的アプローチ", "AI生成物の著作権法的課題", "地域おこし協力隊の現状分析", 
+                "音楽療法の可能性", "江戸時代の庶民教育", "スポーツとデータ分析", "心理学から見るマーケティング"
+            ];
+            const themesScience = [
+                "大口川の水質汚染と微生物分布", "モデルロケットの空力特性の最適化", "自律歩行ロボットの障害物回避制御", 
+                "食品添加物の抗酸化作用の比較", "粘菌による迷路解決のシミュレーション", "バイオエタノールの生成効率",
+                "自作望遠鏡による天体観測", "プログラミングによる画像認識"
+            ];
+            const themesGlobal = [
+                "SDGs Goal 4: Quality Education", "Cross-Cultural Communication Styles", 
+                "Environmental Impact of Fast Fashion", "Gender Equality in Japan", "Plastic Free Ocean Project"
+            ];
+
+            function getRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+            // Data Generator
+            function generateStudents(type) {
+                let count = 0;
+                let list = [];
+                let isGroup = false;
+
+                if (type === 'h2') { 
+                    count = 5; 
+                    list = themesH2; 
+                } else if (type === 'science') { 
+                    count = 6; 
+                    list = themesScience; 
+                } else if (type === 'global') { 
+                    count = 4; 
+                    list = themesGlobal; 
+                    isGroup = true; 
+                } else if (type === 'ceremony') {
+                    return [{ 
+                        name: "実行委員会", title: "クロージングセレモニー", 
+                        desc: "2日間の成果を称えるフィナーレ。各部門の優秀賞発表。", 
+                        comment: "感動の瞬間を共に！",
+                        image: "https://placehold.jp/150x150.png?text=Ceremony" 
+                    }];
+                }
+
+                const students = [];
+                for (let i = 0; i < count; i++) {
+                    if (isGroup) {
+                        students.push({
+                            name: `Group ${String.fromCharCode(65+i)}`, 
+                            title: getRandom(list),
+                            desc: "英語によるポスターセッションと質疑応答。世界を変えるアイデアを提案します。",
+                            comment: "We are waiting for your questions!",
+                            image: `https://placehold.jp/150x150.png?text=Group+${String.fromCharCode(65+i)}`
+                        });
+                    } else {
+                        students.push({
+                            name: `${getRandom(lastNames)} ${getRandom(firstNames)}`, 
+                            title: getRandom(list),
+                            desc: type === 'h2' ? "1年間の探究学習の成果をポスター形式で発表します。" : "実験データに基づいた科学的な考察を発表します。",
+                            comment: "ぜひ見に来てください！",
+                            image: `https://placehold.jp/150x150.png?text=Student`
+                        });
+                    }
+                }
+                return students;
+            }
+
+            // Modal Logic
+            const modal = document.getElementById('room-modal');
+            const closeModal = document.getElementById('close-modal');
+            const listContainer = document.getElementById('student-list-container');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBadge = document.getElementById('modal-badge');
+
+            rooms.forEach(room => {
+                room.addEventListener('click', () => {
+                    // Check isDragging (need to ensure this variable is accessible or handled)
+                    // Simplified: if map logic isn't active, isDragging might not be defined in this scope if blocked by if(canvas)
+                    // For now, removing isDragging check here since map is hidden anyway
+                    
+                    const type = room.getAttribute('data-type');
+                    const roomName = room.getAttribute('data-room');
+                    if (!type) return;
+                    const students = generateStudents(type);
+                    
+                    // Update Header Info
+                    modalTitle.textContent = `${roomName} 発表者一覧`;
+                    
+                    // Badge Color
+                    modalBadge.className = "px-3 py-1 text-white text-xs font-bold rounded uppercase";
+                    if (type === 'h2') { modalBadge.classList.add('bg-brand-blue'); modalBadge.textContent = "高2探究"; }
+                    else if (type === 'science') { modalBadge.classList.add('bg-gray-600'); modalBadge.textContent = "サイエンス"; }
+                    else if (type === 'global') { modalBadge.classList.add('bg-brand-green'); modalBadge.textContent = "グローバル"; }
+                    else if (type === 'ceremony') { modalBadge.classList.add('bg-brand-red'); modalBadge.textContent = "イベント"; modalTitle.textContent = "イベント詳細"; }
+
+                    // Generate Cards
+                    listContainer.innerHTML = students.map(s => `
+                        <div class="student-card">
+                            <img src="${s.image}" alt="${s.name}" class="student-img">
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-bold text-gray-800 mb-1 line-clamp-2 leading-snug">${s.title}</h4>
+                                <p class="text-xs font-bold text-brand-blue mb-2 flex items-center">
+                                    <i class="fa-solid fa-user mr-1"></i> ${s.name}
+                                </p>
+                                <p class="text-sm text-gray-600 mb-2 leading-relaxed text-xs">${s.desc}</p>
+                                <div class="bg-yellow-50 p-2 rounded text-xs text-gray-500 border border-yellow-100 inline-block">
+                                    <i class="fa-regular fa-comment-dots text-brand-yellow mr-1"></i> ${s.comment}
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+
+                    modal.classList.add('open');
+                    document.body.style.overflow = 'hidden'; // Lock scroll
+                });
+            });
+
+            // Close Modal
+            const closeFunc = () => {
+                modal.classList.remove('open');
+                document.body.style.overflow = '';
+            };
+            closeModal.addEventListener('click', closeFunc);
+            modal.addEventListener('click', (e) => { if (e.target === modal) closeFunc(); });
+        }
+    });
+</script>
+</body>
+</html>
