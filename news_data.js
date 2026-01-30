@@ -10,6 +10,17 @@ const sharedNewsData = [
         id: 1,
         date: "2026.01.21",
         category: "important",
+        title: "【重要】Project Festa 2026の入場チケットの予約受付ページを公開！",
+        summary: "2026/01/31より受付開始です。チケットはご来場に<strong>必ず必要</strong>となります！お早めのご予約を。",
+        content: `<p>保護者の方、外部の方などの、横浜創英中学・高等学校に所属している方以外の皆様は、入場のためにデジタルチケットが必要となります。</p>
+        　　　　　 <p>無料ですので、予約は当日まで受け付けておりますが、お忘れのないように、お早めにお申し込みください。</p>
+                  <p>公開されたPeatixのサイトを用いて、チケットを各自必ずご用意ください。</p>
+                  <div class="bg-gray-100 p-4 rounded mt-4"><strong>リンク：</strong> https://soei-pf2026.peatix.com/</div>`
+    },
+    {
+        id: 2,
+        date: "2026.01.21",
+        category: "important",
         title: "【重要】当日の来場について",
         summary: "Project Festa 2026へのご来場に関する重要なお知らせです。入場方法、持ち物と感染症対策についてご確認ください。",
         content: `<p>Project Festa 2026にご来場いただく皆様へ、当日のスムーズな入場と安全確保のため、以下の点についてご協力をお願い申し上げます。</p>
@@ -20,17 +31,17 @@ const sharedNewsData = [
                   <p>セレモニーを行う体育館には<strong>外履きで入場することができません</strong>。必ず<strong>上履きやスリッパなどとそれを携帯する袋を持参</strong>し、スムーズに楽しくイベントをお楽しみください。</p>`
     },
     {
-        id: 2,
+        id: 3,
         date: "2026.01.21",
         category: "important",
-        title: "【重要】Project Festa 2026の入場チケットの予約受付を開始します。",
+        title: "【重要】Project Festa 2026の入場チケットの予約受付予定について",
         summary: "チケットはご来場に<strong>必ず必要</strong>となります。お早めのご予約を。",
         content: `<p>保護者の方、外部の方などの、横浜創英中学・高等学校に所属している方以外の皆様は、入場のためにデジタルチケットが必要となります。</p>
                   <p>今後公開予定のPeatixのサイトを用いてチケットを各自ご用意ください。</p>
-                  <div class="bg-gray-100 p-4 rounded mt-4"><strong>リンク：</strong> https://ataro-qqq.github.io/PFH-alpha-0.1.1/preparation/</div>`
+                  <div class="bg-gray-100 p-4 rounded mt-4"><strong>リンク：</strong> https://soei-pf2026.peatix.com/</div>`
     },
     {
-        id: 3,
+        id: 4,
         date: "2026.01.21",
         category: "info",
         title: "キッチンカーの誘致決定！",
@@ -43,7 +54,7 @@ const sharedNewsData = [
                   <p>出店店舗は<strong>&me…</strong>、<strong>キッチンカーKI KI</strong>、<strong>HIDAMARI -waffle-</strong>、<strong>773crepe</strong>の四つです。そのうち &me… は一日目、 キッチンカーKI KI は二日目のみの営業となります。ご了承ください。</p>`
     },
     {
-        id: 4,
+        id: 5,
         date: "2026.01.21",
         category: "info",
         title: "SNSアカウント準備中です…",
@@ -57,7 +68,7 @@ const sharedNewsData = [
                   <p class="mt-4">ぜひフォローなどもよろしくお願いします。</p>`
     },
     {
-        id: 5,
+        id: 6,
         date: "2026.01.21",
         category: "info",
         title: "ホームページ開設のお知らせ",
