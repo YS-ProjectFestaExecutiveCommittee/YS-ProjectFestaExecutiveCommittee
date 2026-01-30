@@ -15,7 +15,7 @@ const sharedNewsData = [
         content: `<p>保護者の方、外部の方などの、横浜創英中学・高等学校に所属している方以外の皆様は、入場のためにデジタルチケットが必要となります。</p>
         　　　　　 <p>無料ですので、予約は当日まで受け付けておりますが、お忘れのないように、お早めにお申し込みください。</p>
                   <p>公開されたPeatixのサイトを用いて、チケットを各自必ずご用意ください。</p>
-                  <div class="bg-gray-100 p-4 rounded mt-4"><strong>リンク：</strong> https://soei-pf2026.peatix.com/</div>`
+                  <div class="bg-gray-100 p-4 rounded mt-4"><strong>リンク：</strong> <li>https://soei-pf2026.peatix.com/</li></div>`
     },
     {
         id: 2,
@@ -38,7 +38,7 @@ const sharedNewsData = [
         summary: "チケットはご来場に<strong>必ず必要</strong>となります。お早めのご予約を。",
         content: `<p>保護者の方、外部の方などの、横浜創英中学・高等学校に所属している方以外の皆様は、入場のためにデジタルチケットが必要となります。</p>
                   <p>今後公開予定のPeatixのサイトを用いてチケットを各自ご用意ください。</p>
-                  <div class="bg-gray-100 p-4 rounded mt-4"><strong>リンク：</strong> https://soei-pf2026.peatix.com/</div>`
+                  <div class="bg-gray-100 p-4 rounded mt-4"><strong>リンク：</strong> <li>https://soei-pf2026.peatix.com/</li></div>`
     },
     {
         id: 4,
