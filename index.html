@@ -17,6 +17,7 @@
     <meta property="og:url" content="https://your-github-username.github.io/project-festa-2026/">
     <meta property="og:image" content="https://soei-pf.com/figure/place01.jpg">
     <meta property="og:description" content="2026年、新たな感動を。Project Festa 2026の情報をチェック。">
+
     <!-- Security Headers -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
@@ -27,6 +28,7 @@
     
     <!-- Icons: FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -72,6 +74,7 @@
             background-color: #ffffff;
             -webkit-text-size-adjust: 100%; /* iOSでのフォントサイズ自動調整を防止 */
         }
+
         /* --- New Geometric Background Patterns --- */
         
         /* 1. Dot Grid (Design Blueprint Style) */
@@ -83,6 +86,7 @@
             z-index: -3;
             opacity: 0.6;
         }
+
         /* 2. Abstract Shapes styling */
         .geo-deco {
             position: absolute;
@@ -90,6 +94,7 @@
             pointer-events: none;
             opacity: 0.8;
         }
+
         /* Existing Large Gradients (Adjusted) */
         .shape-1 {
             width: 50vw;
@@ -107,6 +112,7 @@
             left: -10vw;
             border-radius: 50%;
         }
+
         /* Header Transition */
         #main-header {
             transition: transform 0.3s ease-in-out, background-color 0.3s ease;
@@ -119,6 +125,7 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
+
         /* Hero Text Clip */
         .text-clip-gradient {
             background: linear-gradient(90deg, #0057B7, #DD2E44, #FFD700, #009B77);
@@ -127,11 +134,13 @@
             -webkit-text-fill-color: transparent;
             animation: gradientMove 8s ease infinite;
         }
+
         @keyframes gradientMove {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+
         /* Scroll Animation (Fade Up) */
         .reveal-up {
             opacity: 0;
@@ -142,6 +151,7 @@
             opacity: 1;
             transform: translateY(0);
         }
+
         /* Tag Badges for News */
         .tag-badge {
             font-size: 0.7rem;
@@ -155,6 +165,7 @@
         .tag-event { background-color: #0057B7; color: #ffffff; } /* イベント: 青背景 */
         .tag-info { background-color: #FFD700; color: #212121; } /* お知らせ: 黄背景 */
         .tag-recruit { background-color: #009B77; color: #ffffff; } /* 募集: 緑背景 */
+
         /* Mobile Menu */
         #mobile-menu {
             transition: max-height 0.4s ease-in-out, opacity 0.4s ease;
@@ -169,10 +180,12 @@
     </style>
 </head>
 <body class="text-gray-800 antialiased relative selection:bg-brand-blue selection:text-white">
+
     <!-- Global Backgrounds -->
     <div class="bg-dot-grid"></div>
     <div class="geo-deco shape-1 animate-float-slow"></div>
     <div class="geo-deco shape-2 animate-float-medium"></div>
+
     <!-- Header -->
     <header id="main-header" class="fixed w-full top-0 z-50 px-4 py-3 md:py-4">
         <div class="container mx-auto flex justify-between items-center">
@@ -184,6 +197,7 @@
                      class="w-10 h-10 md:w-14 md:h-14 transition-transform duration-500 shrink-0 group-hover:scale-110 group-hover:rotate-45 object-contain">
                 <span class="font-bold text-lg md:text-2xl tracking-tighter truncate">&nbsp; Y. S. PROJECT FESTA <span class="text-brand-blue">2026</span></span>
             </a>
+
             <!-- Desktop Nav -->
             <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
                 <a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">TOP</a>
@@ -193,11 +207,13 @@
                 <a href="https://soei-pf.com/attractions/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ATTRACTIONS</a>
                 <a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">NEWS</a>
             </nav>
+
             <!-- Mobile Menu Button -->
             <button id="menu-btn" class="md:hidden text-2xl focus:outline-none p-2" aria-label="メニューを開く">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
+
         <!-- Mobile Nav Menu -->
         <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md shadow-lg absolute top-full left-0 w-full border-t border-gray-100">
             <nav class="flex flex-col p-4 space-y-4 font-bold text-center">
@@ -210,6 +226,7 @@
             </nav>
         </div>
     </header>
+
     <!-- Main Content -->
     <main id="top" class="w-full overflow-hidden">
         
@@ -222,6 +239,7 @@
                      class="w-full h-full object-cover opacity-60">
                 <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-white/50 to-white"></div>
             </div>
+
             <!-- Geometric Accents (Hero) -->
             <!-- Blue Ring -->
             <div class="absolute top-[15%] right-[10%] w-24 h-24 md:w-40 md:h-40 border-[6px] border-brand-blue/20 rounded-full animate-float-slow z-0"></div>
@@ -235,6 +253,7 @@
             
             <!-- Dashed Line -->
             <div class="absolute top-1/3 left-0 w-32 h-1 bg-gradient-to-r from-transparent to-brand-red/30"></div>
+
             <!-- Hero Content -->
             <div class="text-center px-4 relative z-10 w-full">
                 <p class="text-brand-blue font-bold tracking-[0.3em] mb-4 reveal-up text-sm md:text-base inline-block bg-white/50 px-4 py-1 rounded-full backdrop-blur-sm">
@@ -247,17 +266,22 @@
                 <p class="text-gray-600 text-sm md:text-xl font-medium tracking-wide mb-10 reveal-up px-2" style="transition-delay: 0.2s;">
                     未来につなぐ、夢の祭典。
                 </p>
-                <div class="reveal-up" style="transition-delay: 0.3s;">
-                    <a href="#about" class="inline-block px-8 py-3 bg-gray-900 text-white font-bold rounded-none hover:bg-brand-blue transition-colors duration-300 transform hover:skew-x-[-10deg] shadow-lg hover:shadow-xl">
+                <div class="reveal-up flex flex-col md:flex-row justify-center gap-4 items-center" style="transition-delay: 0.3s;">
+                    <a href="#about" class="inline-block px-8 py-3 bg-gray-900 text-white font-bold rounded-none hover:bg-brand-blue transition-colors duration-300 transform hover:skew-x-[-10deg] shadow-lg hover:shadow-xl w-64 md:w-auto">
                         <span class="inline-block transform hover:skew-x-[10deg]">詳しく見る</span>
+                    </a>
+                    <a href="https://soei-pf2026.peatix.com/" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-brand-yellow text-brand-black font-bold rounded-none hover:bg-brand-red hover:text-white transition-colors duration-300 transform hover:skew-x-[-10deg] shadow-lg hover:shadow-xl w-64 md:w-auto">
+                        <span class="inline-block transform hover:skew-x-[10deg]">チケット申し込み <i class="fa-solid fa-ticket ml-1"></i></span>
                     </a>
                 </div>
             </div>
+
             <!-- Scroll Down Indicator -->
             <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
                 <i class="fa-solid fa-chevron-down text-2xl text-gray-400"></i>
             </div>
         </section>
+
         <!-- News Section (Revised: Vertical List) -->
         <section class="bg-brand-black text-white py-12 relative z-20 border-b-4 border-brand-yellow w-full shadow-lg">
             <div class="container mx-auto px-4 max-w-5xl">
@@ -270,6 +294,7 @@
                         一覧を見る <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
+
                 <!-- ニュースリストコンテナ (JSで注入) -->
                 <div id="top-news-list" class="space-y-4">
                     <!-- Loading state -->
@@ -277,6 +302,7 @@
                 </div>
             </div>
         </section>
+
         <!-- About Section -->
         <section id="about" class="py-24 px-4 relative w-full overflow-hidden">
             <!-- Geometric Accents (About) -->
@@ -285,6 +311,7 @@
             
             <!-- Red Square -->
             <div class="absolute bottom-10 left-10 w-20 h-20 border-4 border-brand-red/10 rotate-12 animate-float-medium"></div>
+
             <div class="container mx-auto max-w-6xl relative z-10">
                 <div class="flex flex-col md:flex-row gap-12 items-center">
                     <div class="w-full md:w-1/2 reveal-up">
@@ -332,6 +359,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- Button -->
                         <div class="reveal-up mt-8" style="transition-delay: 0.3s;">
                             <a href="https://soei-pf.com/concept/" class="inline-block px-8 py-3 bg-gray-900 text-white font-bold rounded-none hover:bg-brand-blue transition-colors duration-300 transform hover:skew-x-[-10deg] shadow-lg hover:shadow-xl">
@@ -342,6 +370,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Main Links / Highlights -->
         <section id="schedule" class="py-24 px-4 bg-gray-50 relative overflow-hidden w-full">
             <!-- Decorative diagonal background -->
@@ -349,6 +378,7 @@
             
             <!-- Geometric Accents (Highlights) -->
             <div class="absolute top-10 left-10 text-brand-green/10 text-9xl font-black z-0 pointer-events-none select-none">2026</div>
+
             <div class="container mx-auto max-w-6xl relative z-10">
                 <div class="text-center mb-16 reveal-up">
                     <h2 class="text-4xl font-black mb-4 inline-block relative z-10">
@@ -359,6 +389,7 @@
                     </h2>
                     <p class="text-gray-500">イベント情報</p>
                 </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Card 1 -->
                     <a href="https://soei-pf.com/schedule/" class="group block reveal-up" style="transition-delay: 0.1s;">
@@ -378,6 +409,7 @@
                             </div>
                         </div>
                     </a>
+
                     <!-- Card 2 -->
                     <a href="https://soei-pf.com/map/" class="group block reveal-up" style="transition-delay: 0.2s;">
                         <div class="bg-white h-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden rounded-lg">
@@ -396,6 +428,7 @@
                             </div>
                         </div>
                     </a>
+
                     <!-- Card 3 -->
                     <a href="https://soei-pf.com/attractions/" class="group block reveal-up" style="transition-delay: 0.3s;">
                         <div class="bg-white h-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden rounded-lg">
@@ -417,6 +450,7 @@
                 </div>
             </div>
         </section>
+
         <!-- CTA Section -->
         <section class="py-20 bg-brand-black text-white relative overflow-hidden text-center w-full">
             <!-- Background effects -->
@@ -444,6 +478,7 @@
             </div>
         </section>
     </main>
+
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-100 pt-16 pb-8 w-full relative overflow-hidden">
         <!-- Footer Deco -->
@@ -502,8 +537,10 @@
            </div>  
         </div>  
     </footer>
+
     <!-- 共通ニュースデータ読み込み (必ずmain scriptの前) -->
     <script src="https://soei-pf.com/news_data.js"></script>
+
     <!-- JavaScript for Interactivity -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -512,6 +549,7 @@
             let lastScroll = 0;
             const header = document.getElementById('main-header');
             const scrollThreshold = 100; // Amount to scroll before activating logic
+
             window.addEventListener('scroll', () => {
                 const currentScroll = window.pageYOffset;
                 // Add background when scrolled
@@ -536,12 +574,14 @@
                 }
                 lastScroll = currentScroll;
             });
+
             /* --- Scroll Reveal Animation --- */
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
                 threshold: 0.1
             };
+
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -550,12 +590,15 @@
                     }
                 });
             }, observerOptions);
+
             const revealElements = document.querySelectorAll('.reveal-up');
             revealElements.forEach(el => observer.observe(el));
+
             /* --- Mobile Menu Toggle --- */
             const menuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             let isMenuOpen = false;
+
             menuBtn.addEventListener('click', () => {
                 isMenuOpen = !isMenuOpen;
                 if (isMenuOpen) {
@@ -566,6 +609,7 @@
                     menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
                 }
             });
+
             document.querySelectorAll('#mobile-menu a').forEach(link => {
                 link.addEventListener('click', () => {
                     isMenuOpen = false;
@@ -573,6 +617,7 @@
                     menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
                 });
             });
+
             /* --- Top Page News Render (Modified) --- */
             const topNewsList = document.getElementById('top-news-list');
             
@@ -585,6 +630,7 @@
                     default: return '<span class="tag-badge tag-info">お知らせ</span>';
                 }
             }
+
             if (typeof sharedNewsData !== 'undefined' && topNewsList) {
                 topNewsList.innerHTML = ''; // Clear loading
                 
@@ -599,6 +645,7 @@
                     row.onclick = () => {
                         window.location.href = `https://soei-pf.com/information/?id=${item.id}`;
                     };
+
                     row.innerHTML = `
                         <div class="flex items-center gap-3 shrink-0">
                             <span class="text-gray-400 text-sm font-mono tracking-wider">${item.date}</span>
@@ -620,3 +667,4 @@
     </script>
 </body>
 </html>
+```
