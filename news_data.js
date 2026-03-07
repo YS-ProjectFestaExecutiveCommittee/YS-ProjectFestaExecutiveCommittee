@@ -8,6 +8,16 @@
 const sharedNewsData = [
     {
         id: 1,
+        date: "2026.03.08",
+        category: "important",
+        title: "【重要】スケジュール表を更新しました",
+        summary: "従来のスケジュール表から大幅に詳細な内容を確認できるようになりました。詳しくはサイトをチェック！",
+        content: `<p>当日のスケジュールを更新し、より詳細な内容を盛り込みました。</p>
+        　　　　　 <p>イベントの動きをチェックしたい方は、以下のリンクよりご覧ください。</p>
+                  <div class="bg-gray-100 p-4 rounded mt-4"><strong>リンク：</strong> https://soei-pf.com/schedule/</div>`
+    },
+    {
+        id: 2,
         date: "2026.01.21",
         category: "important",
         title: "【重要】Project Festa 2026の入場チケットの予約受付ページを公開！",
@@ -18,7 +28,7 @@ const sharedNewsData = [
                   <div class="bg-gray-100 p-4 rounded mt-4"><strong>リンク：</strong> https://soei-pf2026.peatix.com/</div>`
     },
     {
-        id: 2,
+        id: 3,
         date: "2026.01.21",
         category: "important",
         title: "【重要】当日の来場について",
@@ -31,7 +41,7 @@ const sharedNewsData = [
                   <p>セレモニーを行う体育館には<strong>外履きで入場することができません</strong>。必ず<strong>上履きやスリッパなどとそれを携帯する袋を持参</strong>し、スムーズに楽しくイベントをお楽しみください。</p>`
     },
     {
-        id: 3,
+        id: 4,
         date: "2026.01.21",
         category: "important",
         title: "【重要】Project Festa 2026の入場チケットの予約受付予定について",
@@ -41,7 +51,7 @@ const sharedNewsData = [
                   <div class="bg-gray-100 p-4 rounded mt-4"><strong>リンク：</strong> https://soei-pf2026.peatix.com/</div>`
     },
     {
-        id: 4,
+        id: 5,
         date: "2026.01.21",
         category: "info",
         title: "キッチンカーの誘致決定！",
@@ -54,7 +64,7 @@ const sharedNewsData = [
                   <p>出店店舗は<strong>&me…</strong>、<strong>キッチンカーKI KI</strong>、<strong>HIDAMARI -waffle-</strong>、<strong>773crepe</strong>の四つです。そのうち &me… は一日目、 キッチンカーKI KI は二日目のみの営業となります。ご了承ください。</p>`
     },
     {
-        id: 5,
+        id: 6,
         date: "2026.01.21",
         category: "info",
         title: "SNSアカウント準備中です…",
@@ -68,7 +78,7 @@ const sharedNewsData = [
                   <p class="mt-4">ぜひフォローなどもよろしくお願いします。</p>`
     },
     {
-        id: 6,
+        id: 7,
         date: "2026.01.21",
         category: "info",
         title: "ホームページ開設のお知らせ",
