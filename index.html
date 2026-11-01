@@ -1,678 +1,2152 @@
-<!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="icon" href="https://soei-pf.com/figure/favicon01.ico" />
-    <title>Yokohama-SOEI Project Festa 2026 | 公式サイト</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Project Festa 2026（プロジェクトフェスタ2026）の公式ホームページです。未来を創る祭典のスケジュール、会場マップ、見どころなどの最新情報をお届けします。">
-    <meta name="keywords" content="Project Festa 2026, プロジェクトフェスタ, 2026, 高等学校, 横浜">
-    <meta name="robots" content="index, follow">
-    
-    <!-- OGP (SNS Sharing) -->
-    <meta property="og:title" content="Project Festa 2026 | 公式サイト">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-github-username.github.io/project-festa-2026/">
-    <meta property="og:image" content="https://soei-pf.com/figure/place01.jpg">
-    <meta property="og:description" content="2026年、新たな感動を。Project Festa 2026の情報をチェック。">
+<!doctype html>
+<html lang="ja">
 
-    <!-- Security Headers -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- Fonts: Noto Sans JP -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Icons: FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#212121">
+        <meta name="description" content="横浜創英中学・高等学校で開催される PROJECT FESTA 2027。生徒たちの探究と挑戦が集まる2日間。">
+        <meta name="keywords" content="PROJECT FESTA 2027,プロジェクトフェスタ,横浜創英,探究,横浜">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="PROJECT FESTA 2027｜横浜創英中学・高等学校">
+        <meta property="og:description" content="Our Runway — 夢へ向かう、それぞれの滑走路。">
+        <meta property="og:image" content="https://soei-pf.com/img/PF27_rogo.png">
+        <link rel="icon" href="https://soei-pf.com/img/PF27_Fabicon.ico">
+        <title>PROJECT FESTA 2027｜横浜創英中学・高等学校</title>
+        <style>
+            @font-face {
+                font-family: "M PLUS 1p Local";
+                src: url("https://ys-projectfestaexecutivecommittee.github.io/27test/font/MPLUS1P-REGULAR.woff") format("woff");
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+            }
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Noto Sans JP"', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            blue: '#0057B7',
-                            yellow: '#FFD700',
-                            black: '#212121',
-                            green: '#009B77',
-                            red: '#DD2E44',
-                        }
-                    },
-                    animation: {
-                        'float-slow': 'float 8s ease-in-out infinite',
-                        'float-medium': 'float 6s ease-in-out infinite',
-                        'float-fast': 'float 4s ease-in-out infinite',
-                        'spin-slow': 'spin 12s linear infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
+            @font-face {
+                font-family: "M PLUS 1p Local";
+                src: url("https://ys-projectfestaexecutivecommittee.github.io/27test/font/MPLUS1P-MEDIUM.woff") format("woff");
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "M PLUS 1p Local";
+                src: url("https://ys-projectfestaexecutivecommittee.github.io/27test/font/MPLUS1P-BOLD.woff") format("woff");
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "M PLUS 1p Local";
+                src: url("https://ys-projectfestaexecutivecommittee.github.io/27test/font/MPLUS1P-EXTRABOLD.woff") format("woff");
+                font-style: normal;
+                font-weight: 800 900;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "Bahnschrift Local";
+                src: url("https://ys-projectfestaexecutivecommittee.github.io/27test/font/BAHNSCHRIFT.woff") format("woff");
+                font-style: normal;
+                font-weight: 100 900;
+                font-display: swap;
+            }
+
+            :root {
+                --blue: #0057B7;
+                --blue-dark: #063B78;
+                --blue-soft: #EAF5FC;
+                --sky: #BFE8F3;
+                --sky-deep: #54B9D7;
+                --yellow: #FFD700;
+                --charcoal: #212121;
+                --ink: #202B38;
+                --text: #3E4852;
+                --muted: #76828C;
+                --line: #D5E2E9;
+                --paper: #FFFFFF;
+                --paper-blue: #F8FCFE;
+                --jp: "M PLUS 1p Local", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+                --en: "Bahnschrift Local", "Arial Narrow", sans-serif;
+                --hand: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+                --content: 1160px;
+                --shadow: 0 12px 30px rgba(0, 55, 116, .075);
+            }
+
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 92px;
+            }
+
+            body {
+                margin: 0;
+                color: var(--ink);
+                background: var(--paper);
+                font-family: var(--jp);
+                font-weight: 400;
+                line-height: 1.8;
+                overflow-x: hidden;
+                -webkit-font-smoothing: antialiased;
+                text-rendering: optimizeLegibility;
+            }
+
+            body::before {
+                content: "";
+                position: fixed;
+                inset: 0;
+                z-index: -5;
+                pointer-events: none;
+                background-image:
+                    radial-gradient(circle, rgba(0, 87, 183, .105) 1px, transparent 1.35px),
+                    linear-gradient(rgba(84, 185, 215, .04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(84, 185, 215, .04) 1px, transparent 1px),
+                    repeating-linear-gradient(135deg, transparent 0 74px, rgba(0, 87, 183, .018) 74px 75px);
+                background-size: 10px 10px, 38px 38px, 38px 38px, auto;
+                background-position: 0 0, center center, center center, center center;
+                opacity: .72;
+            }
+
+            body::after {
+                content: "";
+                position: fixed;
+                inset: 0;
+                z-index: -4;
+                pointer-events: none;
+                background: linear-gradient(180deg, rgba(255, 255, 255, .72), rgba(255, 255, 255, .94) 44%, rgba(255, 255, 255, .97));
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            img,
+            svg {
+                display: block;
+                max-width: 100%;
+            }
+
+            button {
+                font: inherit;
+            }
+
+            .container {
+                width: min(var(--content), calc(100% - 48px));
+                margin-inline: auto;
+            }
+
+            .en {
+                font-family: var(--en), "Arial Narrow", sans-serif;
+                font-weight: 700;
+                letter-spacing: .085em;
+            }
+
+            .eyebrow {
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                color: var(--blue);
+                font: 700 .78rem/1.2 var(--en), var(--jp);
+                letter-spacing: .2em;
+                text-transform: uppercase;
+            }
+
+            .eyebrow::before {
+                content: "";
+                width: 27px;
+                height: 2px;
+                background: var(--yellow);
+            }
+
+            .section-heading {
+                margin: 0;
+                font-size: clamp(2rem, 4vw, 3.15rem);
+                line-height: 1.2;
+                font-weight: 800;
+                letter-spacing: .025em;
+            }
+
+            .section-heading .en {
+                display: block;
+                margin-bottom: 11px;
+                color: var(--blue);
+                font-size: .76rem;
+                letter-spacing: .2em;
+            }
+
+            .section-lead {
+                max-width: 620px;
+                margin: 18px 0 0;
+                color: var(--muted);
+                font-size: .92rem;
+                line-height: 2;
+            }
+
+            .yellow-mark {
+                position: relative;
+                z-index: 0;
+                white-space: nowrap;
+            }
+
+            .yellow-mark::after {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                left: -.04em;
+                right: -.04em;
+                bottom: .06em;
+                height: .25em;
+                background: var(--yellow);
+                transform: rotate(-1deg);
+            }
+
+            .site-header {
+                position: fixed;
+                z-index: 100;
+                inset: 0 0 auto;
+                color: white;
+                background: rgba(33, 33, 33, .97);
+                border-bottom: 1px solid rgba(255, 255, 255, .1);
+                transition: background .25s ease, box-shadow .25s ease;
+            }
+
+            .site-header.is-scrolled {
+                background: rgba(33, 33, 33, .985);
+                box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
+                backdrop-filter: blur(12px);
+            }
+
+            .header-inner {
+                min-height: 82px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 24px;
+            }
+
+            .brand {
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                min-width: 0;
+            }
+
+            .brand img {
+                width: 48px;
+                height: 48px;
+                object-fit: contain;
+                transition: opacity .25s ease;
+            }
+
+            .brand:hover img {
+                opacity: .82;
+            }
+
+            .brand-copy {
+                display: grid;
+                line-height: 1.15;
+            }
+
+            .brand-copy strong {
+                color: white;
+                font: 800 1.04rem/1.1 var(--en), sans-serif;
+                letter-spacing: .075em;
+                white-space: nowrap;
+            }
+
+            .brand-copy strong span {
+                color: var(--yellow) !important;
+            }
+
+            .brand-copy small {
+                margin-top: 5px;
+                color: rgba(255, 255, 255, .62);
+                font-size: .58rem;
+                letter-spacing: .1em;
+            }
+
+            .desktop-nav {
+                display: flex;
+                align-items: center;
+                gap: clamp(15px, 2vw, 28px);
+            }
+
+            .desktop-nav a {
+                position: relative;
+                padding: 10px 0;
+                color: rgba(255, 255, 255, .86);
+                font: 700 .74rem/1 var(--en), var(--jp);
+                letter-spacing: .1em;
+                transition: color .2s ease;
+            }
+
+            .desktop-nav a::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 1px;
+                width: 100%;
+                height: 2px;
+                background: var(--yellow);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform .2s ease;
+            }
+
+            .desktop-nav a:hover {
+                color: white;
+            }
+
+            .desktop-nav a:hover::after {
+                transform: scaleX(1);
+            }
+
+            .menu-toggle {
+                display: none;
+                width: 46px;
+                height: 46px;
+                border: 1px solid rgba(255, 255, 255, .35);
+                background: transparent;
+                color: var(--yellow);
+                cursor: pointer;
+            }
+
+            .menu-toggle span {
+                display: block;
+                width: 19px;
+                height: 2px;
+                margin: 5px auto;
+                background: currentColor;
+                transition: transform .2s ease, opacity .2s ease;
+            }
+
+            .menu-toggle[aria-expanded="true"] span:first-child {
+                transform: translateY(3.5px) rotate(45deg);
+            }
+
+            .menu-toggle[aria-expanded="true"] span:last-child {
+                transform: translateY(-3.5px) rotate(-45deg);
+            }
+
+            .mobile-nav {
+                display: none;
+            }
+
+            .hero {
+                position: relative;
+                min-height: min(890px, 100svh);
+                display: grid;
+                align-items: center;
+                overflow: hidden;
+                isolation: isolate;
+                padding: 132px 0 94px;
+            }
+
+            .hero::before {
+                content: "";
+                position: absolute;
+                z-index: -3;
+                width: min(74vw, 940px);
+                height: min(74vw, 940px);
+                top: -42%;
+                right: -19%;
+                border: 1px solid rgba(0, 87, 183, .09);
+                border-radius: 50%;
+                box-shadow: 0 0 0 28px rgba(84, 185, 215, .03), 0 0 0 58px rgba(0, 87, 183, .02);
+            }
+
+            .hero::after {
+                content: "";
+                position: absolute;
+                z-index: -2;
+                bottom: -210px;
+                left: 50%;
+                width: min(86vw, 1080px);
+                height: 470px;
+                transform: translateX(-50%) perspective(500px) rotateX(48deg);
+                background: linear-gradient(180deg, rgba(0, 87, 183, .025), rgba(0, 87, 183, .085));
+                clip-path: polygon(35% 0, 65% 0, 100% 100%, 0 100%);
+                border-top: 2px solid rgba(0, 87, 183, .13);
+            }
+
+            .hero-runway-line {
+                position: absolute;
+                z-index: -1;
+                left: 50%;
+                bottom: 0;
+                height: 35%;
+                width: 1px;
+                transform: translateX(-50%);
+                background: repeating-linear-gradient(to bottom, rgba(0, 87, 183, .3) 0 15px, transparent 15px 31px);
+                opacity: .45;
+            }
+
+            .hero-inner {
+                display: grid;
+                grid-template-columns: minmax(240px, .78fr) minmax(0, 1.22fr);
+                align-items: center;
+                gap: clamp(36px, 7vw, 100px);
+            }
+
+            .hero-emblem {
+                position: relative;
+                display: grid;
+                place-items: center;
+                min-height: 390px;
+            }
+
+            .hero-emblem::before {
+                content: "";
+                position: absolute;
+                width: min(29vw, 320px);
+                aspect-ratio: 1;
+                border: 1px solid rgba(0, 87, 183, .18);
+                transform: rotate(45deg);
+            }
+
+            .hero-emblem::after {
+                content: "+";
+                position: absolute;
+                right: 7%;
+                top: 4%;
+                color: var(--yellow);
+                font: 700 3.7rem/1 var(--en);
+            }
+
+            .hero-emblem img {
+                position: relative;
+                z-index: 1;
+                width: clamp(180px, 24vw, 290px);
+                filter: drop-shadow(0 13px 15px rgba(0, 87, 183, .1));
+            }
+
+            .hero-emblem .orbit {
+                position: absolute;
+                width: min(35vw, 380px);
+                aspect-ratio: 1;
+                border: 1px dashed rgba(0, 87, 183, .22);
+                border-radius: 50%;
+            }
+
+            .hero-copy {
+                position: relative;
+                padding: 10px 0 10px 31px;
+                border-left: 2px solid var(--sky-deep);
+            }
+
+            .hero-school {
+                margin: 0 0 14px;
+                color: var(--blue);
+                font-size: .8rem;
+                font-weight: 700;
+                letter-spacing: .18em;
+            }
+
+            .hero-title {
+                margin: 0;
+                color: var(--charcoal);
+                font: 800 clamp(3.4rem, 7.7vw, 7.25rem)/.9 var(--en), sans-serif;
+                letter-spacing: .015em;
+            }
+
+            .hero-title span {
+                display: block;
+            }
+
+            .hero-title .year {
+                margin-top: .1em;
+                color: var(--blue);
+            }
+
+            .hero-slogan {
+                display: inline-block;
+                position: relative;
+                margin: 25px 0 21px 4px;
+                color: var(--blue);
+                font: 700 clamp(2.2rem, 5vw, 4.5rem)/1.1 var(--hand);
+                letter-spacing: -.04em;
+                transform: rotate(-1.5deg);
+            }
+
+            .hero-slogan::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: -10px;
+                bottom: -5px;
+                height: 6px;
+                border-radius: 100%;
+                background: var(--yellow);
+                transform: rotate(-.7deg);
+                z-index: -1;
+            }
+
+            .hero-subtitle {
+                margin: 0;
+                color: var(--text);
+                font-size: .94rem;
+                font-weight: 500;
+                letter-spacing: .04em;
+            }
+
+            .hero-date {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 13px;
+                margin-top: 28px;
+                padding-top: 21px;
+                border-top: 1px dashed #A8B7C1;
+            }
+
+            .date-part {
+                display: flex;
+                align-items: baseline;
+                gap: 7px;
+            }
+
+            .date-part strong {
+                color: var(--blue);
+                font: 800 clamp(2.4rem, 5vw, 3.8rem)/1 var(--en);
+                letter-spacing: -.035em;
+            }
+
+            .date-part span {
+                color: var(--text);
+                font: 700 .84rem var(--en), var(--jp);
+            }
+
+            .date-arrow {
+                color: #65717B;
+                font: 400 1.8rem/1 var(--en);
+            }
+
+            .hero-venue {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin: 19px 0 0;
+                color: var(--text);
+                font-size: .86rem;
+                font-weight: 700;
+            }
+
+            .pin {
+                display: inline-grid;
+                place-items: center;
+                width: 27px;
+                height: 27px;
+                color: var(--blue);
+                border: 1px solid var(--yellow);
+                border-radius: 50%;
+                font-size: .8rem;
+            }
+
+            .hero-actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 11px;
+                margin-top: 25px;
+            }
+
+            .button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+                min-height: 51px;
+                padding: 12px 22px;
+                border: 1px solid var(--blue);
+                background: var(--blue);
+                color: white;
+                font-size: .8rem;
+                font-weight: 700;
+                letter-spacing: .035em;
+                transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+            }
+
+            .button::after {
+                content: "↗";
+                font: 1rem var(--en);
+            }
+
+            .button:hover {
+                background: var(--blue-dark);
+                box-shadow: 0 7px 16px rgba(0, 87, 183, .14);
+            }
+
+            .button.button-yellow {
+                border-color: var(--yellow);
+                background: var(--yellow);
+                color: var(--charcoal);
+            }
+
+            .button.button-yellow:hover {
+                background: #FFE45A;
+            }
+
+            .scroll-cue {
+                position: absolute;
+                bottom: 22px;
+                left: 50%;
+                display: grid;
+                justify-items: center;
+                gap: 8px;
+                transform: translateX(-50%);
+                color: var(--muted);
+                font: 700 .62rem var(--en);
+                letter-spacing: .18em;
+            }
+
+            .scroll-cue::after {
+                content: "";
+                width: 1px;
+                height: 32px;
+                background: linear-gradient(var(--blue), transparent);
+            }
+
+            .date-strip {
+                position: relative;
+                z-index: 2;
+                background: var(--blue);
+                color: white;
+                border-block: 4px solid var(--yellow);
+            }
+
+            .date-strip-inner {
+                min-height: 110px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 22px;
+                padding-block: 21px;
+            }
+
+            .date-strip-label {
+                color: rgba(255, 255, 255, .72);
+                font: 700 .68rem var(--en);
+                letter-spacing: .22em;
+            }
+
+            .date-strip-date {
+                display: flex;
+                align-items: baseline;
+                flex-wrap: wrap;
+                gap: 12px;
+                font-family: var(--en);
+            }
+
+            .date-strip-date strong {
+                font-size: clamp(2.15rem, 5vw, 3.5rem);
+                line-height: 1;
+                letter-spacing: .02em;
+                font-weight: 800;
+            }
+
+            .date-strip-date span {
+                font: 700 .82rem var(--jp);
+            }
+
+            .date-strip-note {
+                max-width: 270px;
+                color: rgba(255, 255, 255, .86);
+                font-size: .77rem;
+                line-height: 1.7;
+            }
+
+            .news-section {
+                padding: 90px 0 84px;
+                background: rgba(255, 255, 255, .82);
+                border-bottom: 1px solid var(--line);
+            }
+
+            .section-topline {
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+                gap: 24px;
+                margin-bottom: 29px;
+            }
+
+            .text-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 13px;
+                color: var(--blue);
+                font-size: .79rem;
+                font-weight: 700;
+                white-space: nowrap;
+            }
+
+            .text-link::after {
+                content: "→";
+                font: 1.15rem var(--en);
+                transition: transform .2s ease;
+            }
+
+            .text-link:hover::after {
+                transform: translateX(4px);
+            }
+
+            .news-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                border-top: 1px solid var(--line);
+            }
+
+            .news-item {
+                display: grid;
+                grid-template-columns: 105px auto minmax(0, 1fr) 18px;
+                align-items: center;
+                gap: 15px;
+                min-height: 76px;
+                padding: 15px 12px;
+                border-bottom: 1px solid var(--line);
+                transition: background .2s ease;
+            }
+
+            .news-item:nth-child(odd) {
+                border-right: 1px solid var(--line);
+            }
+
+            .news-item:hover {
+                background: var(--blue-soft);
+            }
+
+            .news-date {
+                color: var(--muted);
+                font: 500 .78rem var(--en);
+                letter-spacing: .04em;
+            }
+
+            .news-category {
+                justify-self: start;
+                padding: 2px 8px;
+                background: var(--yellow);
+                color: var(--charcoal);
+                font-size: .61rem;
+                font-weight: 700;
+                white-space: nowrap;
+            }
+
+            .news-title {
+                grid-column: 3;
+                grid-row: 1;
+                min-width: 0;
+                overflow: hidden;
+                color: var(--text);
+                font-size: .8rem;
+                font-weight: 500;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .news-arrow {
+                grid-column: 4;
+                grid-row: 1;
+                color: var(--blue);
+                font: 1rem var(--en);
+            }
+
+            .news-list:empty {
+                display: none;
+            }
+
+            .concept-section {
+                position: relative;
+                padding: 112px 0 118px;
+                overflow: hidden;
+            }
+
+            .concept-section::before {
+                content: "";
+                position: absolute;
+                top: 75px;
+                left: -130px;
+                width: 340px;
+                aspect-ratio: 1;
+                border: 1px solid rgba(0, 87, 183, .1);
+                border-radius: 50%;
+                box-shadow: 0 0 0 24px rgba(84, 185, 215, .03), 0 0 0 50px rgba(0, 87, 183, .02);
+            }
+
+            .concept-section::after {
+                content: "";
+                position: absolute;
+                right: -90px;
+                bottom: 28px;
+                width: 300px;
+                height: 100px;
+                background: rgba(255, 215, 0, .13);
+                transform: rotate(-15deg);
+                border-radius: 50%;
+            }
+
+            .concept-grid {
+                display: grid;
+                grid-template-columns: .95fr 1.05fr;
+                gap: clamp(42px, 8vw, 105px);
+                align-items: center;
+            }
+
+            .concept-visual {
+                min-height: 410px;
+                position: relative;
+                display: grid;
+                place-items: center;
+            }
+
+            .concept-visual::before {
+                content: "";
+                position: absolute;
+                inset: 7% 8%;
+                border: 1px dashed rgba(0, 87, 183, .27);
+                transform: rotate(-5deg);
+            }
+
+            .concept-visual::after {
+                content: "";
+                position: absolute;
+                width: 64%;
+                aspect-ratio: 1;
+                background: linear-gradient(145deg, rgba(84, 185, 215, .14), rgba(0, 87, 183, .045));
+                border-radius: 50%;
+            }
+
+            .concept-logo {
+                position: relative;
+                z-index: 1;
+                width: min(58%, 275px);
+                filter: drop-shadow(0 12px 17px rgba(0, 87, 183, .09));
+            }
+
+            .concept-stamp {
+                position: absolute;
+                z-index: 2;
+                right: 5%;
+                bottom: 8%;
+                padding: 12px 18px;
+                background: var(--yellow);
+                color: var(--charcoal);
+                font: 700 .66rem/1.4 var(--en);
+                letter-spacing: .15em;
+                transform: rotate(-3deg);
+                box-shadow: 4px 4px 0 rgba(0, 87, 183, .1);
+            }
+
+            .concept-copy h2 {
+                margin: 16px 0 23px;
+                font-size: clamp(2rem, 4.3vw, 3.35rem);
+                line-height: 1.4;
+                font-weight: 800;
+            }
+
+            .concept-copy h2 .blue {
+                color: var(--blue);
+            }
+
+            .concept-copy p {
+                color: var(--text);
+                font-size: .9rem;
+                line-height: 2.1;
+            }
+
+            .concept-copy .button {
+                margin-top: 18px;
+            }
+
+            .guide-section {
+                position: relative;
+                padding: 104px 0 114px;
+                background: var(--paper-blue);
+                border-block: 1px solid var(--line);
+                overflow: hidden;
+            }
+
+            .guide-section::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+                opacity: .56;
+                background: repeating-linear-gradient(135deg, transparent 0 72px, rgba(0, 87, 183, .035) 72px 73px);
+            }
+
+            .guide-head {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+                gap: 24px;
+                margin-bottom: 40px;
+            }
+
+            .guide-head .section-lead {
+                max-width: 390px;
+                margin-bottom: 3px;
+            }
+
+            .guide-grid {
+                position: relative;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+            }
+
+            .guide-card {
+                position: relative;
+                min-height: 270px;
+                padding: 25px 22px 23px;
+                background: white;
+                border: 1px solid #E0EAF0;
+                box-shadow: 0 5px 16px rgba(0, 55, 116, .03);
+                transition: box-shadow .22s ease, border-color .22s ease;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+
+            .guide-card::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: var(--blue);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform .22s ease;
+            }
+
+            .guide-card:nth-child(2)::before {
+                background: var(--yellow);
+            }
+
+            .guide-card:nth-child(3)::before {
+                background: var(--sky-deep);
+            }
+
+            .guide-card:nth-child(4)::before {
+                background: var(--charcoal);
+            }
+
+            .guide-card:hover {
+                border-color: rgba(0, 87, 183, .25);
+                box-shadow: var(--shadow);
+            }
+
+            .guide-card:hover::before {
+                transform: scaleX(1);
+            }
+
+            .guide-number {
+                color: #91A2AE;
+                font: 700 .74rem var(--en);
+                letter-spacing: .15em;
+            }
+
+            .guide-icon {
+                display: grid;
+                place-items: center;
+                width: 46px;
+                height: 46px;
+                margin: 24px 0 16px;
+                background: var(--blue-soft);
+                color: var(--blue);
+                font-size: 1.3rem;
+            }
+
+            .guide-card:nth-child(2) .guide-icon {
+                background: #FFF8D6;
+            }
+
+            .guide-card:nth-child(3) .guide-icon {
+                background: #E7F8FC;
+            }
+
+            .guide-card:nth-child(4) .guide-icon {
+                background: #F0F0F0;
+                color: var(--charcoal);
+            }
+
+            .guide-card h3 {
+                margin: 0;
+                color: var(--charcoal);
+                font: 700 1.16rem var(--en);
+                letter-spacing: .06em;
+            }
+
+            .guide-card p {
+                margin: 9px 0 22px;
+                color: var(--muted);
+                font-size: .77rem;
+                line-height: 1.8;
+            }
+
+            .guide-more {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+                margin-top: auto;
+                padding-top: 12px;
+                border-top: 1px solid var(--line);
+                color: var(--blue);
+                font: 700 .63rem var(--en);
+                letter-spacing: .12em;
+            }
+
+            .guide-more span:last-child {
+                font-size: 1.05rem;
+            }
+
+            .access-section {
+                padding: 108px 0;
+            }
+
+            .access-grid {
+                display: grid;
+                grid-template-columns: .78fr 1.22fr;
+                gap: clamp(34px, 6vw, 76px);
+                align-items: center;
+            }
+
+            .access-copy h2 {
+                margin: 15px 0 22px;
+                font-size: clamp(2rem, 4vw, 2.9rem);
+                line-height: 1.35;
+            }
+
+            .access-copy p {
+                color: var(--muted);
+                font-size: .86rem;
+                line-height: 2;
+            }
+
+            .access-info {
+                margin-top: 25px;
+                border-top: 1px solid var(--line);
+            }
+
+            .access-row {
+                display: grid;
+                grid-template-columns: 82px 1fr;
+                gap: 15px;
+                padding: 14px 0;
+                border-bottom: 1px solid var(--line);
+                font-size: .8rem;
+            }
+
+            .access-row dt {
+                color: var(--blue);
+                font-weight: 700;
+            }
+
+            .access-row dd {
+                margin: 0;
+                color: var(--text);
+            }
+
+            .access-copy .text-link {
+                margin-top: 20px;
+            }
+
+            .map-frame {
+                position: relative;
+                min-height: 355px;
+                padding: 10px;
+                background: white;
+                border: 1px solid #D9EAF1;
+                box-shadow: 0 8px 22px rgba(0, 70, 130, .055);
+            }
+
+            .map-frame::before {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                inset: -10px 10px 10px -10px;
+                border: 1px solid rgba(0, 87, 183, .2);
+            }
+
+            .map-frame iframe {
+                display: block;
+                width: 100%;
+                height: 410px;
+                border: 0;
+            }
+
+            .map-caption {
+                display: flex;
+                justify-content: space-between;
+                gap: 14px;
+                padding: 11px 5px 2px;
+                color: var(--muted);
+                font-size: .7rem;
+            }
+
+            .map-caption strong {
+                color: var(--charcoal);
+                font-weight: 700;
+            }
+
+            .social-section {
+                position: relative;
+                padding: 74px 0 78px;
+                background: var(--blue);
+                color: white;
+                overflow: hidden;
+            }
+
+            .social-section::before {
+                content: "";
+                position: absolute;
+                width: 580px;
+                height: 580px;
+                right: -180px;
+                top: -360px;
+                border: 1px solid rgba(255, 255, 255, .18);
+                border-radius: 50%;
+                box-shadow: 0 0 0 28px rgba(255, 255, 255, .03), 0 0 0 60px rgba(255, 255, 255, .02);
+            }
+
+            .social-section::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+                opacity: .13;
+                background: repeating-linear-gradient(135deg, transparent 0 68px, rgba(255, 255, 255, .16) 68px 69px);
+            }
+
+            .social-inner {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 40px;
+            }
+
+            .social-copy .eyebrow {
+                color: var(--yellow);
+            }
+
+            .social-copy .eyebrow::before {
+                background: white;
+            }
+
+            .social-copy h2 {
+                margin: 15px 0 10px;
+                font-size: clamp(1.7rem, 3.8vw, 2.6rem);
+                line-height: 1.35;
+            }
+
+            .social-copy p {
+                margin: 0;
+                color: rgba(255, 255, 255, .78);
+                font-size: .82rem;
+            }
+
+            .social-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 11px;
+            }
+
+            .social-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 11px;
+                min-width: 148px;
+                padding: 13px 16px;
+                border: 1px solid rgba(255, 255, 255, .48);
+                color: white;
+                font: 700 .7rem var(--en);
+                letter-spacing: .1em;
+                transition: background .2s ease, color .2s ease, border-color .2s ease;
+            }
+
+            .social-link:hover {
+                background: var(--yellow);
+                color: var(--charcoal);
+                border-color: var(--yellow);
+            }
+
+            .social-icon {
+                width: 25px;
+                height: 25px;
+                flex: 0 0 25px;
+            }
+
+            .social-icon path,
+            .social-icon rect,
+            .social-icon circle,
+            .social-icon line,
+            .social-icon polygon {
+                vector-effect: non-scaling-stroke;
+            }
+
+            .site-footer {
+                position: relative;
+                padding: 60px 0 23px;
+                color: rgba(255, 255, 255, .8);
+                background: var(--charcoal);
+                border-top: 4px solid var(--yellow);
+            }
+
+            .site-footer::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+                opacity: .16;
+                background-image: linear-gradient(rgba(255, 255, 255, .12) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .12) 1px, transparent 1px);
+                background-size: 34px 34px;
+            }
+
+            .site-footer .container {
+                position: relative;
+            }
+
+            .footer-main {
+                display: grid;
+                grid-template-columns: 1.45fr 1fr 1fr 1fr;
+                gap: 34px;
+                padding-bottom: 40px;
+            }
+
+            .footer-brand {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                margin-bottom: 15px;
+            }
+
+            .footer-brand img {
+                width: 64px;
+                height: 64px;
+                object-fit: contain;
+            }
+
+            .footer-brand-copy strong {
+                display: block;
+                color: white;
+                font: 800 .98rem var(--en);
+                letter-spacing: .08em;
+            }
+
+            .footer-brand-copy span {
+                display: block;
+                margin-top: 3px;
+                color: rgba(255, 255, 255, .55);
+                font-size: .62rem;
+            }
+
+            .footer-about p {
+                margin: 0;
+                color: rgba(255, 255, 255, .65);
+                font-size: .74rem;
+                line-height: 2;
+            }
+
+            .footer-column h3 {
+                margin: 4px 0 16px;
+                padding-left: 11px;
+                border-left: 3px solid var(--yellow);
+                color: white;
+                font: 700 .76rem var(--en);
+                letter-spacing: .15em;
+            }
+
+            .footer-column ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .footer-column li+li {
+                margin-top: 9px;
+            }
+
+            .footer-column a {
+                color: rgba(255, 255, 255, .64);
+                font-size: .73rem;
+                transition: color .2s ease;
+            }
+
+            .footer-column a:hover {
+                color: var(--yellow);
+            }
+
+            .footer-bottom {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+                padding-top: 18px;
+                border-top: 1px solid rgba(255, 255, 255, .16);
+                color: rgba(255, 255, 255, .45);
+                font: 500 .63rem var(--en);
+                letter-spacing: .055em;
+            }
+
+            .footer-committee {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .footer-committee img {
+                width: 32px;
+                height: 32px;
+                object-fit: contain;
+            }
+
+            .back-top {
+                position: fixed;
+                z-index: 50;
+                right: 22px;
+                bottom: 22px;
+                display: grid;
+                place-items: center;
+                width: 43px;
+                height: 43px;
+                background: var(--yellow);
+                color: var(--charcoal);
+                font: 700 1rem var(--en);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(8px);
+                transition: opacity .2s ease, visibility .2s ease, transform .2s ease;
+                box-shadow: 0 4px 12px rgba(0, 55, 116, .12);
+            }
+
+            .back-top.visible {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .reveal {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity .65s ease, transform .65s ease;
+            }
+
+            .reveal.is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .reveal-delay-1 {
+                transition-delay: .08s;
+            }
+
+            .reveal-delay-2 {
+                transition-delay: .16s;
+            }
+
+            .reveal-delay-3 {
+                transition-delay: .24s;
+            }
+
+            @media (max-width: 980px) {
+                .desktop-nav {
+                    gap: 13px;
+                }
+
+                .desktop-nav a {
+                    font-size: .66rem;
+                }
+
+                .hero-inner {
+                    grid-template-columns: .72fr 1.28fr;
+                    gap: 34px;
+                }
+
+                .hero-emblem {
+                    min-height: 330px;
+                }
+
+                .guide-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .footer-main {
+                    grid-template-columns: 1.3fr 1fr 1fr;
+                }
+
+                .footer-about {
+                    grid-column: 1 / -1;
                 }
             }
-        }
-    </script>
-    <style>
-        /* --- 重要: モバイルでの横揺れ防止 --- */
-        html, body {
-            overflow-x: hidden; /* 横スクロールを完全に禁止 */
-            width: 100%;
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            -webkit-text-size-adjust: 100%; /* iOSでのフォントサイズ自動調整を防止 */
-        }
 
-        /* --- New Geometric Background Patterns --- */
-        
-        /* 1. Dot Grid (Design Blueprint Style) */
-        .bg-dot-grid {
-            background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
-            background-size: 24px 24px;
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: -3;
-            opacity: 0.6;
-        }
+            @media (max-width: 760px) {
+                .container {
+                    width: min(100% - 38px, var(--content));
+                }
 
-        /* 2. Abstract Shapes styling */
-        .geo-deco {
-            position: absolute;
-            z-index: -1;
-            pointer-events: none;
-            opacity: 0.8;
-        }
+                .header-inner {
+                    min-height: 70px;
+                }
 
-        /* Existing Large Gradients (Adjusted) */
-        .shape-1 {
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(0,87,183,0.08) 0%, rgba(0,155,119,0) 70%);
-            top: -10vw;
-            right: -10vw;
-            border-radius: 50%;
-        }
-        .shape-2 {
-            width: 40vw;
-            height: 40vw;
-            background: radial-gradient(circle, rgba(221,46,68,0.08) 0%, rgba(255,215,0,0) 70%);
-            bottom: 5vh;
-            left: -10vw;
-            border-radius: 50%;
-        }
+                .brand img {
+                    width: 41px;
+                    height: 41px;
+                }
 
-        /* Header Transition */
-        #main-header {
-            transition: transform 0.3s ease-in-out, background-color 0.3s ease;
-        }
-        #main-header.hidden-header {
-            transform: translateY(-100%);
-        }
-        #main-header.scrolled {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
+                .brand-copy strong {
+                    font-size: .9rem;
+                }
 
-        /* Hero Text Clip */
-        .text-clip-gradient {
-            background: linear-gradient(90deg, #0057B7, #DD2E44, #FFD700, #009B77);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 8s ease infinite;
-        }
+                .brand-copy small {
+                    font-size: .53rem;
+                }
 
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+                .desktop-nav {
+                    display: none;
+                }
 
-        /* Scroll Animation (Fade Up) */
-        .reveal-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal-up.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+                .menu-toggle {
+                    display: block;
+                    flex: 0 0 auto;
+                }
 
-        /* Tag Badges for News */
-        .tag-badge {
-            font-size: 0.7rem;
-            padding: 0.125rem 0.5rem;
-            border-radius: 9999px;
-            font-weight: 700;
-            white-space: nowrap;
-            display: inline-block;
-        }
-        .tag-important { background-color: #DD2E44; color: #ffffff; } /* 重要: 赤背景 */
-        .tag-event { background-color: #0057B7; color: #ffffff; } /* イベント: 青背景 */
-        .tag-info { background-color: #FFD700; color: #212121; } /* お知らせ: 黄背景 */
-        .tag-recruit { background-color: #009B77; color: #ffffff; } /* 募集: 緑背景 */
+                .mobile-nav {
+                    display: block;
+                    max-height: 0;
+                    overflow: hidden;
+                    background: var(--charcoal);
+                    border-top: 0 solid rgba(255, 255, 255, .14);
+                    transition: max-height .3s ease, border-width .2s ease;
+                }
 
-        /* Mobile Menu */
-        #mobile-menu {
-            transition: max-height 0.4s ease-in-out, opacity 0.4s ease;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-        }
-        #mobile-menu.open {
-            max-height: 500px;
-            opacity: 1;
-        }
-    </style>
-</head>
-<body class="text-gray-800 antialiased relative selection:bg-brand-blue selection:text-white">
+                .mobile-nav.is-open {
+                    max-height: 440px;
+                    border-top-width: 1px;
+                }
 
-    <!-- Global Backgrounds -->
-    <div class="bg-dot-grid"></div>
-    <div class="geo-deco shape-1 animate-float-slow"></div>
-    <div class="geo-deco shape-2 animate-float-medium"></div>
+                .mobile-nav nav {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 0 18px;
+                    width: min(100% - 38px, var(--content));
+                    margin: auto;
+                    padding: 12px 0 20px;
+                }
 
-    <!-- Header -->
-    <header id="main-header" class="fixed w-full top-0 z-50 px-4 py-3 md:py-4">
-        <div class="container mx-auto flex justify-between items-center">
-            
-            <!-- Logo -->
-            <a href="https://soei-pf.com/" class="flex items-center gap-2 group">
-                <img src="https://soei-pf.com/figure/logo01.png" 
-                     alt="Project Festa Logo" 
-                     class="w-10 h-10 md:w-14 md:h-14 transition-transform duration-500 shrink-0 group-hover:scale-110 group-hover:rotate-45 object-contain">
-                <span class="font-bold text-lg md:text-2xl tracking-tighter truncate">&nbsp; Y. S. PROJECT FESTA <span class="text-brand-blue">2026</span></span>
-            </a>
+                .mobile-nav a {
+                    padding: 12px 3px;
+                    border-bottom: 1px solid rgba(255, 255, 255, .13);
+                    color: rgba(255, 255, 255, .88);
+                    font-size: .78rem;
+                    font-weight: 700;
+                }
 
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
-                <a href="https://soei-pf.com/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">TOP</a>
-                <a href="https://soei-pf.com/concept/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ABOUT</a>
-                <a href="https://soei-pf.com/schedule/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">SCHEDULE</a>
-                <a href="https://soei-pf.com/map/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">MAP</a>
-                <a href="https://soei-pf.com/attractions/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">ATTRACTIONS</a>
-                <a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">NEWS</a>
-            </nav>
+                .mobile-nav a span {
+                    display: block;
+                    color: var(--yellow);
+                    font: 700 .6rem var(--en);
+                    letter-spacing: .12em;
+                }
 
-            <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none p-2" aria-label="メニューを開く">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
+                .hero {
+                    min-height: auto;
+                    padding: 116px 0 83px;
+                }
 
-        <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md shadow-lg absolute top-full left-0 w-full border-t border-gray-100">
-            <nav class="flex flex-col p-4 space-y-4 font-bold text-center">
-                <a href="https://soei-pf.com/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">TOP</a>
-                <a href="https://soei-pf.com/concept/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ABOUT</a>
-                <a href="https://soei-pf.com/schedule/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">SCHEDULE</a>
-                <a href="https://soei-pf.com/map/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">MAP</a>
-                <a href="https://soei-pf.com/attractions/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">ATTRACTIONS</a>
-                <a href="https://soei-pf.com/information/" class="block py-2 text-gray-600 hover:bg-gray-50 hover:text-brand-blue">NEWS</a>
-            </nav>
-        </div>
-    </header>
+                .hero-inner {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                }
 
-    <!-- Main Content -->
-    <main id="top" class="w-full overflow-hidden">
-        
-        <!-- Hero Section -->
-        <section class="relative h-screen flex items-center justify-center overflow-hidden">
-            <!-- Background Image with Overlay -->
-            <div class="absolute inset-0 z-[-2]">
-                <img src="https://soei-pf.com/figure/image01.jpg" 
-                     alt="Festa background" 
-                     class="w-full h-full object-cover opacity-60">
-                <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-white/50 to-white"></div>
+                .hero-emblem {
+                    min-height: 205px;
+                    order: 0;
+                }
+
+                .hero-emblem img {
+                    width: 155px;
+                }
+
+                .hero-emblem::before {
+                    width: 175px;
+                }
+
+                .hero-emblem .orbit {
+                    width: 215px;
+                }
+
+                .hero-emblem::after {
+                    right: 19%;
+                    top: 2%;
+                    font-size: 2.8rem;
+                }
+
+                .hero-copy {
+                    max-width: 570px;
+                    margin: 0 auto;
+                    width: 100%;
+                    padding-left: 19px;
+                }
+
+                .hero-school {
+                    font-size: .67rem;
+                }
+
+                .hero-title {
+                    font-size: clamp(3.15rem, 13vw, 5.6rem);
+                }
+
+                .hero-slogan {
+                    margin: 19px 0 18px 3px;
+                    font-size: clamp(2.45rem, 10vw, 3.7rem);
+                }
+
+                .hero-date {
+                    margin-top: 21px;
+                    padding-top: 17px;
+                }
+
+                .date-part strong {
+                    font-size: 2.55rem;
+                }
+
+                .date-arrow {
+                    font-size: 1.45rem;
+                }
+
+                .hero-venue {
+                    align-items: flex-start;
+                    font-size: .78rem;
+                }
+
+                .hero-actions {
+                    gap: 9px;
+                }
+
+                .button {
+                    min-height: 47px;
+                    padding: 10px 15px;
+                    font-size: .74rem;
+                }
+
+                .scroll-cue {
+                    bottom: 10px;
+                }
+
+                .date-strip-inner {
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 11px;
+                    padding-block: 19px;
+                }
+
+                .date-strip-date strong {
+                    font-size: 2.7rem;
+                }
+
+                .date-strip-note {
+                    max-width: 100%;
+                }
+
+                .news-section {
+                    padding: 68px 0;
+                }
+
+                .section-topline {
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 13px;
+                }
+
+                .news-list {
+                    grid-template-columns: 1fr;
+                }
+
+                .news-item:nth-child(odd) {
+                    border-right: 0;
+                }
+
+                .news-item {
+                    grid-template-columns: 78px auto minmax(0, 1fr) 16px;
+                    min-height: 70px;
+                    gap: 9px;
+                    padding-inline: 5px;
+                }
+
+                .news-date {
+                    font-size: .72rem;
+                }
+
+                .news-title {
+                    font-size: .74rem;
+                }
+
+                .concept-section {
+                    padding: 78px 0 86px;
+                }
+
+                .concept-grid {
+                    grid-template-columns: 1fr;
+                    gap: 30px;
+                }
+
+                .concept-visual {
+                    min-height: 260px;
+                    order: 2;
+                }
+
+                .concept-visual::before {
+                    inset: 5% 14%;
+                }
+
+                .concept-logo {
+                    width: 170px;
+                }
+
+                .concept-stamp {
+                    right: 12%;
+                    bottom: 3%;
+                }
+
+                .concept-copy h2 {
+                    font-size: clamp(1.9rem, 8vw, 2.65rem);
+                }
+
+                .guide-section {
+                    padding: 78px 0 84px;
+                }
+
+                .guide-head {
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 12px;
+                    margin-bottom: 28px;
+                }
+
+                .guide-head .section-lead {
+                    margin-top: 0;
+                }
+
+                .guide-grid {
+                    gap: 12px;
+                }
+
+                .guide-card {
+                    min-height: 240px;
+                    padding: 19px 16px;
+                }
+
+                .guide-icon {
+                    margin: 19px 0 12px;
+                    width: 41px;
+                    height: 41px;
+                }
+
+                .guide-card h3 {
+                    font-size: 1.02rem;
+                }
+
+                .guide-card p {
+                    font-size: .72rem;
+                }
+
+                .access-section {
+                    padding: 78px 0;
+                }
+
+                .access-grid {
+                    grid-template-columns: 1fr;
+                    gap: 28px;
+                }
+
+                .map-frame iframe {
+                    height: 350px;
+                }
+
+                .social-inner {
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 23px;
+                }
+
+                .social-links {
+                    width: 100%;
+                }
+
+                .social-link {
+                    flex: 1 1 140px;
+                }
+
+                .site-footer {
+                    padding-top: 45px;
+                }
+
+                .footer-main {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 27px 20px;
+                }
+
+                .footer-about {
+                    grid-column: 1 / -1;
+                }
+
+                .footer-bottom {
+                    align-items: flex-start;
+                    flex-direction: column;
+                }
+            }
+
+            @media (max-width: 420px) {
+                .container {
+                    width: calc(100% - 30px);
+                }
+
+                .brand {
+                    gap: 8px;
+                }
+
+                .brand img {
+                    width: 36px;
+                    height: 36px;
+                }
+
+                .brand-copy strong {
+                    font-size: .8rem;
+                }
+
+                .brand-copy small {
+                    font-size: .49rem;
+                }
+
+                .menu-toggle {
+                    width: 41px;
+                    height: 41px;
+                }
+
+                .hero-emblem {
+                    min-height: 180px;
+                }
+
+                .hero-emblem img {
+                    width: 138px;
+                }
+
+                .hero-emblem::before {
+                    width: 153px;
+                }
+
+                .hero-emblem .orbit {
+                    width: 188px;
+                }
+
+                .hero-title {
+                    font-size: 3.05rem;
+                }
+
+                .hero-date {
+                    gap: 8px;
+                }
+
+                .date-part strong {
+                    font-size: 2.2rem;
+                }
+
+                .date-part span {
+                    font-size: .71rem;
+                }
+
+                .hero-actions .button {
+                    flex: 1 1 100%;
+                }
+
+                .guide-grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                .guide-card {
+                    min-height: 228px;
+                    padding: 16px 13px;
+                }
+
+                .guide-card p {
+                    font-size: .68rem;
+                }
+
+                .access-row {
+                    grid-template-columns: 68px 1fr;
+                    gap: 9px;
+                    font-size: .73rem;
+                }
+
+                .map-frame {
+                    padding: 7px;
+                }
+
+                .map-frame iframe {
+                    height: 300px;
+                }
+
+                .map-caption {
+                    flex-direction: column;
+                    gap: 3px;
+                }
+
+                .footer-main {
+                    gap: 24px 15px;
+                }
+
+                .footer-column h3 {
+                    font-size: .68rem;
+                }
+
+                .footer-column a {
+                    font-size: .68rem;
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+
+                *,
+                *::before,
+                *::after {
+                    scroll-behavior: auto !important;
+                    animation-duration: .01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: .01ms !important;
+                }
+
+                .reveal {
+                    opacity: 1;
+                    transform: none;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="site-header" id="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="#top" aria-label="PROJECT FESTA 2027 トップ">
+                    <img src="https://soei-pf.com/img/PF27_rogo.png" alt="PROJECT FESTA ロゴ">
+                    <span class="brand-copy">
+                        <strong>PROJECT FESTA <span>2027</span></strong>
+                        <small>YOKOHAMA SOEI JUNIOR &amp; SENIOR HIGH SCHOOL</small>
+                    </span>
+                </a>
+                <nav class="desktop-nav" aria-label="メインメニュー">
+                    <a href="#top">TOP</a>
+                    <a href="https://soei-pf.com/fix/">ABOUT</a>
+                    <a href="https://soei-pf.com/fix/">SCHEDULE</a>
+                    <a href="https://soei-pf.com/fix/">MAP</a>
+                    <a href="https://soei-pf.com/fix/">ATTRACTIONS</a>
+                    <a href="https://soei-pf.com/fix/">NEWS</a>
+                </nav>
+                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-nav">
+                    <span></span><span></span>
+                </button>
             </div>
-
-            <!-- Geometric Accents (Hero) -->
-            <!-- Blue Ring -->
-            <div class="absolute top-[15%] right-[10%] w-24 h-24 md:w-40 md:h-40 border-[6px] border-brand-blue/20 rounded-full animate-float-slow z-0"></div>
-            
-            <!-- Yellow Triangle -->
-            <div class="absolute bottom-[20%] left-[5%] text-brand-yellow/30 animate-spin-slow z-0">
-                <svg width="100" height="100" viewBox="0 0 100 100" fill="currentColor">
-                    <path d="M50 15 L90 85 L10 85 Z" />
-                </svg>
+            <div class="mobile-nav" id="mobile-nav">
+                <nav aria-label="スマートフォン用メニュー">
+                    <a href="#top"><span>00 / HOME</span>トップページ</a>
+                    <a href="https://soei-pf.com/fix/"><span>01 / ABOUT</span>コンセプト</a>
+                    <a href="https://soei-pf.com/fix/"><span>02 / SCHEDULE</span>スケジュール</a>
+                    <a href="https://soei-pf.com/fix/"><span>03 / MAP</span>会場マップ</a>
+                    <a href="https://soei-pf.com/fix/"><span>04 / PROGRAM</span>企画・見どころ</a>
+                    <a href="https://soei-pf.com/fix/"><span>05 / NEWS</span>お知らせ</a>
+                </nav>
             </div>
-            
-            <!-- Dashed Line -->
-            <div class="absolute top-1/3 left-0 w-32 h-1 bg-gradient-to-r from-transparent to-brand-red/30"></div>
-
-            <!-- Hero Content -->
-            <div class="text-center px-4 relative z-10 w-full">
-                <p class="text-brand-blue font-bold tracking-[0.3em] mb-4 reveal-up text-sm md:text-base inline-block bg-white/50 px-4 py-1 rounded-full backdrop-blur-sm">
-                    2026.03.17 - 03.18
-                </p>
-                <h1 class="text-5xl md:text-8xl lg:text-9xl font-black mb-6 tracking-tighter leading-none reveal-up break-words drop-shadow-sm" style="transition-delay: 0.1s;">
-                    Sharing<br>
-                    <span class="text-clip-gradient">dreams</span>
-                </h1>
-                <p class="text-gray-600 text-sm md:text-xl font-medium tracking-wide mb-10 reveal-up px-2" style="transition-delay: 0.2s;">
-                    未来につなぐ、夢の祭典。
-                </p>
-                <div class="reveal-up flex flex-col md:flex-row justify-center gap-4 items-center" style="transition-delay: 0.3s;">
-                    <a href="#about" class="inline-block px-8 py-3 bg-gray-900 text-white font-bold rounded-none hover:bg-brand-blue transition-colors duration-300 transform hover:skew-x-[-10deg] shadow-lg hover:shadow-xl w-64 md:w-auto">
-                        <span class="inline-block transform hover:skew-x-[10deg]">詳しく見る</span>
-                    </a>
-                    <a href="https://soei-pf2026.peatix.com/" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-brand-yellow text-brand-black font-bold rounded-none hover:bg-brand-red hover:text-white transition-colors duration-300 transform hover:skew-x-[-10deg] shadow-lg hover:shadow-xl w-64 md:w-auto">
-                        <span class="inline-block transform hover:skew-x-[10deg]">チケット申し込み <i class="fa-solid fa-ticket ml-1"></i></span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Scroll Down Indicator -->
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <i class="fa-solid fa-chevron-down text-2xl text-gray-400"></i>
-            </div>
-        </section>
-
-        <!-- News Section (Revised: Vertical List) -->
-        <section class="bg-brand-black text-white py-12 relative z-20 border-b-4 border-brand-yellow w-full shadow-lg">
-            <div class="container mx-auto px-4 max-w-5xl">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 border-b border-gray-700 pb-4">
-                    <h2 class="text-2xl md:text-3xl font-bold tracking-tight flex items-center gap-3">
-                        <span class="w-2 h-8 bg-brand-yellow inline-block"></span>
-                        INFORMATION
-                    </h2>
-                    <a href="https://soei-pf.com/information" class="text-sm font-bold text-brand-yellow hover:text-white transition-colors mt-2 md:mt-0 flex items-center gap-2">
-                        一覧を見る <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- ニュースリストコンテナ (JSで注入) -->
-                <div id="top-news-list" class="space-y-4">
-                    <!-- Loading state -->
-                    <p class="text-gray-400">読み込み中...</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-24 px-4 relative w-full overflow-hidden">
-            <!-- Geometric Accents (About) -->
-            <!-- Dotted Pattern Block -->
-            <div class="absolute top-20 right-0 w-64 h-64 opacity-10" style="background-image: radial-gradient(#0057B7 2px, transparent 2px); background-size: 10px 10px;"></div>
-            
-            <!-- Red Square -->
-            <div class="absolute bottom-10 left-10 w-20 h-20 border-4 border-brand-red/10 rotate-12 animate-float-medium"></div>
-
-            <div class="container mx-auto max-w-6xl relative z-10">
-                <div class="flex flex-col md:flex-row gap-12 items-center">
-                    <div class="w-full md:w-1/2 reveal-up">
-                        <div class="relative group">
-                            <!-- Image Frame Decor -->
-                            <div class="absolute -top-4 -left-4 w-full h-full border-2 border-brand-blue/30 rounded-tr-[4rem] rounded-bl-[4rem] group-hover:top-4 group-hover:left-4 transition-all duration-500"></div>
-                            
-                            <img src="https://soei-pf.com/figure/place01.jpg" 
-                                 alt="Event atmosphere" 
-                                 class="w-full h-auto shadow-2xl rounded-tr-[4rem] rounded-bl-[4rem] relative z-10 grayscale hover:grayscale-0 transition-all duration-700">
+        </header>
+        <main id="top">
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-runway-line" aria-hidden="true"></div>
+                <div class="container hero-inner">
+                    <div class="hero-emblem reveal">
+                        <div class="orbit" aria-hidden="true"></div>
+                        <img src="https://soei-pf.com/img/PF27_rogo.png" alt="PROJECT FESTA 2027 シンボル">
+                    </div>
+                    <div class="hero-copy">
+                        <p class="hero-school reveal">YOKOHAMA SOEI JUNIOR &amp; SENIOR HIGH SCHOOL</p>
+                        <h1 class="hero-title reveal reveal-delay-1" id="hero-title">
+                            <span>PROJECT</span><span>FESTA</span><span class="year">2027</span>
+                        </h1>
+                        <p class="hero-slogan reveal reveal-delay-2">Our Runway</p>
+                        <p class="hero-subtitle reveal reveal-delay-2">それぞれの夢へ、踏み出すための滑走路。</p>
+                        <div class="hero-date reveal reveal-delay-3" aria-label="開催日 2027年3月18日木曜日から19日金曜日">
+                            <div class="date-part"><strong>3.18</strong><span>2027 THU.</span></div>
+                            <span class="date-arrow" aria-hidden="true">→</span>
+                            <div class="date-part"><strong>19</strong><span>FRI.</span></div>
+                        </div>
+                        <p class="hero-venue reveal reveal-delay-3"><span class="pin" aria-hidden="true">＋</span>横浜創英中学・高等学校</p>
+                        <div class="hero-actions reveal reveal-delay-3">
+                            <a class="button" href="https://soei-pf.com/fix/">PROJECT FESTAについて</a>
+                            <a class="button button-yellow" href="https://soei-pf.com/fix/">開催情報を見る</a>
                         </div>
                     </div>
-                    
-                    <!-- Right Column -->
-                    <div class="w-full md:w-1/2 reveal-up" style="transition-delay: 0.2s;">
-                        <span class="text-brand-blue font-bold tracking-widest text-sm block mb-2 flex items-center gap-2">
-                            <span class="w-8 h-[1px] bg-brand-blue"></span> CONCEPT
-                        </span>
-                        <h2 class="text-3xl md:text-5xl font-black mb-6 leading-tight">
-                            夢を共有して<br>輝かせる場を。
-                        </h2>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            横浜創英中学・高等学校 Project Festa 2026は、生徒たちが取り組んできた探究やプロジェクトなどを発表する、生徒の夢が輝く祭典です。
-                            さまざまな目標に向かって真剣に取り組んできた成果を目の前で体感しましょう！
-                        </p>
-                        <p class="text-gray-600 leading-relaxed mb-8">
-                            中学2年生から高校2年生まで、総勢約900名の多彩な分野を究める生徒が、各々の興味関心に向かって突き進んでいます。
-                            この場所から、新たな発見や革新が、きっと生まれます。
-                        </p>
-                        
-                        <!-- Statistics -->
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-white p-4 border-l-4 border-brand-green shadow-sm hover:shadow-md transition-shadow">
-                                <h3 class="font-bold text-lg mb-1 text-brand-green">PRESENTERS</h3>
-                                <div class="flex items-end gap-1">
-                                    <span class="text-3xl font-black text-gray-800">900</span>
-                                    <span class="text-sm text-gray-500 mb-1">＋</span>
-                                </div>
-                            </div>
-                            <div class="bg-white p-4 border-l-4 border-brand-yellow shadow-sm hover:shadow-md transition-shadow">
-                                <h3 class="font-bold text-lg mb-1 text-brand-yellow">PROJECTS</h3>
-                                <div class="flex items-end gap-1">
-                                    <span class="text-3xl font-black text-gray-800">700</span>
-                                    <span class="text-sm text-gray-500 mb-1">＋</span>
-                                </div>
-                            </div>
+                </div>
+                <a class="scroll-cue" href="#news">SCROLL</a>
+            </section>
+            <section class="date-strip" aria-label="開催概要">
+                <div class="container date-strip-inner">
+                    <div>
+                        <div class="date-strip-label">SAVE THE DATE</div>
+                        <div class="date-strip-date"><strong>2027.03.18</strong><span>THU.</span><strong>— 19</strong><span>FRI.</span></div>
+                    </div>
+                    <p class="date-strip-note">横浜創英中学・高等学校にて開催。<br>2日間のプロジェクトフェスタ。</p>
+                </div>
+            </section>
+            <section class="news-section" id="news" aria-labelledby="news-heading">
+                <div class="container">
+                    <div class="section-topline reveal">
+                        <div>
+                            <span class="eyebrow">INFORMATION</span>
+                            <h2 class="section-heading" id="news-heading">最新のお知らせ</h2>
                         </div>
-
-                        <!-- Button -->
-                        <div class="reveal-up mt-8" style="transition-delay: 0.3s;">
-                            <a href="https://soei-pf.com/concept/" class="inline-block px-8 py-3 bg-gray-900 text-white font-bold rounded-none hover:bg-brand-blue transition-colors duration-300 transform hover:skew-x-[-10deg] shadow-lg hover:shadow-xl">
-                                <span class="inline-block transform hover:skew-x-[10deg]">コンセプトの詳細へ</span>
-                            </a>
-                        </div>
+                        <a class="text-link" href="https://soei-pf.com/fix/">お知らせ一覧</a>
+                    </div>
+                    <div class="news-list" id="news-list" aria-live="polite"></div>
+                </div>
+            </section>
+            <section class="concept-section" id="about" aria-labelledby="concept-heading">
+                <div class="container concept-grid">
+                    <div class="concept-visual reveal">
+                        <img class="concept-logo" src="https://soei-pf.com/img/PF27_rogo.png" alt="PROJECT FESTA 2027 ロゴ">
+                        <span class="concept-stamp">DREAMS<br>TAKE OFF</span>
+                    </div>
+                    <div class="concept-copy reveal reveal-delay-1">
+                        <span class="eyebrow">CONCEPT</span>
+                        <h2 id="concept-heading">Our <span class="blue">Runway</span><br>一人ひとりの挑戦が、<br>未来へ飛び立つ。</h2>
+                        <p>プロジェクトフェスタは、生徒たちが日々向き合ってきた問いや探究、挑戦を持ち寄る発表の場です。</p>
+                        <p>一人ひとりが描く夢も、歩んできた道のりも違う。だからこそ、それぞれの想いが交わるこの場所から、新しい発見や次の一歩が生まれていきます。</p>
+                        <p>ここを、自分だけの未来へ向かう滑走路に。OUR RUNWAY — それぞれの可能性が動き出す2日間です。</p>
+                        <a class="button" href="https://soei-pf.com/fix/">コンセプトを詳しく見る</a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Main Links / Highlights -->
-        <section id="schedule" class="py-24 px-4 bg-gray-50 relative overflow-hidden w-full">
-            <!-- Decorative diagonal background -->
-            <div class="absolute top-0 right-0 w-2/3 h-full bg-white transform skew-x-12 translate-x-1/3 z-0"></div>
-            
-            <!-- Geometric Accents (Highlights) -->
-            <div class="absolute top-10 left-10 text-brand-green/10 text-9xl font-black z-0 pointer-events-none select-none">2026</div>
-
-            <div class="container mx-auto max-w-6xl relative z-10">
-                <div class="text-center mb-16 reveal-up">
-                    <h2 class="text-4xl font-black mb-4 inline-block relative z-10">
-                        HIGHLIGHTS
-                        <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-brand-blue"></span>
-                        <!-- Deco circle behind text -->
-                        <span class="absolute -top-4 -right-6 w-12 h-12 bg-brand-yellow/30 rounded-full -z-10 blur-sm"></span>
-                    </h2>
-                    <p class="text-gray-500">イベント情報</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Card 1 -->
-                    <a href="https://soei-pf.com/schedule/" class="group block reveal-up" style="transition-delay: 0.1s;">
-                        <div class="bg-white h-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden rounded-lg">
-                            <div class="h-48 overflow-hidden relative">
-                                <img src="https://soei-pf.com/figure/time01.jpg" 
-                                     alt="Schedule" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                                <div class="absolute inset-0 bg-brand-blue/0 group-hover:bg-brand-blue/10 transition-colors duration-300"></div>
-                            </div>
-                            <div class="p-8">
-                                <div class="w-12 h-12 bg-brand-blue text-white flex items-center justify-center text-xl mb-4 absolute top-40 right-8 shadow-md rounded-lg group-hover:scale-110 transition-transform">
-                                    <i class="fa-regular fa-calendar"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-blue transition-colors">SCHEDULE</h3>
-                                <p class="text-gray-600 text-sm">2日間のタイムテーブルを確認。メインステージからワークショップまで。</p>
-                                <span class="inline-block mt-4 text-brand-blue font-bold text-sm border-b border-brand-blue pb-1">VIEW MORE <i class="fa-solid fa-arrow-right ml-1"></i></span>
-                            </div>
+            </section>
+            <section class="guide-section" aria-labelledby="guide-heading">
+                <div class="container">
+                    <div class="guide-head reveal">
+                        <div>
+                            <span class="eyebrow">EXPLORE THE FESTA</span>
+                            <h2 class="section-heading" id="guide-heading">フェスタを知る</h2>
                         </div>
-                    </a>
-
-                    <!-- Card 2 -->
-                    <a href="https://soei-pf.com/map/" class="group block reveal-up" style="transition-delay: 0.2s;">
-                        <div class="bg-white h-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden rounded-lg">
-                            <div class="h-48 overflow-hidden relative">
-                                <img src="https://soei-pf.com/figure/place02.jpg" 
-                                     alt="Map" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                                <div class="absolute inset-0 bg-brand-red/0 group-hover:bg-brand-red/10 transition-colors duration-300"></div>
-                            </div>
-                            <div class="p-8">
-                                <div class="w-12 h-12 bg-brand-red text-white flex items-center justify-center text-xl mb-4 absolute top-40 right-8 shadow-md rounded-lg group-hover:scale-110 transition-transform">
-                                    <i class="fa-solid fa-map-location-dot"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-red transition-colors">AREA MAP</h3>
-                                <p class="text-gray-600 text-sm">広大な会場のエリアマップ。各発表場所やステージへのアクセス。</p>
-                                <span class="inline-block mt-4 text-brand-red font-bold text-sm border-b border-brand-red pb-1">VIEW MORE <i class="fa-solid fa-arrow-right ml-1"></i></span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Card 3 -->
-                    <a href="https://soei-pf.com/attractions/" class="group block reveal-up" style="transition-delay: 0.3s;">
-                        <div class="bg-white h-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden rounded-lg">
-                            <div class="h-48 overflow-hidden relative">
-                                <img src="https://soei-pf.com/figure/people01.jpg" 
-                                     alt="Attraction" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                                <div class="absolute inset-0 bg-brand-yellow/0 group-hover:bg-brand-yellow/10 transition-colors duration-300"></div>
-                            </div>
-                            <div class="p-8">
-                                <div class="w-12 h-12 bg-brand-yellow text-brand-black flex items-center justify-center text-xl mb-4 absolute top-40 right-8 shadow-md rounded-lg group-hover:scale-110 transition-transform">
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-yellow transition-colors">ATTRACTIONS</h3>
-                                <p class="text-gray-600 text-sm">ここでしか体験できない発表や特別イベントの見どころ。</p>
-                                <span class="inline-block mt-4 text-brand-yellow font-bold text-sm border-b border-brand-yellow pb-1 text-black">VIEW MORE <i class="fa-solid fa-arrow-right ml-1"></i></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="py-20 bg-brand-black text-white relative overflow-hidden text-center w-full">
-            <!-- Background effects -->
-            <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-            <!-- Neon lines -->
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue via-brand-yellow to-brand-red"></div>
-            
-            <div class="container mx-auto px-4 relative z-10 reveal-up">
-                <h2 class="text-3xl md:text-5xl font-black mb-6">JOIN THE FESTIVAL</h2>
-                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
-                    チケット情報や最新ニュースを見逃さないように<br>
-                    公式SNSをチェック！
-                </p>
-
-                <!-- 追加: チケットボタン -->
-                <div class="mb-10">
-                    <a href="https://soei-pf2026.peatix.com/" target="_blank" rel="noopener noreferrer" class="inline-block px-10 py-4 bg-brand-yellow text-brand-black font-bold text-lg rounded-none hover:bg-brand-red hover:text-white transition-colors duration-300 transform hover:skew-x-[-10deg] shadow-[0_0_15px_rgba(255,215,0,0.4)] hover:shadow-[0_0_25px_rgba(221,46,68,0.6)]">
-                        <span class="inline-block transform hover:skew-x-[10deg]">チケット申し込み <i class="fa-solid fa-ticket ml-1"></i></span>
-                    </a>
-                </div>
-
-                <div class="flex justify-center gap-6">
-                    <a href="https://soei-pf.com/preparation/" class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-black transition-all hover:scale-110">
-                        <i class="fa-brands fa-twitter text-xl"></i>
-                    </a>
-                    <a href="https://soei-pf.com/preparation/" class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-black transition-all hover:scale-110">
-                        <i class="fa-brands fa-instagram text-xl"></i>
-                    </a>
-                    <a href="https://youtube.com/live/OTA4lBNdNeI?feature=share" class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-black transition-all hover:scale-110">
-                        <i class="fa-brands fa-youtube text-xl"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-100 pt-16 pb-8 w-full relative overflow-hidden">
-        <!-- Footer Deco -->
-        <div class="absolute bottom-0 right-0 w-32 h-32 bg-gray-50 rounded-tl-full -z-10"></div>
-        
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="md:col-span-1">
-                    <div class="flex items-center gap-2 mb-4">
-                         <img src="https://soei-pf.com/figure/logo01.png" 
-                              alt="Project Festa Logo" 
-                              class="w-8 h-8 shrink-0 object-contain transition-transform duration-500 hover:rotate-45">
-                        <span class="font-bold text-xl tracking-tighter">PROJECT FESTA 2026</span>
+                        <p class="section-lead">開催スケジュールや会場、企画の情報はこちらから。各ページは公開に合わせて順次ご案内します。</p>
                     </div>
-                    <p class="text-gray-500 text-sm leading-loose">
-                        〒221-0004<br>
-                        神奈川県横浜市神奈川区西大口28<br>
-                        お問い合わせ: y.s.profes@outlook.jp
-                    </p>
+                    <div class="guide-grid">
+                        <a class="guide-card reveal" href="https://soei-pf.com/fix/">
+                            <span class="guide-number">01 / TIME TABLE</span>
+                            <span class="guide-icon" aria-hidden="true">◷</span>
+                            <h3>SCHEDULE</h3>
+                            <p>2日間の開催スケジュールや当日の流れをご案内します。</p>
+                            <span class="guide-more"><span>VIEW DETAILS</span><span>→</span></span>
+                        </a>
+                        <a class="guide-card reveal reveal-delay-1" href="https://soei-pf.com/fix/">
+                            <span class="guide-number">02 / LOCATION</span>
+                            <span class="guide-icon" aria-hidden="true">⌖</span>
+                            <h3>AREA MAP</h3>
+                            <p>会場内のエリアや各発表場所への行き方を確認できます。</p>
+                            <span class="guide-more"><span>VIEW DETAILS</span><span>→</span></span>
+                        </a>
+                        <a class="guide-card reveal reveal-delay-2" href="https://soei-pf.com/fix/">
+                            <span class="guide-number">03 / PROGRAM</span>
+                            <span class="guide-icon" aria-hidden="true">✳</span>
+                            <h3>ATTRACTIONS</h3>
+                            <p>生徒たちの発表や企画など、フェスタの見どころをご紹介。</p>
+                            <span class="guide-more"><span>VIEW DETAILS</span><span>→</span></span>
+                        </a>
+                        <a class="guide-card reveal reveal-delay-3" href="https://soei-pf.com/fix/">
+                            <span class="guide-number">04 / Q &amp; A</span>
+                            <span class="guide-icon" aria-hidden="true">?</span>
+                            <h3>INFORMATION</h3>
+                            <p>ご来場にあたってのご案内や、よくある質問を掲載します。</p>
+                            <span class="guide-more"><span>VIEW DETAILS</span><span>→</span></span>
+                        </a>
+                    </div>
                 </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4 border-l-4 border-brand-blue pl-3">PAGES</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="https://soei-pf.com/" class="text-brand-blue font-bold">トップページ</a></li>
-                        <li><a href="https://soei-pf.com/information/" class="hover:text-brand-blue transition-colors">お知らせ</a></li>
-                        <li><a href="https://soei-pf.com/concept/" class="hover:text-brand-blue transition-colors">コンセプト</a></li>
-                    </ul>
+            </section>
+            <section class="access-section" id="access" aria-labelledby="access-heading">
+                <div class="container access-grid">
+                    <div class="access-copy reveal">
+                        <span class="eyebrow">ACCESS</span>
+                        <h2 id="access-heading">会場のご案内</h2>
+                        <p>PROJECT FESTA 2027は、横浜創英中学・高等学校で開催します。ご来場の際は、公共交通機関をご利用ください。</p>
+                        <dl class="access-info">
+                            <div class="access-row">
+                                <dt>会場</dt>
+                                <dd>横浜創英中学・高等学校</dd>
+                            </div>
+                            <div class="access-row">
+                                <dt>開催日</dt>
+                                <dd>2027年3月18日（木）・19日（金）</dd>
+                            </div>
+                            <div class="access-row">
+                                <dt>所在地</dt>
+                                <dd>〒221-0004<br>神奈川県横浜市神奈川区西大口28</dd>
+                            </div>
+                        </dl>
+                        <a class="text-link" href="https://soei-pf.com/fix/">アクセス詳細・会場マップ</a>
+                    </div>
+                    <div class="map-frame reveal reveal-delay-1" aria-label="横浜創英中学・高等学校の地図">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9947.3248423308!2d139.63196493405744!3d35.490682916785225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185e9cc4221ea1%3A0x87c86b62ff677393!2z5qiq5rWc5Ym16Iux5Lit5a2m44O76auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1793497432244!5m2!1sja!2sjp" title="横浜創英中学・高等学校 Googleマップ" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        <div class="map-caption"><strong>YOKOHAMA SOEI JUNIOR &amp; SENIOR HIGH SCHOOL</strong><span>GOOGLE MAP</span></div>
+                    </div>
                 </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4 border-l-4 border-brand-red pl-3">EVENT</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="https://soei-pf.com/schedule/" class="hover:text-brand-blue transition-colors">スケジュール</a></li>
-                        <li><a href="https://soei-pf.com/map/" class="hover:text-brand-blue transition-colors">会場マップ</a></li>
-                        <li><a href="https://soei-pf.com/committee/" class="hover:text-brand-blue transition-colors">実行委員会より</a></li>
-                    </ul>
+            </section>
+            <section class="social-section" aria-labelledby="social-heading">
+                <div class="container social-inner reveal">
+                    <div class="social-copy">
+                        <span class="eyebrow">FOLLOW US</span>
+                        <h2 id="social-heading">フェスタの最新情報をチェック。</h2>
+                        <p>最新のお知らせや当日の情報は、公式ページ・SNSから発信します。</p>
+                    </div>
+                    <div class="social-links" aria-label="公式SNSリンク">
+                        <a class="social-link" href="https://soei-pf.com/fix/" aria-label="Instagram公式ページ">
+                            <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.7" r=".9" fill="currentColor" stroke="none"></circle>
+                            </svg>
+                            <span>INSTAGRAM</span>
+                        </a>
+                        <a class="social-link" href="https://soei-pf.com/fix/" aria-label="Facebook公式ページ">
+                            <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="currentColor">
+                                <path d="M13.55 21v-8.2h2.76l.41-3.2h-3.17V7.56c0-.93.26-1.56 1.59-1.56h1.7V3.14c-.3-.04-1.34-.14-2.55-.14-2.53 0-4.26 1.54-4.26 4.38V9.6H7.17v3.2h2.86V21h3.52z"></path>
+                            </svg>
+                            <span>FACEBOOK</span>
+                        </a>
+                        <a class="social-link" href="https://soei-pf.com/fix/" aria-label="YouTube公式チャンネル">
+                            <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                <rect x="2.2" y="5" width="19.6" height="14" rx="4" fill="currentColor"></rect>
+                                <path d="M10 8.6 16 12l-6 3.4V8.6z" fill="#0057B7"></path>
+                            </svg>
+                            <span>YOUTUBE</span>
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="font-bold mb-4 border-l-4 border-brand-yellow pl-3">SUPPORT</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="https://soei-pf.com/qaa/" class="hover:text-brand-blue transition-colors">よくある質問</a></li>
-                        <li><a href="https://soei-pf.com/privacypolicy/" class="hover:text-brand-blue transition-colors">プライバシーポリシー</a></li>
-                        <li><a href="https://soei-pf.com/sitemap/" class="hover:text-brand-blue transition-colors">サイトマップ</a></li>
-                    </ul>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-main">
+                    <div class="footer-about">
+                        <div class="footer-brand">
+                            <img src="https://soei-pf.com/img/PF27_rogo.png" alt="PROJECT FESTA ロゴ">
+                            <div class="footer-brand-copy">
+                                <strong>PROJECT FESTA 2027</strong>
+                                <span>YOKOHAMA SOEI JUNIOR &amp; SENIOR HIGH SCHOOL</span>
+                            </div>
+                        </div>
+                        <p>Our Runway<br>2027.03.18 THU. — 03.19 FRI.<br>横浜創英中学・高等学校</p>
+                    </div>
+                    <div class="footer-column">
+                        <h3>CONTENTS</h3>
+                        <ul>
+                            <li><a href="#top">トップページ</a></li>
+                            <li><a href="https://soei-pf.com/fix/">コンセプト</a></li>
+                            <li><a href="https://soei-pf.com/fix/">お知らせ</a></li>
+                            <li><a href="https://soei-pf.com/fix/">企画・見どころ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>EVENT</h3>
+                        <ul>
+                            <li><a href="https://soei-pf.com/fix/">スケジュール</a></li>
+                            <li><a href="https://soei-pf.com/fix/">会場マップ</a></li>
+                            <li><a href="https://soei-pf.com/fix/">アクセス</a></li>
+                            <li><a href="https://soei-pf.com/fix/">実行委員会</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>SUPPORT</h3>
+                        <ul>
+                            <li><a href="https://soei-pf.com/fix/">よくある質問</a></li>
+                            <li><a href="https://soei-pf.com/fix/">お問い合わせ</a></li>
+                            <li><a href="https://soei-pf.com/fix/">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <span>© 2027 YOKOHAMA SOEI PROJECT FESTA EXECUTIVE COMMITTEE.</span>
+                    <span class="footer-committee"><img src="https://soei-pf.com/img/PFEC_rogo.png" alt="実行委員会ロゴ">PROJECT FESTA EXECUTIVE COMMITTEE</span>
                 </div>
             </div>
-            
-           <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">  
-             <p>&copy; 2026 Yokohama Soei High School Project Festa Executive Committee.</p>  
-             <div class="flex space-x-4 mt-4 md:mt-0">  
-                 <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-twitter"></i></a>  
-                 <a href="https://soei-pf.com/preparation/" class="hover:text-brand-blue"><i class="fa-brands fa-instagram"></i></a>  
-                 <a href="https://www.youtube.com/live/XSiDKIQYi_I" class="hover:text-brand-blue"><i class="fa-brands fa-youtube"></i></a>  
-             </div>  
-           </div>  
-        </div>  
-    </footer>
-
-    <!-- 共通ニュースデータ読み込み (必ずmain scriptの前) -->
-    <script src="https://soei-pf.com/news_data.js"></script>
-
-    <!-- JavaScript for Interactivity -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            /* --- Header Scroll Logic --- */
-            let lastScroll = 0;
-            const header = document.getElementById('main-header');
-            const scrollThreshold = 100; // Amount to scroll before activating logic
-
-            window.addEventListener('scroll', () => {
-                const currentScroll = window.pageYOffset;
-                // Add background when scrolled
-                if (currentScroll > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-                
-                // Show/Hide Logic
-                if (currentScroll <= 0) {
-                    header.classList.remove('hidden-header');
-                    return;
-                }
-                
-                if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
-                    // Scrolling Down
-                    header.classList.add('hidden-header');
-                } else {
-                    // Scrolling Up
-                    header.classList.remove('hidden-header');
-                }
-                lastScroll = currentScroll;
-            });
-
-            /* --- Scroll Reveal Animation --- */
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
+        </footer>
+        <a class="back-top" id="back-top" href="#top" aria-label="ページ上部へ戻る">↑</a>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const NEWS_ITEMS = [];
+              const newsList = document.getElementById("news-list");
+              NEWS_ITEMS.slice(0, 4).forEach((item) => {
+                const link = document.createElement("a");
+                link.className = "news-item";
+                link.href = "https://soei-pf.com/fix/";
+                const date = document.createElement("time");
+                date.className = "news-date";
+                date.textContent = item.date || "";
+                const category = document.createElement("span");
+                category.className = "news-category";
+                category.textContent = item.category || "お知らせ";
+                const title = document.createElement("span");
+                title.className = "news-title";
+                title.textContent = item.title || "";
+                const arrow = document.createElement("span");
+                arrow.className = "news-arrow";
+                arrow.setAttribute("aria-hidden", "true");
+                arrow.textContent = "→";
+                link.append(date, category, title, arrow);
+                newsList.appendChild(link);
+              });
+              const menuToggle = document.getElementById("menu-toggle");
+              const mobileNav = document.getElementById("mobile-nav");
+              const closeMenu = () => {
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "メニューを開く");
+                mobileNav.classList.remove("is-open");
+              };
+              menuToggle.addEventListener("click", () => {
+                const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+                menuToggle.setAttribute("aria-expanded", String(!isOpen));
+                menuToggle.setAttribute("aria-label", isOpen ? "メニューを開く" : "メニューを閉じる");
+                mobileNav.classList.toggle("is-open", !isOpen);
+              });
+              mobileNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+              document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") closeMenu();
+              });
+              const header = document.getElementById("site-header");
+              const backTop = document.getElementById("back-top");
+              const updateScrollState = () => {
+                const scrolled = window.scrollY > 24;
+                header.classList.toggle("is-scrolled", scrolled);
+                backTop.classList.toggle("visible", window.scrollY > 500);
+              };
+              updateScrollState();
+              window.addEventListener("scroll", updateScrollState, { passive: true });
+              const revealElements = document.querySelectorAll(".reveal");
+              if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                  entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target); 
+                      entry.target.classList.add("is-visible");
+                      obs.unobserve(entry.target);
                     }
-                });
-            }, observerOptions);
-
-            const revealElements = document.querySelectorAll('.reveal-up');
-            revealElements.forEach(el => observer.observe(el));
-
-            /* --- Mobile Menu Toggle --- */
-            const menuBtn = document.getElementById('menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            let isMenuOpen = false;
-
-            menuBtn.addEventListener('click', () => {
-                isMenuOpen = !isMenuOpen;
-                if (isMenuOpen) {
-                    mobileMenu.classList.add('open');
-                    menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-                } else {
-                    mobileMenu.classList.remove('open');
-                    menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-                }
+                  });
+                }, { threshold: 0.12, rootMargin: "0px 0px -35px 0px" });
+                revealElements.forEach((element) => observer.observe(element));
+              } else {
+                revealElements.forEach((element) => element.classList.add("is-visible"));
+              }
             });
+        </script>
+    </body>
 
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    isMenuOpen = false;
-                    mobileMenu.classList.remove('open');
-                    menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-                });
-            });
-
-            /* --- Top Page News Render (Modified) --- */
-            const topNewsList = document.getElementById('top-news-list');
-            
-            // カテゴリラベル生成ヘルパー
-            function getCategoryLabel(cat) {
-                switch(cat) {
-                    case 'important': return '<span class="tag-badge tag-important">重要</span>';
-                    case 'event': return '<span class="tag-badge tag-event">イベント</span>';
-                    case 'recruit': return '<span class="tag-badge tag-recruit">募集</span>';
-                    default: return '<span class="tag-badge tag-info">お知らせ</span>';
-                }
-            }
-
-            if (typeof sharedNewsData !== 'undefined' && topNewsList) {
-                topNewsList.innerHTML = ''; // Clear loading
-                
-                // 最新5件のみ表示
-                const displayData = sharedNewsData.slice(0, 5);
-                displayData.forEach(item => {
-                    const row = document.createElement('div');
-                    // リスト項目のスタイル (スズキ風: 日付、ラベル、タイトルの順)
-                    row.className = 'group flex flex-col md:flex-row md:items-center gap-2 md:gap-6 py-2 border-b border-gray-700 last:border-0 hover:bg-white/5 transition-colors cursor-pointer px-2';
-                    
-                    // リンク先は /information/?id=XX (ディレクトリ指定とパラメータ付与)
-                    row.onclick = () => {
-                        window.location.href = `https://soei-pf.com/information/?id=${item.id}`;
-                    };
-
-                    row.innerHTML = `
-                        <div class="flex items-center gap-3 shrink-0">
-                            <span class="text-gray-400 text-sm font-mono tracking-wider">${item.date}</span>
-                            ${getCategoryLabel(item.category)}
-                        </div>
-                        <h3 class="text-sm md:text-base font-medium truncate group-hover:text-brand-yellow transition-colors flex-grow">
-                            ${item.title}
-                        </h3>
-                        <span class="hidden md:inline-block text-brand-yellow opacity-0 group-hover:opacity-100 transition-opacity text-xs transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
-                    `;
-                    topNewsList.appendChild(row);
-                });
-            } else {
-                if(topNewsList) topNewsList.innerHTML = '<p class="text-red-400">ニュースデータの読み込みに失敗しました。</p>';
-            }
-        });
-    </script>
-</body>
 </html>
-```
